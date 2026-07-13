@@ -211,3 +211,9 @@ experiments/*
 trained_models/*
 wandb/*
 !*/.gitkeep
+
+# Container images (large binaries, rebuild from container/*.def instead)
+container/*.sif
+
+# Stray SLURM logs left in repo root
+slurm-*.out

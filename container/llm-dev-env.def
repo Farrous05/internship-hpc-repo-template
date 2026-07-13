@@ -1,0 +1,20 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/pytorch:25.09-py3
+
+%post
+    apt-get update && apt-get install -y \
+        python3-pip build-essential && \
+        rm -rf /var/lib/apt/lists/*
+    pip install --upgrade ninja packaging \
+        transformers datasets accelerate peft \
+        wandb weave dotenv
+    pip install flash-attn --no-build-isolation
+
+%environment
+    export PATH=/workspace:$PATH
+
+%runscript
+    exec bash
+
+%help
+    Container based on NVIDIA PyTorch 25.09 with transformers, datasets, accelerate, peft, and flash-attn installed. Usage: run with 'apptainer run <container.sif>'

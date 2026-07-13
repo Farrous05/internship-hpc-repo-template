@@ -10,7 +10,7 @@
 #SBATCH --mem={memory}
 #
 #SBATCH --constraint="gpu"
-#SBATCH --gres=gpu:a100:{n_gpu}
+#SBATCH --gres=gpu:{n_gpu}
 #SBATCH --partition=gpu
 
 # Wall clock limit (max is 24 hours):
@@ -34,10 +34,9 @@ srun apptainer exec \
     --pwd /root/llm-strategic-tuning \
     --bind .:/root/llm-strategic-tuning \
     --bind ~/.cache/huggingface:/root/.cache/huggingface \
-    --bind /ptmp:/ptmp \
     --env HUGGING_FACE_HUB_TOKEN="$HUGGINGFACE_TOKEN" \
     --env WANDB_API_KEY="$WANDB_API_KEY" \
-    --env WANDB_ENTITY="chm-ml" \
+    --env WANDB_ENTITY="{entity_name}" \
     --env WANDB_PROJECT="{project_name}" \
     --env WANDB_RUN_GROUP="{group_name}" \
     --env WANDB_NAME="{job_name}/{job_id}" \

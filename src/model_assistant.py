@@ -209,7 +209,7 @@ class ModelAssistant:
             train_dataset=datasets["train"],
             eval_dataset=datasets["eval"],
             data_collator=data_collator,
-            tokenizer=self.tokenizer,
+            processing_class=self.tokenizer,
         )
 
         # Train

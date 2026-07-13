@@ -25,18 +25,16 @@ DEFAULT_SCRIPT_PATH = "src/train.py"
 DEFAULT_PROJECT_NAME = "hpc_repo_template"
 DEFAULT_JOB_NAME = "v1"
 DEFAULT_GROUP_NAME = "hpc_demo"
+DEFAULT_ENTITY_NAME = "faresshretah-max-planck-society"
 
-# If this image doesn't work, please clone the llm-strategic-tuning repository
-# and build an image yourself. Guides are available in the repository.
-# https://github.com/center-for-humans-and-machines/llm-strategic-tuning
 DEFAULT_IMAGE_PATH = (
-    "/u/lumi/projects/llm-strategic-tuning/images/ai_nk_trl_vllm.sif"
+    "/u/fash/internship-hpc-repo-template/container/llm-dev-env.sif"
 )
 DEFAULT_TIME = "00:10:00"
 
 # Resource calculation constants
 GPUS_PER_NODE = 4
-CORES_PER_GPU = 18
+CORES_PER_GPU = 12
 MEMORY_PER_GPU = 125000
 
 
@@ -387,6 +385,11 @@ class SlurmJobManager:
                 "type": str,
                 "default": DEFAULT_PROJECT_NAME,
                 "help": f"Project to charge (default: {DEFAULT_PROJECT_NAME})",
+            },
+            "entity_name": {
+                "type": str,
+                "default": DEFAULT_ENTITY_NAME,
+                "help": f"W&B entity/team to log runs under (default: {DEFAULT_ENTITY_NAME})",  # noqa: E501
             },
         }
 

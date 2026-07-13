@@ -113,7 +113,11 @@ def validate_training_setup(config: TrainingConfig) -> None:
 
     # Check output directory
     output_dir = Path(config.output_dir)
-    overwrite_allowed = config.training_args.overwrite_output_dir
+    # overwrite_output_dir was removed from TrainingArguments in
+    # transformers 5.x; default to True (allow overwrite) when absent.
+    overwrite_allowed = getattr(
+        config.training_args, "overwrite_output_dir", True
+    )
 
     if output_dir.exists() and not overwrite_allowed:
         logger.warning(
