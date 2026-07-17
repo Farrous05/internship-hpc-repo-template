@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-07-01 15:53:07.955093",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/none",
+    "injection_config": {
+      "size": "InjectionSize.SKIM_HALF",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 5,
+  "total_characters": 217126,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.010611258311705174,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 10,
+    "size": "skim_half",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres.",
+    "distance": 0.8643691539764404,
+    "span_start": 1888,
+    "span_end": 5443
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres.",
+      "distance": 0.8643691539764404,
+      "span_start": 1888,
+      "span_end": 5443
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 49,
+    "hold_length": 6,
+    "post_injection_distances": [
+      0.23245024681091309,
+      0.31676363945007324,
+      0.3984494209289551,
+      0.40127724409103394,
+      0.2666030526161194,
+      0.4955531358718872,
+      0.48486924171447754,
+      0.3515107035636902,
+      0.451285719871521,
+      0.37718522548675537,
+      0.3520948886871338,
+      0.35515642166137695,
+      0.3916178345680237,
+      0.3916178345680237,
+      0.41322213411331177,
+      0.37412142753601074,
+      0.38587403297424316,
+      0.38985002040863037,
+      0.47545164823532104,
+      0.4042705297470093,
+      0.3903321623802185,
+      0.4396406412124634,
+      0.5000652074813843,
+      0.5505430102348328,
+      0.49069809913635254,
+      0.3784867525100708,
+      0.40078306198120117,
+      0.3834115266799927,
+      0.4219341278076172,
+      0.5621464252471924,
+      0.621044933795929,
+      0.6757164001464844,
+      0.6262934505939484,
+      0.7669559419155121,
+      0.7785821408033371,
+      0.782471165060997,
+      0.7297960519790649,
+      0.7007751762866974,
+      0.7425153851509094,
+      0.8164853155612946,
+      0.79081030189991,
+      0.78799769282341,
+      0.7821636348962784,
+      0.7796040773391724
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "timestamp": "2026-06-26 21:35:52.931852",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OPENAI",
+        "model": "OpenAIModels.GPT4O_MINI",
+        "system_prompt": null,
+        "temperature": 0.5,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260626_195505",
+    "injection_config": {
+      "size": "InjectionSize.SKIM_HALF",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 99362,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.011623794382268739,
+  "collapse_onsets": [
+    10,
+    20
+  ],
+  "injection": {
+    "round": 10,
+    "size": "skim_half",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "const mapChildCategoryIdsToNames = categories => { categories.map(category => { if (category?.children?.length) { for (const childCategory of category.children) { if (childCategory.categoryId) { categoryMap[childCategory.categoryId] = childCategory.name } } } }) 1. Awareness: The customer becomes aware of the product or service they want to purchase through social media advertisements, recommendations from friends, or online reviews. 2. Interest: The customer expresses interest in the product or service by visiting the company's website, reading more about the product, or watching product videos. 3. Consideration: The customer compares the product or service with similar products from competitors, reads customer reviews, and considers the price and features. 4. Intent: The customer decides to make a purchase and adds the product to their shopping cart or",
+    "distance": 0.9688027612864971,
+    "span_start": 676,
+    "span_end": 1542
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "const mapChildCategoryIdsToNames = categories => { categories.map(category => { if (category?.children?.length) { for (const childCategory of category.children) { if (childCategory.categoryId) { categoryMap[childCategory.categoryId] = childCategory.name } } } }) 1. Awareness: The customer becomes aware of the product or service they want to purchase through social media advertisements, recommendations from friends, or online reviews. 2. Interest: The customer expresses interest in the product or service by visiting the company's website, reading more about the product, or watching product videos. 3. Consideration: The customer compares the product or service with similar products from competitors, reads customer reviews, and considers the price and features. 4. Intent: The customer decides to make a purchase and adds the product to their shopping cart or",
+      "distance": 0.9688027612864971,
+      "span_start": 676,
+      "span_end": 1542
+    },
+    {
+      "round": 20,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Wukong sneers, \"You are a traitor, MK. You should have stayed loyal to your true king.\" The implementation of these portals can help to address the specific needs and challenges of the tribal districts and improve the delivery of services to the citizens. This is just a simple example, but XML documents can be much more complex, with multiple levels of elements and a wide range of data types and structures. def text_analysis(file): # Load the text data set as a Pandas DataFrame df = pd.read_csv(file, encoding='ISO-8859-1') Michael Mankins and Mark Gottfredson suggest a new approach to strategy-making in uncertain times. This approach involves five steps: defining extreme but plausible scenarios, identifying strategic hedges and options, running experiments before locking in investment, identifying trigger points, signposts, and metrics, and providing prescriptive surveillance. This approach can help companies adapt to changing market and competitive conditions and make better strategic decisions. Is our model not calculating values of capital, labor and prices outside the energy sector? If so, we should add variables to account for price of goods outside the energy sector, capital investment outside the energy sector and goods produced outside the energy sector esac1@hotmail.com could you customise the above css code with the name EstateMall instead of magicbrick eDisha is a one-stop citizen service portal of the Government of Haryana. It was launched in 2012 to provide citizens with easy access to various government services and information online. The portal is a part of the e-governance initiatives of the Haryana government and aims to provide a transparent and efficient delivery of services to the citizens. The Ford control tower is supported by a team of supply chain experts who use advanced analytics and reporting tools to track and optimize supply chain operations. The control tower team works closely with the Ford manufacturing teams to identify potential bottlenecks and proactively address them, ensuring that the supply chain runs smoothly and efficiently. With the roll",
+      "distance": 0.7965391874313354,
+      "span_start": 2393,
+      "span_end": 4508
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 11,
+    "hold_length": 16,
+    "post_injection_distances": [
+      0.895106852054596,
+      0.876602292060852,
+      0.8620528280735016,
+      0.882350005209446,
+      0.859287679195404,
+      0.8906607702374458,
+      0.8998861685395241,
+      0.8842491656541824,
+      0.8652241379022598,
+      0.8803487867116928,
+      0.8908528909087181,
+      0.9128051847219467,
+      0.9234836399555206,
+      0.9108217731118202,
+      0.910155825316906,
+      0.910155825316906
+    ]
+  }
+}

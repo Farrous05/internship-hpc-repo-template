@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-07-02 10:38:28.356519",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 1.0,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/none",
+    "injection_config": null
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 167101,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.02148356275124981,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.024342358112335205,
+      0.02392733097076416,
+      0.048183441162109375,
+      0.05035567283630371,
+      0.044550538063049316,
+      0.05721580982208252,
+      0.08129823207855225,
+      0.09065473079681396,
+      0.10950934886932373,
+      0.12173521518707275,
+      0.1089392900466919,
+      0.10249090194702148,
+      0.12140011787414551,
+      0.10939711332321167,
+      0.15851014852523804,
+      0.12945640087127686,
+      0.1332639455795288,
+      0.20989298820495605,
+      0.40885472297668457,
+      0.3125132918357849,
+      0.2065684199333191,
+      0.19465410709381104,
+      0.1921067237854004,
+      0.20457559823989868,
+      0.2421223521232605,
+      0.2585148811340332,
+      0.2881743311882019,
+      0.3357442617416382,
+      0.2566729187965393,
+      0.2093116044998169,
+      0.1977628469467163,
+      0.21395599842071533,
+      0.2568179965019226,
+      0.2584022283554077,
+      0.24377572536468506
+    ]
+  }
+}

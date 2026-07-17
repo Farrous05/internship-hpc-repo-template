@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-07-03 12:45:00.697098",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": "Be critical. Each reply should question, challenge, or disagree with something in the previous message -- never just agree and elaborate.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/disagree",
+    "injection_config": {
+      "size": "InjectionSize.OUTPUT_SIZED",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 96108,
+  "collapse_onset_round": 12,
+  "collapse_rate": 0.0182813910337595,
+  "collapse_onsets": [
+    12
+  ],
+  "injection": {
+    "round": 5,
+    "size": "output_sized",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever.",
+    "distance": 0.8661782145500183,
+    "span_start": 792,
+    "span_end": 1474
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever.",
+      "distance": 0.8661782145500183,
+      "span_start": 792,
+      "span_end": 1474
+    },
+    {
+      "round": 10,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. Chess spread along trade routes from India through Persia to Europe, and the pieces changed as they travelled. The counsellor beside the king became a queen, gaining the sweeping power that makes the modern game so sharp. A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks. Glaciers are rivers of ice that flow downhill at the pace of fingernails growing, grinding mountains into powder and carving valleys shaped like the letter U. The blue in deep crevasses is ancient compressed air. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water.",
+      "distance": 0.8048262894153595,
+      "span_start": 3305,
+      "span_end": 6199
+    },
+    {
+      "round": 15,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. John Coltrane practised scales until his lips bled, chasing a sound that felt like prayer. His quartet turned a Broadway show tune into a spiritual suite that stretched past thirty minutes. Acclimatisation means climbing high and sleeping low, letting the blood thicken with new red cells over days, because rushing the mountain invites a fluid-filled swelling of the lungs or brain that kills quietly in the night. As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. Deserts are not empty but patient. Seeds can lie dormant in the sand for decades, waiting for a rain heavy enough to wash away the chemical coating that blocks them from sprouting too soon. Critics called the late recordings chaotic, but younger musicians heard a doorway, a way of playing every note in a chord at once until melody dissolved into pure searching energy. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. Beneath the paving stones lay layers of gravel and sand for drainage, engineering so durable that farmers still plough over intact Roman roadbeds two thousand years after the last legion marched. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. For centuries players memorised opening lines by hand; now engines calculate millions of positions a second, yet the game feels no smaller, because the number of possible games still exceeds the atoms in the observable universe. A honeybee colony is a single organism spread across forty thousand bodies.",
+      "distance": 0.7622598707675934,
+      "span_start": 5201,
+      "span_end": 9668
+    },
+    {
+      "round": 20,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. Natural dyeing turns a kitchen into an alchemist's shop. Onion skins yield amber, avocado pits a dusty pink, and fermented indigo leaves a green vat that oxidises to deep blue only when the cloth meets the air. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. Beneath the paving stones lay layers of gravel and sand for drainage, engineering so durable that farmers still plough over intact Roman roadbeds two thousand years after the last legion marched. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. Beneath the paving stones lay layers of gravel and sand for drainage, engineering so durable that farmers still plough over intact Roman roadbeds two thousand years after the last legion marched. Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks.",
+      "distance": 0.7968652248382568,
+      "span_start": 4151,
+      "span_end": 7659
+    },
+    {
+      "round": 25,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Natural dyeing turns a kitchen into an alchemist's shop. Onion skins yield amber, avocado pits a dusty pink, and fermented indigo leaves a green vat that oxidises to deep blue only when the cloth meets the air. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. A volcano is a pressure valve for a planet still cooling from its birth.",
+      "distance": 0.814177542924881,
+      "span_start": 1649,
+      "span_end": 3107
+    },
+    {
+      "round": 30,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. Critics called the late recordings chaotic, but younger musicians heard a doorway, a way of playing every note in a chord at once until melody dissolved into pure searching energy. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. Chess spread along trade routes from India through Persia to Europe, and the pieces changed as they travelled. The counsellor beside the king became a queen, gaining the sweeping power that makes the modern game so sharp. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again.",
+      "distance": 0.6741288304328918,
+      "span_start": 1585,
+      "span_end": 3260
+    },
+    {
+      "round": 35,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. Glaciers are rivers of ice that flow downhill at the pace of fingernails growing, grinding mountains into powder and carving valleys shaped like the letter U. The blue in deep crevasses is ancient compressed air. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks.",
+      "distance": 0.8112631738185883,
+      "span_start": 836,
+      "span_end": 1717
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 3,
+    "post_injection_distances": [
+      0.3221173882484436,
+      0.33679234981536865,
+      0.39101552963256836,
+      0.43116819858551025,
+      0.47049248218536377,
+      0.49764442443847656,
+      0.5067046284675598,
+      0.5289851725101471,
+      0.5177452564239502,
+      0.5141291320323944,
+      0.5150293111801147,
+      0.5049470663070679,
+      0.509299635887146,
+      0.522921621799469,
+      0.5189284980297089,
+      0.5778685808181763,
+      0.566573441028595,
+      0.5468136668205261,
+      0.6262320280075073,
+      0.5907686352729797,
+      0.6079148054122925,
+      0.6040095090866089,
+      0.7313928008079529,
+      0.6866806149482727,
+      0.703574925661087,
+      0.7174908518791199,
+      0.6856736838817596,
+      0.7156095802783966,
+      0.7510820925235748,
+      0.753871813416481
+    ]
+  }
+}

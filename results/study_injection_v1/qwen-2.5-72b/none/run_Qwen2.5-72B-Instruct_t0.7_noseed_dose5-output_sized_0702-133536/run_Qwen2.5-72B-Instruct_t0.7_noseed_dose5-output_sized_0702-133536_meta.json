@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-07-02 13:35:36.083569",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/none",
+    "injection_config": {
+      "size": "InjectionSize.OUTPUT_SIZED",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 179399,
+  "collapse_onset_round": 27,
+  "collapse_rate": 0.00044152449732866333,
+  "collapse_onsets": [
+    27
+  ],
+  "injection": {
+    "round": 5,
+    "size": "output_sized",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+    "distance": 0.8660627603530884,
+    "span_start": 3358,
+    "span_end": 6258
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+      "distance": 0.8660627603530884,
+      "span_start": 3358,
+      "span_end": 6258
+    },
+    {
+      "round": 10,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres.",
+      "distance": 0.8334618210792542,
+      "span_start": 657,
+      "span_end": 1443
+    },
+    {
+      "round": 15,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "John Coltrane practised scales until his lips bled, chasing a sound that felt like prayer. His quartet turned a Broadway show tune into a spiritual suite that stretched past thirty minutes. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. John Coltrane practised scales until his lips bled, chasing a sound that felt like prayer. His quartet turned a Broadway show tune into a spiritual suite that stretched past thirty minutes. Acclimatisation means climbing high and sleeping low, letting the blood thicken with new red cells over days, because rushing the mountain invites a fluid-filled swelling of the lungs or brain that kills quietly in the night.",
+      "distance": 0.8127487748861313,
+      "span_start": 967,
+      "span_end": 1963
+    },
+    {
+      "round": 20,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. Acclimatisation means climbing high and sleeping low, letting the blood thicken with new red cells over days, because rushing the mountain invites a fluid-filled swelling of the lungs or brain that kills quietly in the night. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. For centuries players memorised opening lines by hand; now engines calculate millions of positions a second, yet the game feels no smaller, because the number of possible games still exceeds the atoms in the observable universe. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. Acclimatisation means climbing high and sleeping low, letting the blood thicken with new red cells over days, because rushing the mountain invites a fluid-filled swelling of the lungs or brain that kills quietly in the night. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. Critics called the late recordings chaotic, but younger musicians heard a doorway, a way of playing every note in a chord at once until melody dissolved into pure searching energy. In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. John Coltrane practised scales until his lips bled, chasing a sound that felt like prayer. His quartet turned a Broadway show tune into a spiritual suite that stretched past thirty minutes. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. Natural dyeing turns a kitchen into an alchemist's shop. Onion skins yield amber, avocado pits a dusty pink, and fermented indigo leaves a green vat that oxidises to deep blue only when the cloth meets the air. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. Beneath the paving stones lay layers of gravel and sand for drainage, engineering so durable that farmers still plough over intact Roman roadbeds two thousand years after the last legion marched.",
+      "distance": 0.557999312877655,
+      "span_start": 6710,
+      "span_end": 12748
+    },
+    {
+      "round": 25,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Critics called the late recordings chaotic, but younger musicians heard a doorway, a way of playing every note in a chord at once until melody dissolved into pure searching energy. For centuries players memorised opening lines by hand; now engines calculate millions of positions a second, yet the game feels no smaller, because the number of possible games still exceeds the atoms in the observable universe. Automation eventually made the keepers obsolete, and the last of them left their lonely towers, leaving the lamps to switch themselves on at dusk over an ocean that no longer needs anyone watching. For centuries players memorised opening lines by hand; now engines calculate millions of positions a second, yet the game feels no smaller, because the number of possible games still exceeds the atoms in the observable universe. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Natural dyeing turns a kitchen into an alchemist's shop. Onion skins yield amber, avocado pits a dusty pink, and fermented indigo leaves a green vat that oxidises to deep blue only when the cloth meets the air. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. Natural dyeing turns a kitchen into an alchemist's shop. Onion skins yield amber, avocado pits a dusty pink, and fermented indigo leaves a green vat that oxidises to deep blue only when the cloth meets the air. Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. John Coltrane practised scales until his lips bled, chasing a sound that felt like prayer. His quartet turned a Broadway show tune into a spiritual suite that stretched past thirty minutes. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. Deserts are not empty but patient. Seeds can lie dormant in the sand for decades, waiting for a rain heavy enough to wash away the chemical coating that blocks them from sprouting too soon. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.5221440196037292,
+      "span_start": 6436,
+      "span_end": 12092
+    },
+    {
+      "round": 30,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks. For centuries players memorised opening lines by hand; now engines calculate millions of positions a second, yet the game feels no smaller, because the number of possible games still exceeds the atoms in the observable universe. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Acclimatisation means climbing high and sleeping low, letting the blood thicken with new red cells over days, because rushing the mountain invites a fluid-filled swelling of the lungs or brain that kills quietly in the night. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. Chess spread along trade routes from India through Persia to Europe, and the pieces changed as they travelled. The counsellor beside the king became a queen, gaining the sweeping power that makes the modern game so sharp.",
+      "distance": 0.776296079158783,
+      "span_start": 2559,
+      "span_end": 4739
+    },
+    {
+      "round": 35,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. John Coltrane practised scales until his lips bled, chasing a sound that felt like prayer. His quartet turned a Broadway show tune into a spiritual suite that stretched past thirty minutes. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step.",
+      "distance": 0.6565212607383728,
+      "span_start": 1521,
+      "span_end": 2933
+    },
+    {
+      "round": 40,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. John Coltrane practised scales until his lips bled, chasing a sound that felt like prayer. His quartet turned a Broadway show tune into a spiritual suite that stretched past thirty minutes. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. Natural dyeing turns a kitchen into an alchemist's shop. Onion skins yield amber, avocado pits a dusty pink, and fermented indigo leaves a green vat that oxidises to deep blue only when the cloth meets the air. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. Automation eventually made the keepers obsolete, and the last of them left their lonely towers, leaving the lamps to switch themselves on at dusk over an ocean that no longer needs anyone watching.",
+      "distance": 0.7007134556770325,
+      "span_start": 1673,
+      "span_end": 3284
+    },
+    {
+      "round": 45,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. Natural dyeing turns a kitchen into an alchemist's shop. Onion skins yield amber, avocado pits a dusty pink, and fermented indigo leaves a green vat that oxidises to deep blue only when the cloth meets the air. As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. Beneath the paving stones lay layers of gravel and sand for drainage, engineering so durable that farmers still plough over intact Roman roadbeds two thousand years after the last legion marched. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. John Coltrane practised scales until his lips bled, chasing a sound that felt like prayer. His quartet turned a Broadway show tune into a spiritual suite that stretched past thirty minutes. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. Critics called the late recordings chaotic, but younger musicians heard a doorway, a way of playing every note in a chord at once until melody dissolved into pure searching energy. In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. Acclimatisation means climbing high and sleeping low, letting the blood thicken with new red cells over days, because rushing the mountain invites a fluid-filled swelling of the lungs or brain that kills quietly in the night. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. Critics called the late recordings chaotic, but younger musicians heard a doorway, a way of playing every note in a chord at once until melody dissolved into pure searching energy. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. Chess spread along trade routes from India through Persia to Europe, and the pieces changed as they travelled. The counsellor beside the king became a queen, gaining the sweeping power that makes the modern game so sharp. For centuries players memorised opening lines by hand; now engines calculate millions of positions a second, yet the game feels no smaller, because the number of possible games still exceeds the atoms in the observable universe. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks. Beneath the paving stones lay layers of gravel and sand for drainage, engineering so durable that farmers still plough over intact Roman roadbeds two thousand years after the last legion marched. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Critics called the late recordings chaotic, but younger musicians heard a doorway, a way of playing every note in a chord at once until melody dissolved into pure searching energy. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step.",
+      "distance": 0.5940739512443542,
+      "span_start": 7388,
+      "span_end": 13929
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 19,
+    "hold_length": 6,
+    "post_injection_distances": [
+      0.39656364917755127,
+      0.46213608980178833,
+      0.4975239038467407,
+      0.5129286646842957,
+      0.5459282398223877,
+      0.5654255151748657,
+      0.8122226446866989,
+      0.8154570758342743,
+      0.797633558511734,
+      0.7535842955112457,
+      0.7316187620162964,
+      0.697899580001831,
+      0.6919244527816772,
+      0.714487612247467,
+      0.76176717877388,
+      0.7493387162685394,
+      0.7766315788030624,
+      0.7801937460899353,
+      0.7525574564933777,
+      0.7037268877029419,
+      0.7193098366260529,
+      0.7081137597560883,
+      0.6840386390686035,
+      0.6841727495193481,
+      0.6660369634628296,
+      0.7918002009391785,
+      0.8590000569820404,
+      0.8320513516664505,
+      0.7486856579780579,
+      0.7225197851657867,
+      0.7917272001504898,
+      0.7739807665348053,
+      0.8052033185958862,
+      0.7636092454195023,
+      0.6918863356113434,
+      0.6824060380458832,
+      0.643889456987381,
+      0.625267744064331,
+      0.6299317479133606,
+      0.6208106577396393
+    ]
+  }
+}

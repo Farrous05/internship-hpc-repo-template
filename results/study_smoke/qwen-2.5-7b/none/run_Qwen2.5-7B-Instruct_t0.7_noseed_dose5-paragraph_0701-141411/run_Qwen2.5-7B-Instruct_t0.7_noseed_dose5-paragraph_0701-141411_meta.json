@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-07-01 14:14:11.152280",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 20,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_smoke/qwen-2.5-7b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 20,
+  "num_fetcher_messages": 5,
+  "total_characters": 119434,
+  "collapse_onset_round": 10,
+  "collapse_rate": -0.001052836396477408,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 5,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+    "distance": 0.9519980885088444,
+    "span_start": 6504,
+    "span_end": 6694
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9519980885088444,
+      "span_start": 6504,
+      "span_end": 6694
+    },
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+      "distance": 0.9743530359119177,
+      "span_start": 7917,
+      "span_end": 8124
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.23850500583648682,
+      0.15497523546218872,
+      0.13841301202774048,
+      0.157798171043396,
+      0.09982824325561523,
+      0.09127867221832275,
+      0.08049190044403076,
+      0.11134994029998779,
+      0.08870553970336914
+    ]
+  }
+}

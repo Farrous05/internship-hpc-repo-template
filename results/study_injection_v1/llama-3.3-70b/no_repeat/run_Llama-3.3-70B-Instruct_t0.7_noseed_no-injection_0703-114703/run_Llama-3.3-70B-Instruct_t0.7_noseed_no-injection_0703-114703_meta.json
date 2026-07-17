@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-07-03 11:47:03.927639",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "You are in an open-ended conversation. Each reply must introduce a genuinely new idea, fact, or question -- never repeat points already made or keep circling the same topic.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/no_repeat",
+    "injection_config": null
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 100136,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.018792141567577022,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.10723131895065308,
+      0.11180645227432251,
+      0.2663685083389282,
+      0.1355654001235962,
+      0.12922459840774536,
+      0.10848486423492432,
+      0.1981833577156067,
+      0.24684011936187744,
+      0.27030885219573975,
+      0.2580399513244629,
+      0.2253386378288269,
+      0.35204994678497314,
+      0.35161906480789185,
+      0.3224397897720337,
+      0.30788636207580566,
+      0.4403250217437744,
+      0.4233696460723877,
+      0.48114585876464844,
+      0.44566988945007324,
+      0.49088841676712036,
+      0.5024617314338684,
+      0.5080106854438782,
+      0.5442059338092804,
+      0.5326105952262878,
+      0.5812246799468994
+    ]
+  }
+}

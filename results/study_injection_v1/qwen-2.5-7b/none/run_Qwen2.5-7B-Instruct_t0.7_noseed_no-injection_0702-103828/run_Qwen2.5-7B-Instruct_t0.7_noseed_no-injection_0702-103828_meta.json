@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-07-02 10:38:28.343851",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/none",
+    "injection_config": null
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 353531,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.02788118990984831,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.04012954235076904,
+      0.02594047784805298,
+      0.03417694568634033,
+      0.18623679876327515,
+      0.19572937488555908,
+      0.18095743656158447,
+      0.16849923133850098,
+      0.1953517198562622,
+      0.169664204120636,
+      0.1630408763885498,
+      0.16452574729919434,
+      0.18652117252349854,
+      0.1921061873435974,
+      0.17550909519195557,
+      0.18599289655685425,
+      0.1836552619934082,
+      0.1306450366973877,
+      0.16887176036834717,
+      0.1673106551170349,
+      0.1669817566871643,
+      0.1670249104499817,
+      0.11875283718109131,
+      0.17918133735656738,
+      0.17857986688613892,
+      0.20572233200073242,
+      0.26975929737091064,
+      0.21450334787368774,
+      0.24638569355010986,
+      0.17825406789779663,
+      0.2571151852607727,
+      0.30602550506591797,
+      0.3143903613090515,
+      0.3089064359664917,
+      0.2882119417190552,
+      0.27698206901550293
+    ]
+  }
+}

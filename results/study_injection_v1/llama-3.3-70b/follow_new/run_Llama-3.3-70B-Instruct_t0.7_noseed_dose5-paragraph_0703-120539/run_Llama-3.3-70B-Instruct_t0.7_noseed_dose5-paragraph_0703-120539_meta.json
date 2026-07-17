@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-07-03 12:05:39.670995",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "Pay close attention to any new or surprising information in the latest message and follow where it leads, instead of continuing your previous train of thought.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/follow_new",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 89180,
+  "collapse_onset_round": 14,
+  "collapse_rate": 0.0027962937951088234,
+  "collapse_onsets": [
+    14
+  ],
+  "injection": {
+    "round": 5,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+    "distance": 0.9883286505937576,
+    "span_start": 888,
+    "span_end": 1078
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9883286505937576,
+      "span_start": 888,
+      "span_end": 1078
+    },
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Automation eventually made the keepers obsolete, and the last of them left their lonely towers, leaving the lamps to switch themselves on at dusk over an ocean that no longer needs anyone watching.",
+      "distance": 0.9658567011356354,
+      "span_start": 3595,
+      "span_end": 3792
+    },
+    {
+      "round": 15,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth.",
+      "distance": 0.9708417803049088,
+      "span_start": 1333,
+      "span_end": 1519
+    },
+    {
+      "round": 20,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour.",
+      "distance": 0.9233762100338936,
+      "span_start": 6137,
+      "span_end": 6336
+    },
+    {
+      "round": 25,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.954191979020834,
+      "span_start": 1609,
+      "span_end": 1808
+    },
+    {
+      "round": 30,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step.",
+      "distance": 0.9312601163983345,
+      "span_start": 3093,
+      "span_end": 3288
+    },
+    {
+      "round": 35,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead.",
+      "distance": 0.9037351608276367,
+      "span_start": 2784,
+      "span_end": 3013
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 21,
+    "hold_length": 13,
+    "post_injection_distances": [
+      0.45369386672973633,
+      0.39556896686553955,
+      0.3659248352050781,
+      0.3415204882621765,
+      0.370246946811676,
+      0.4980989098548889,
+      0.420457124710083,
+      0.4482511281967163,
+      0.41399919986724854,
+      0.5035827457904816,
+      0.630013108253479,
+      0.5914822816848755,
+      0.5778708457946777,
+      0.6982751488685608,
+      0.6784400045871735,
+      0.7555098980665207,
+      0.7741056084632874,
+      0.7889822721481323,
+      0.7963868975639343,
+      0.8009476065635681,
+      0.8282469809055328,
+      0.8114988803863525,
+      0.7818437218666077,
+      0.7881290018558502,
+      0.7993179708719254,
+      0.8512929379940033,
+      0.8251437097787857,
+      0.7968993186950684,
+      0.8083103001117706,
+      0.8225710093975067
+    ]
+  }
+}

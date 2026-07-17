@@ -1,0 +1,115 @@
+{
+  "timestamp": "2026-06-26 20:02:05.137471",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OPENAI",
+        "model": "OpenAIModels.GPT4O_MINI",
+        "system_prompt": null,
+        "temperature": 0.2,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260626_195505",
+    "injection_config": {
+      "size": "InjectionSize.SKIM_HALF",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 78730,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.013118585131385129,
+  "collapse_onsets": [
+    10,
+    21
+  ],
+  "injection": {
+    "round": 10,
+    "size": "skim_half",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "As the algorithm processes each span in order, it compares the current span to the last non-overlapping span that was added to the list. If the current span overlaps with the last non-overlapping span, the algorithm updates the end value of the last non-overlapping span to be the maximum of its current end value and the end value of the current span. This ensures that the resulting non-overlapping spans are maximal, since each non-overlapping span is extended as far as possible to the right without overlapping with any other span. 1. Awareness: The customer becomes aware of the product or",
+    "distance": 0.9852265808731318,
+    "span_start": 552,
+    "span_end": 1147
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "As the algorithm processes each span in order, it compares the current span to the last non-overlapping span that was added to the list. If the current span overlaps with the last non-overlapping span, the algorithm updates the end value of the last non-overlapping span to be the maximum of its current end value and the end value of the current span. This ensures that the resulting non-overlapping spans are maximal, since each non-overlapping span is extended as far as possible to the right without overlapping with any other span. 1. Awareness: The customer becomes aware of the product or",
+      "distance": 0.9852265808731318,
+      "span_start": 552,
+      "span_end": 1147
+    },
+    {
+      "round": 21,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Wukong sneers, \"You are a traitor, MK. You should have stayed loyal to your true king.\" The implementation of these portals can help to address the specific needs and challenges of the tribal districts and improve the delivery of services to the citizens. This is just a simple example, but XML documents can be much more complex, with multiple levels of elements and a wide range of data types and structures. def text_analysis(file): # Load the text data set as a Pandas DataFrame df = pd.read_csv(file, encoding='ISO-8859-1') Michael Mankins and Mark Gottfredson suggest a new approach to strategy-making in uncertain times. This approach involves five steps: defining extreme but plausible scenarios, identifying strategic hedges and options, running experiments before locking in investment, identifying trigger points, signposts, and metrics, and providing prescriptive surveillance. This approach can help companies adapt to changing market and competitive conditions and make better strategic decisions. Is our model not calculating values of capital, labor and prices outside the energy sector? If so, we should add variables to account for price of goods outside the energy sector, capital investment outside the energy sector and goods produced outside the energy sector esac1@hotmail.com could you customise the above css code with the name EstateMall instead of magicbrick eDisha is a one-stop citizen service portal of the Government of Haryana. It was launched in 2012 to provide citizens with easy access to various government services and information online. The portal is a part of the e-governance initiatives of the Haryana government and aims to provide a transparent and efficient delivery of services to the citizens. The Ford control tower is supported by a team of supply chain experts who use advanced analytics and reporting tools to track and optimize supply chain operations. The control tower team works closely with the Ford manufacturing teams to identify potential bottlenecks and proactively address them, ensuring that the supply chain runs smoothly and efficiently. With the roll improved by your previous actions",
+      "distance": 0.810722604393959,
+      "span_start": 2091,
+      "span_end": 4240
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 11,
+    "hold_length": 16,
+    "post_injection_distances": [
+      0.8925405740737915,
+      0.9279335960745811,
+      0.8582570999860764,
+      0.9383260905742645,
+      0.8881846070289612,
+      0.8768525198101997,
+      0.8640803694725037,
+      0.8898172378540039,
+      0.9168409332633018,
+      0.9027425348758698,
+      0.8853372633457184,
+      0.892796978354454,
+      0.9120651036500931,
+      0.9120651036500931,
+      0.9120651036500931,
+      0.9120651036500931
+    ]
+  }
+}

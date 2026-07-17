@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-07-03 12:44:40.256378",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": "Be critical. Each reply should question, challenge, or disagree with something in the previous message -- never just agree and elaborate.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/disagree",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 238124,
+  "collapse_onset_round": 14,
+  "collapse_rate": 0.012469663258109775,
+  "collapse_onsets": [
+    14
+  ],
+  "injection": {
+    "round": 5,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+    "distance": 0.9417294263839722,
+    "span_start": 4857,
+    "span_end": 5047
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9417294263839722,
+      "span_start": 4857,
+      "span_end": 5047
+    },
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+      "distance": 0.9448087066411972,
+      "span_start": 5413,
+      "span_end": 5620
+    },
+    {
+      "round": 15,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.9533728063106537,
+      "span_start": 6735,
+      "span_end": 6934
+    },
+    {
+      "round": 20,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour.",
+      "distance": 0.9540444500744343,
+      "span_start": 5382,
+      "span_end": 5581
+    },
+    {
+      "round": 25,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead.",
+      "distance": 0.9241981282830238,
+      "span_start": 10332,
+      "span_end": 10561
+    },
+    {
+      "round": 30,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour.",
+      "distance": 0.9525830671191216,
+      "span_start": 11246,
+      "span_end": 11445
+    },
+    {
+      "round": 35,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south.",
+      "distance": 0.9429715238511562,
+      "span_start": 11319,
+      "span_end": 11516
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 1,
+    "post_injection_distances": [
+      0.45802807807922363,
+      0.3728359341621399,
+      0.3656931519508362,
+      0.38970017433166504,
+      0.3898876905441284,
+      0.3565100431442261,
+      0.3112396001815796,
+      0.34492117166519165,
+      0.39327120780944824,
+      0.3800593614578247,
+      0.7104895412921906,
+      0.5699502527713776,
+      0.5411437749862671,
+      0.504861444234848,
+      0.4968959093093872,
+      0.5224707722663879,
+      0.5225000381469727,
+      0.4940599203109741,
+      0.5054017305374146,
+      0.5391506552696228,
+      0.483156681060791,
+      0.473541259765625,
+      0.47403693199157715,
+      0.4744071960449219,
+      0.48999011516571045,
+      0.5004119873046875,
+      0.5149027109146118,
+      0.5051217079162598,
+      0.5090146064758301,
+      0.5277152359485626
+    ]
+  }
+}

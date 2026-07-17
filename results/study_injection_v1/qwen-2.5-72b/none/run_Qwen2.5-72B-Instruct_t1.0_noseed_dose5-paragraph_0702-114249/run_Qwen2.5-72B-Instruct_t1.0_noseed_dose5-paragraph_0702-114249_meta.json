@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-07-02 11:42:49.768608",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": null,
+        "temperature": 1.0,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 235840,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.0314084592190656,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 5,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+    "distance": 0.9553570449352264,
+    "span_start": 6796,
+    "span_end": 6986
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9553570449352264,
+      "span_start": 6796,
+      "span_end": 6986
+    },
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles.",
+      "distance": 0.9800676479935646,
+      "span_start": 8754,
+      "span_end": 8956
+    },
+    {
+      "round": 15,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth.",
+      "distance": 0.962631106376648,
+      "span_start": 7027,
+      "span_end": 7213
+    },
+    {
+      "round": 20,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.9449920579791069,
+      "span_start": 4539,
+      "span_end": 4738
+    },
+    {
+      "round": 25,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead.",
+      "distance": 0.9166127815842628,
+      "span_start": 7178,
+      "span_end": 7407
+    },
+    {
+      "round": 30,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles.",
+      "distance": 0.9256557524204254,
+      "span_start": 2828,
+      "span_end": 3030
+    },
+    {
+      "round": 35,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Automation eventually made the keepers obsolete, and the last of them left their lonely towers, leaving the lamps to switch themselves on at dusk over an ocean that no longer needs anyone watching.",
+      "distance": 0.8976773321628571,
+      "span_start": 5746,
+      "span_end": 5943
+    },
+    {
+      "round": 40,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks.",
+      "distance": 0.9337691441178322,
+      "span_start": 3439,
+      "span_end": 3631
+    },
+    {
+      "round": 45,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Chess spread along trade routes from India through Persia to Europe, and the pieces changed as they travelled. The counsellor beside the king became a queen, gaining the sweeping power that makes the modern game so sharp.",
+      "distance": 0.897559642791748,
+      "span_start": 5760,
+      "span_end": 5981
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 2,
+    "post_injection_distances": [
+      0.07312518358230591,
+      0.044106483459472656,
+      0.0582389235496521,
+      0.07273983955383301,
+      0.0922861099243164,
+      0.43828147649765015,
+      0.3740618824958801,
+      0.2988579273223877,
+      0.24444764852523804,
+      0.20775675773620605,
+      0.5318143963813782,
+      0.5834683477878571,
+      0.787894606590271,
+      0.7228925824165344,
+      0.6565549373626709,
+      0.7430879473686218,
+      0.6889514327049255,
+      0.6923552453517914,
+      0.6521609723567963,
+      0.6875377893447876,
+      0.792412519454956,
+      0.7520292401313782,
+      0.753857210278511,
+      0.7576719522476196,
+      0.7260654270648956,
+      0.7100452780723572,
+      0.7340942025184631,
+      0.6932995021343231,
+      0.7043828666210175,
+      0.7121622264385223,
+      0.691701352596283,
+      0.6449968218803406,
+      0.6976646184921265,
+      0.6814631819725037,
+      0.6106274425983429,
+      0.7193721830844879,
+      0.6658704876899719,
+      0.7042988538742065,
+      0.6658336222171783,
+      0.6418999433517456
+    ]
+  }
+}

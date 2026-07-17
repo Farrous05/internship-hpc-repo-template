@@ -1,0 +1,3824 @@
+iteration,timestamp,role,content,analysis,fetcher_config,agent_id,agent_config
+0,2026-07-01 13:59:19.134274,gpt,"It seems that there is a compilation error due to the use of `uniform` instead of `constant` for the vertex shader's uniforms. In Metal, the `constant` storage qualifier should be used for shader uniform variables. Try updating your vertex shader code as follows:
+```glsl
+#pragma arguments
+constant float time;
+constant float radius;
+constant float4x4 u_modelTransform;
+constant float4x4 u_inverseModelTransform;
+
+#pragma body
+float4 newPosition = u_inverseModelTransform * float4(_geometry.position, 1.0);
+float angle = atan2(newPosition.x, newPosition.z);
+angle += time * 0.5;
+float x = radius * cos(angle);
+float z = radius * sin(angle);
+newPosition.x = x;
+newPosition.z = z;
+
+_geometry.position = float3(u_modelTransform * newPosition);
+```
+This should resolve the compilation errors in your shader code. Make sure to update your application with the new vertex shader code and test again.","{'word_count': 126, 'unique_word_count': 86, 'coherence_score': 0.6825396825396826, 'lexical_similarity': None, 'semantic_similarity': None, 'lexical_similarity_window': None, 'semantic_similarity_window': None, 'token_perplexity': 14.226006530742083, 'version_b_distance': None}","{'fetcher': <FetcherType.SHAREGPT: 'sharegpt'>, 'data_path': 'data/sharegpt_real.json', 'second_data_path': None, 'category': None, 'min_messages': 2, 'max_messages': 6}",,
+1,2026-07-01 13:59:19.134328,human,"It is now giving this error:
+
+2023-03-17 12:02:47.841003-0400 GPTBlackHole[4687:158901] [SceneConfiguration] Info.plist contained no UIScene configuration dictionary (looking for configuration named ""(no name)"")
+2023-03-17 12:02:47.841222-0400 GPTBlackHole[4687:158901] [SceneConfiguration] Info.plist contained no UIScene configuration dictionary (looking for configuration named ""(no name)"")
+2023-03-17 12:02:47.841364-0400 GPTBlackHole[4687:158901] [SceneConfiguration] Info.plist contained no UIScene configuration dictionary (looking for configuration named ""(no name)"")
+2023-03-17 12:02:47.881247-0400 GPTBlackHole[4687:158901] Metal GPU Frame Capture Enabled
+2023-03-17 12:02:47.881435-0400 GPTBlackHole[4687:158901] Metal API Validation Enabled
+2023-03-17 12:02:48.121314-0400 GPTBlackHole[4687:159149] Compiler failed to build request
+2023-03-17 12:02:48.122699-0400 GPTBlackHole[4687:159149] [SceneKit] Error: FATAL ERROR : failed compiling shader:
+Error Domain=MTLLibraryErrorDomain Code=3 ""program\_source:2535:65: error: C++ requires a type specifier for all declarations
+ , constant constant& float
+ ~~~~~~~~~~~~~~~~~ ^
+program\_source:2535:65: error: expected ')'
+program\_source:2455:43: note: to match this '('
+vertex commonprofile\_io commonprofile\_vert(
+ ^
+program\_source:2952:52: error: no matching constructor for initialization of 'float4' (vector of 4 'float' values)
+ float4 newPosition = u\_inverseModelTransform \* float4(\_geometry.position, 1.0);
+ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+note: candidate constructor float4(float, float3)
+note: candidate constructor float4(float2, float2)
+note: candidate constructor float4(float3, float)
+program\_source:2952:26: error: use of undeclared identifier 'u\_inverseModelTransform'
+ float4 newPosition = u\_inverseModelTransform \* float4(\_geometry.position, 1.0);
+ ^
+program\_source:2954:10: error: use of undeclared identifier 'time'
+angle += time \* 0.5;
+ ^
+program\_source:2955:11: error: use of undeclared identifier 'radius'
+float x = radius \* cos(angle);
+ ^
+program\_source:2956:11: error: use of undeclared identifier 'radius'
+float z = radius \* sin(angle);
+ ^
+program\_source:2960:29: error: use of undeclared identifier 'u\_modelTransform'
+\_geometry.position = float3(u\_modelTransform \* newPosition);
+ ^
+program\_source:3252:60: error: C++ requires a type specifier for all declarations
+ , constant constant& float
+ ~~~~~~~~~~~~~~~~~ ^
+program\_source:3252:60: error: expected ')'
+program\_source:3118:38: note: to match this '('
+fragment SCNOutput commonprofile\_frag(commonprofile\_io in [[ stage\_in ]]
+ ^
+"" UserInfo={NSLocalizedDescription=program\_source:2535:65: error: C++ requires a type specifier for all declarations
+ , constant constant& float
+ ~~~~~~~~~~~~~~~~~ ^
+program\_source:2535:65: error: expected ')'
+program\_source:2455:43: note: to match this '('
+vertex commonprofile\_io commonprofile\_vert(
+ ^
+program\_source:2952:52: error: no matching constructor for initialization of 'float4' (vector of 4 'float' values)
+ float4 newPosition = u\_inverseModelTransform \* float4(\_geometry.position, 1.0);
+ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+note: candidate constructor float4(float, float3)
+note: candidate constructor float4(float2, float2)
+note: candidate constructor float4(float3, float)
+program\_source:2952:26: error: use of undeclared identifier 'u\_inverseModelTransform'
+ float4 newPosition = u\_inverseModelTransform \* float4(\_geometry.position, 1.0);
+ ^
+program\_source:2954:10: error: use of undeclared identifier 'time'
+angle += time \* 0.5;
+ ^
+program\_source:2955:11: error: use of undeclared identifier 'radius'
+float x = radius \* cos(angle);
+ ^
+program\_source:2956:11: error: use of undeclared identifier 'radius'
+float z = radius \* sin(angle);
+ ^
+program\_source:2960:29: error: use of undeclared identifier 'u\_modelTransform'
+\_geometry.position = float3(u\_modelTransform \* newPosition);
+ ^
+program\_source:3252:60: error: C++ requires a type specifier for all declarations
+ , constant constant& float
+ ~~~~~~~~~~~~~~~~~ ^
+program\_source:3252:60: error: expected ')'
+program\_source:3118:38: note: to match this '('
+fragment SCNOutput commonprofile\_frag(commonprofile\_io in [[ stage\_in ]]
+ ^
+}","{'word_count': 435, 'unique_word_count': 133, 'coherence_score': 0.3057471264367816, 'lexical_similarity': 0.140625, 'semantic_similarity': 0.2526547312736511, 'lexical_similarity_window': 0.140625, 'semantic_similarity_window': 0.2526547312736511, 'token_perplexity': 8.426537541277842, 'version_b_distance': None}","{'fetcher': <FetcherType.SHAREGPT: 'sharegpt'>, 'data_path': 'data/sharegpt_real.json', 'second_data_path': None, 'category': None, 'min_messages': 2, 'max_messages': 6}",,
+2,2026-07-01 13:59:19.134353,gpt,"This error seems to be caused by the same issues that were in the previous error log, mainly undeclared identifiers and improper usage of declarations. Here are a few suggestions to fix these issues:
+
+1. Declare the missing variables (such as 'time', 'radius', 'u\_modelTransform', and 'u\_inverseModelTransform') and make sure they have the correct type.
+2. For the lines with ""constant constant& float"", it seems there's a missing type specifier. You should provide a type specifier for these declarations. For example, if 'float' should be the type, you can change those lines to:
+```cpp
+, constant float& ...
+```
+1. Make sure the arguments for 'float4' are valid. From the error, it appears there are no matching constructors for the given arguments. You might need to adjust the arguments to match an existing constructor.
+
+After making these changes, recompile your code and see if the errors are resolved. If you still encounter issues, please provide more context or code snippets for further assistance.","{'word_count': 162, 'unique_word_count': 114, 'coherence_score': 0.7037037037037037, 'lexical_similarity': 0.08333333333333333, 'semantic_similarity': 0.24862593412399292, 'lexical_similarity_window': 0.11309523809523808, 'semantic_similarity_window': 0.40784475207328796, 'token_perplexity': 28.105456136318917, 'version_b_distance': None}","{'fetcher': <FetcherType.SHAREGPT: 'sharegpt'>, 'data_path': 'data/sharegpt_real.json', 'second_data_path': None, 'category': None, 'min_messages': 2, 'max_messages': 6}",,
+3,2026-07-01 13:59:19.134373,human,How do I make sure Metal is configured properly?,"{'word_count': 9, 'unique_word_count': 9, 'coherence_score': 1.0, 'lexical_similarity': 0.01652892561983471, 'semantic_similarity': 0.12604062259197235, 'lexical_similarity_window': 0.021141111852574303, 'semantic_similarity_window': 0.24192668497562408, 'token_perplexity': 86.74184436875586, 'version_b_distance': None}","{'fetcher': <FetcherType.SHAREGPT: 'sharegpt'>, 'data_path': 'data/sharegpt_real.json', 'second_data_path': None, 'category': None, 'min_messages': 2, 'max_messages': 6}",,
+4,2026-07-01 13:59:19.134390,gpt,"To ensure Metal is properly configured in your iOS or macOS app, follow these steps:
+
+1. **Enable Metal in your project:**
+In Xcode, navigate to your project settings by clicking on the project file in the Project Navigator. Select the app target, and under the ""General"" tab, check the ""Metal"" framework is included in the ""Frameworks, Libraries, and Embedded Content"" section. If it's not there, click the ""+"" button and search for ""Metal"" to add it to your project.
+2. **Create an MTLDevice:**
+To use Metal, you'll need to create an `MTLDevice` instance. The device represents the GPU and is responsible for creating and managing resources like textures, buffers, and shaders.
+
+In Swift, you can create an MTLDevice like this:
+```swift
+import Metal
+
+guard let device = MTLCreateSystemDefaultDevice() else {
+    fatalError(""Failed to create Metal device"")
+}
+```
+3. **Set up a Metal view:**
+For rendering Metal content, you need a view that uses Metal for drawing. If you're using SceneKit, you can use `SCNView`, which has built-in support for Metal rendering. Make sure to set the view's `preferredRenderingAPI` to `.metal` before initializing the view.
+
+If you're using Metal directly, use `MTKView`, a subclass of `UIView` (iOS) or `NSView` (macOS) that can render Metal content. When you create an `MTKView`, pass the `MTLDevice` instance you created earlier:
+```swift
+import MetalKit
+
+let metalView = MTKView(frame: view.bounds, device: device)
+view.addSubview(metalView)
+```
+4. **Create shaders:**
+Write your shaders using the Metal Shading Language (MSL) and save them in a `.metal` file in your project. Xcode will automatically compile these shaders into a default Metal library when building your app.
+5. **Load the shader functions and create a pipeline:**
+To use the shaders in your app, load them from the default Metal library, and create a render pipeline with the appropriate vertex and fragment functions:
+```swift
+let defaultLibrary = device.makeDefaultLibrary()
+let vertexFunction = defaultLibrary?.makeFunction(name: ""vertexShader"")
+let fragmentFunction = defaultLibrary?.makeFunction(name: ""fragmentShader"")
+
+let pipelineDescriptor = MTLRenderPipelineDescriptor()
+pipelineDescriptor.vertexFunction = vertexFunction
+pipelineDescriptor.fragmentFunction = fragmentFunction
+pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+do {
+    let pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+} catch let error {
+    fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+}
+```
+6. **Create buffers and textures:**
+Use the `MTLDevice` instance to create buffers and textures that your shaders will use as input or output.
+7. **Render your content:**
+Set up your render pass descriptor, configure the render encoder with your pipeline state, and issue draw calls using the Metal command buffer and command queue.
+
+Ensure you follow these steps and set up your Metal rendering pipeline correctly. If you're using a third-party framework or library, consult its documentation for additional configuration requirements. If you run into issues or errors, please provide more context or code snippets for further assistance.","{'word_count': 447, 'unique_word_count': 240, 'coherence_score': 0.5369127516778524, 'lexical_similarity': 0.024691358024691357, 'semantic_similarity': 0.531131386756897, 'lexical_similarity_window': 0.06554675776021693, 'semantic_similarity_window': 0.335883304476738, 'token_perplexity': 19.041039481070758, 'version_b_distance': None}","{'fetcher': <FetcherType.SHAREGPT: 'sharegpt'>, 'data_path': 'data/sharegpt_real.json', 'second_data_path': None, 'category': None, 'min_messages': 2, 'max_messages': 6}",,
+5,2026-07-01 13:59:31.618730,dfc94ab8-c30d-497b-9514-89afda241a7e,"Sure, here’s a more detailed guide on how to properly configure Metal in your iOS or macOS app, along with some additional context and code snippets where necessary.
+
+### 1. Enable Metal in your project
+
+1. Open your Xcode project.
+2. Navigate to your project settings by clicking on the project file in the Project Navigator.
+3. Select the app target.
+4. Go to the ""General"" tab.
+5. Under the ""Frameworks, Libraries, and Embedded Content"" section, make sure that the ""Metal"" framework is checked. If it's not there, click the ""+"" button and search for ""Metal"" to add it to your project.
+
+### 2. Create an `MTLDevice`
+
+The `MTLDevice` instance represents the GPU and is essential for creating other Metal objects like textures, buffers, and pipelines.
+
+Here’s how you can do it in Swift:
+
+```swift
+import Metal
+
+// Check if a Metal device is available
+guard let device = MTLCreateSystemDefaultDevice() else {
+    fatalError(""Failed to create Metal device"")
+}
+
+print(""Using Metal device: \(device.name)"")
+```
+
+### 3. Set up a Metal view
+
+For rendering Metal content, you typically need an `MTKView`. This class is a `UIView` (iOS) or `NSView` (macOS) subclass that can render Metal content.
+
+#### For iOS:
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController, MTKViewDelegate {
+    var metalView: MTKView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+
+    func metalView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+        // Update the view's drawable size
+    }
+}
+```
+
+#### For macOS:
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+}
+
+extension ViewController: MTKViewDelegate {
+    func draw(_ inView: MTKView) {
+        // Implement drawing logic here
+    }
+}
+```
+
+### 4. Create shaders
+
+Shaders are written using the Metal Shading Language (MSL). Compile them into Metal libraries during the build process.
+
+1. Create a `.metal` file in your project.
+2. Write your shader code in the `.metal` file. Here’s an example of a simple vertex shader:
+
+```metal
+#include <-metal_stdlib.mh>
+
+vertex float4 vertexShader(vertex in_vertex [[stage_in]], device uniform device_buffer [[buffer(0)]]) {
+    return in_vertex.position;
+}
+```
+
+### 5. Load the shader functions and create a pipeline
+
+Load the shader functions and create a render pipeline:
+
+```swift
+import Metal
+
+// Load the default library
+guard let defaultLibrary = device.makeDefaultLibrary() else {
+    fatalError(""Failed to create default Metal library"")
+}
+
+// Get the shader functions
+let vertexFunction = defaultLibrary?.makeFunction(name: ""vertexShader"")
+let fragmentFunction = defaultLibrary?.makeFunction(name: ""fragmentShader"")
+
+// Define the render pipeline descriptor
+let pipelineDescriptor = MTLRenderPipelineDescriptor()
+pipelineDescriptor.vertexFunction = vertexFunction
+pipelineDescriptor.fragmentFunction = fragmentFunction
+pipelineDescriptor.colorAttachmentPixelFormat = .bgra8Unorm
+
+// Create the render pipeline state
+do {
+    let pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+} catch {
+    fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+}
+```
+
+### 6. Create buffers and textures
+
+You can create buffers and textures using the `MTLDevice`.
+
+#### Buffer Example:
+
+```swift
+import Metal
+
+// Create a buffer
+let bufferLength = 1024
+let buffer = device.makeBuffer(length: bufferLength * MemoryLayout<Float>.size, options: [])!
+```
+
+#### Texture Example:
+
+```swift
+import Metal
+
+// Create a texture
+let width = 512
+let height = 512
+let textureDescriptor = MTLTextureDescriptor()
+textureDescriptor.width = width
+textureDescriptor.height = height
+textureDescriptor.pixelFormat = .bgr8Unorm
+textureDescriptor.usage = [.shaderRead, .shaderWrite]
+
+let texture = device.makeTexture(descriptor: textureDescriptor)!
+```
+
+### 7. Render your content
+
+Set up your render pass descriptor and configure the render encoder.
+
+```swift
+import MetalKit
+
+func draw(in view: MTKView) {
+    guard let commandBuffer = commandQueue.makeCommandBuffer(),
+          let renderPassDescriptor = metalView.currentRenderPassDescriptor,
+          let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+        return
+    }
+
+    renderEncoder.setRenderPipelineState(pipelineState)
+    renderEncoder.setVertexBuffer(buffer, offset: 0, index: 0)
+
+    // Draw the mesh
+    renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3)
+
+    renderEncoder.endEncoding()
+
+    commandBuffer.present(metalView.currentDrawable!)
+    commandBuffer.commit()
+}
+```
+
+By following these steps, you should be able to configure and use Metal effectively in your iOS or macOS app. If you encounter any issues or have further questions, feel free to ask!","{'word_count': 670, 'unique_word_count': 319, 'coherence_score': 0.4761194029850746, 'lexical_similarity': 0.38366336633663367, 'semantic_similarity': 0.9248083829879761, 'lexical_similarity_window': 0.12229529231014116, 'semantic_similarity_window': 0.4185776960104704, 'token_perplexity': 16.948902646245784, 'version_b_distance': 0.16809427738189697}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+6,2026-07-01 13:59:47.074106,dfc94ab8-c30d-497b-9514-89afda241a7e,"Certainly! Below is a detailed guide on how to properly configure Metal in your iOS or macOS app, with code snippets for each step. We'll cover everything from setting up the Metal device to rendering content using Metal views and shaders.
+
+### 1. Enable Metal in your project
+
+1. **Open your Xcode project**.
+2. **Navigate to your project settings** by clicking on the project file in the Project Navigator.
+3. **Select the app target**.
+4. **Go to the ""General"" tab**.
+5. **Under the ""Frameworks, Libraries, and Embedded Content"" section**, make sure that the ""Metal"" framework is checked. If it's not there, click the ""+"" button and search for ""Metal"" to add it to your project.
+
+### 2. Create an `MTLDevice`
+
+The `MTLDevice` instance represents the GPU and is essential for creating other Metal objects like textures, buffers, and pipelines.
+
+#### For iOS:
+
+```swift
+import UIKit
+import Metal
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+}
+
+extension ViewController: MTKViewDelegate {
+    func draw(_ inView: MTKView) {
+        // Implement drawing logic here
+    }
+}
+```
+
+#### For macOS:
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+}
+
+extension ViewController: MTKViewDelegate {
+    func draw(_ inView: MTKView) {
+        // Implement drawing logic here
+    }
+}
+```
+
+### 3. Set up a Metal view
+
+The `MTKView` is a `UIView` (iOS) or `NSView` (macOS) subclass that can render Metal content.
+
+### 4. Create shaders
+
+Shaders are written using the Metal Shading Language (MSL). Compile them into Metal libraries during the build process.
+
+1. **Create a `.metal` file** in your project.
+2. **Write your shader code** in the `.metal` file. Here’s an example of a simple vertex shader:
+
+   **Vertex Shader (`vertex_shader.metal`)**:
+   ```metal
+   #include <metal_stdlib>
+   using namespace metal;
+
+   struct VertexIn {
+       float3 position [[attribute(0)]];
+   };
+
+   struct VertexOut {
+       float4 position [[position]];
+   };
+
+   vertex VertexOut vertexShader(VertexIn in [[stage_in]]) {
+       VertexOut out = {};
+       out.position = float4(in.position, 1.0);
+       return out;
+   }
+   ```
+
+   **Fragment Shader (`fragment_shader.metal`)**:
+   ```metal
+   #include <metal_stdlib>
+   using namespace metal;
+
+   fragment float4 fragmentShader(void) {
+       return float4(1.0, 0.0, 0.0, 1.0); // Red color
+   }
+   ```
+
+### 5. Load the shader functions and create a pipeline
+
+Load the shader functions and create a render pipeline state.
+
+```swift
+import Metal
+
+// Load the default library
+guard let defaultLibrary = device.makeDefaultLibrary() else {
+    fatalError(""Failed to create default Metal library"")
+}
+
+// Get the shader functions
+let vertexFunction = defaultLibrary?.makeFunction(name: ""vertexShader"")
+let fragmentFunction = defaultLibrary?.makeFunction(name: ""fragmentShader"")
+
+// Define the render pipeline descriptor
+let pipelineDescriptor = MTLRenderPipelineDescriptor()
+pipelineDescriptor.vertexFunction = vertexFunction
+pipelineDescriptor.fragmentFunction = fragmentFunction
+pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+// Create the render pipeline state
+do {
+    let pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+} catch {
+    fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+}
+```
+
+### 6. Create buffers and textures
+
+You can create buffers and textures using the `MTLDevice`.
+
+#### Buffer Example:
+
+```swift
+import Metal
+
+// Create a buffer
+let bufferLength = 1024
+let buffer = device.makeBuffer(length: bufferLength * MemoryLayout<Float>.size, options: [])!
+```
+
+#### Texture Example:
+
+```swift
+import Metal
+
+// Create a texture
+let width = 512
+let height = 512
+let textureDescriptor = MTLTextureDescriptor()
+textureDescriptor.width = width
+textureDescriptor.height = height
+textureDescriptor.pixelFormat = .bgr8Unorm
+textureDescriptor.usage = [.shaderRead, .shaderWrite]
+
+let texture = device.makeTexture(descriptor: textureDescriptor)!
+```
+
+### 7. Render your content
+
+Set up your render pass descriptor and configure the render encoder.
+
+```swift
+import MetalKit
+
+func draw(in view: MTKView) {
+    guard let commandBuffer = commandQueue.makeCommandBuffer(),
+          let renderPassDescriptor = view.currentRenderPassDescriptor,
+          let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+        return
+    }
+
+    renderEncoder.setRenderPipelineState(pipelineState)
+    renderEncoder.setVertexBuffer(buffer, offset: 0, index: 0)
+
+    // Draw the mesh
+    renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3)
+
+    renderEncoder.endEncoding()
+
+    commandBuffer?.present(view.currentDrawable!)
+    commandBuffer?.commit()
+}
+```
+
+### Summary
+
+1. **Enable Metal in your project**: Ensure the Metal framework is added to your project.
+2. **Create an `MTLDevice`**: Use `MTLCreateSystemDefaultDevice()` to get the default device.
+3. **Set up a Metal view**: Use `MTKView` for rendering.
+4. **Create shaders**: Write vertex and fragment shaders in `.metal` files.
+5. **Load the shader functions and create a pipeline**: Use `MTLRenderPipelineDescriptor` to define the pipeline.
+6. **Create buffers and textures**: Use `MTLDevice` to create buffers and textures.
+7. **Render your content**: Configure the render pass descriptor and render encoder.
+
+If you have further questions or run into specific issues, feel free to ask!","{'word_count': 816, 'unique_word_count': 349, 'coherence_score': 0.42769607843137253, 'lexical_similarity': 0.6372549019607843, 'semantic_similarity': 0.9175636172294617, 'lexical_similarity_window': 0.1961730478872816, 'semantic_similarity_window': 0.4805174443560342, 'token_perplexity': 18.422014368271924, 'version_b_distance': 0.1487652063369751}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+7,2026-07-01 14:00:05.001028,dfc94ab8-c30d-497b-9514-89afda241a7e,"Great job on the comprehensive guide! Below, I’ll provide additional details and some best practices to ensure your Metal setup is robust and efficient. Let’s go through each step with more context and examples to help you integrate Metal into your iOS or macOS app seamlessly.
+
+### Step-by-Step Guide to Setting Up Metal in Your iOS/macOS App
+
+#### 1. Enable Metal in Your Project
+
+Make sure the Metal framework is included in your project.
+
+1. **Open your Xcode project**.
+2. **Navigate to your project settings** by clicking on the project file in the Project Navigator.
+3. **Select the app target**.
+4. **Go to the ""General"" tab**.
+5. **Under the ""Frameworks, Libraries, and Embedded Content"" section**, check if the ""Metal"" framework is listed. If it’s not, click the “+” button and search for ""Metal"" to add it to your project.
+
+#### 2. Create an `MTLDevice`
+
+The `MTLDevice` instance represents the GPU and is essential for creating other Metal objects.
+
+```swift
+import UIKit
+import Metal
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+}
+
+extension ViewController: MTKViewDelegate {
+    func draw(_ inView: MTKView) {
+        // Implement drawing logic here
+        draw(inView: inView)
+    }
+}
+
+func draw(inView: MTKView) {
+    guard let commandBuffer = inView.commandBuffer else { return }
+
+    // Create a render pass descriptor
+    let renderPassDescriptor = MTLRenderPassDescriptor()
+    renderPassDescriptor.colorAttachments[0].texture = inView.currentDrawable?.texture
+    renderPassDescriptor.colorAttachments[0].loadAction = .clear
+    renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+    // Create a render encoder
+    guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
+    renderEncoder.setRenderPipelineState(pipelineState)
+    renderEncoder.endEncoding()
+
+    // Present and commit the command buffer
+    inView.present(inView.currentDrawable!)
+    commandBuffer.commit()
+}
+```
+
+#### 3. Set Up a Metal View
+
+The `MTKView` is a `UIView` (iOS) or `NSView` (macOS) subclass that can render Metal content.
+
+For iOS:
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+}
+
+extension ViewController: MTKViewDelegate {
+    func draw(_ inView: MTKView) {
+        // Implement drawing logic here
+        draw(inView: inView)
+    }
+
+    func draw(inView: MTKView) {
+        guard let commandBuffer = inView.commandBuffer else { return }
+
+        // Create a render pass descriptor
+        let renderPassDescriptor = MTLRenderPassDescriptor()
+        renderPassDescriptor.colorAttachments[0].texture = inView.currentDrawable?.texture
+        renderPassDescriptor.colorAttachments[0].loadAction = .clear
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+        // Create a render encoder
+        guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
+        renderEncoder.setRenderPipelineState(pipelineState)
+        renderEncoder.endEncoding()
+
+        // Present and commit the command buffer
+        inView.present(inView.currentDrawable!)
+        commandBuffer.commit()
+    }
+}
+```
+
+For macOS:
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+
+    func draw(_ inView: MTKView) {
+        // Implement drawing logic here
+        draw(inView: inView)
+    }
+
+    func draw(inView: MTKView) {
+        guard let commandBuffer = inView.commandBuffer else { return }
+
+        // Create a render pass descriptor
+        let renderPassDescriptor = MTLRenderPassDescriptor()
+        renderPassDescriptor.colorAttachments[0].texture = inView.currentDrawable?.texture
+        renderPassDescriptor.colorAttachments[0].loadAction = .clear
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+        // Create a render encoder
+        guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
+        renderEncoder.setRenderPipelineState(pipelineState)
+        renderEncoder.endEncoding()
+
+        // Present and commit the command buffer
+        inView.present(inView.currentDrawable!)
+        commandBuffer.commit()
+    }
+}
+```
+
+#### 4. Create Shaders
+
+Shaders are written using the Metal Shading Language (MSL). Compile them into Metal libraries during the build process.
+
+1. **Create `.metal` files** in your project.
+2. **Write your shader code** in the `.metal` files.
+
+##### Vertex Shader (`vertex_shader.metal`):
+
+```metal
+#include <metal_stdlib>
+using namespace metal;
+
+struct VertexIn {
+    float3 position [[attribute(0)]];
+};
+
+struct VertexOut {
+    float4 position [[position]];
+};
+
+vertex VertexOut vertexShader(VertexIn in [[stage_in]]) {
+    VertexOut out = {};
+    out.position = float4(in.position, 1.0);
+    return out;
+}
+```
+
+##### Fragment Shader (`fragment_shader.metal`):
+
+```metal
+#include <metal_stdlib>
+using namespace metal;
+
+fragment float4 fragmentShader(void) {
+    return float4(1.0, 0.0, 0.0, 1.0); // Red color
+}
+```
+
+#### 5. Load the Shader Functions and Create a Pipeline
+
+Load the shader functions and create a render pipeline state.
+
+```swift
+import Metal
+
+// Load the default library
+guard let defaultLibrary = device.makeDefaultLibrary() else {
+    fatalError(""Failed to create default Metal library"")
+}
+
+// Get the shader functions
+let vertexFunction = defaultLibrary?.makeFunction(name: ""vertexShader"")
+let fragmentFunction = defaultLibrary?.makeFunction(name: ""fragmentShader"")
+
+// Define the render pipeline descriptor
+let pipelineDescriptor = MTLRenderPipelineDescriptor()
+pipelineDescriptor.vertexFunction = vertexFunction
+pipelineDescriptor.fragmentFunction = fragmentFunction
+pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+// Create the render pipeline state
+do {
+    let pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+    self.pipelineState = pipelineState
+} catch {
+    fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+}
+```
+
+#### 6. Create Buffers and Textures
+
+You can create buffers and textures using the `MTLDevice`.
+
+##### Buffer Example:
+
+```swift
+import Metal
+
+// Create a buffer
+let bufferLength = 1024
+let buffer = device.makeBuffer(length: bufferLength * MemoryLayout<Float>.size, options: [])!
+```
+
+##### Texture Example:
+
+```swift
+import Metal
+
+// Create a texture
+let width = 512
+let height = 512
+let textureDescriptor = MTLTextureDescriptor()
+textureDescriptor.width = width
+textureDescriptor.height = height
+textureDescriptor.pixelFormat = .bgr8Unorm
+textureDescriptor.usage = [.shaderRead, .shaderWrite]
+
+let texture = device.makeTexture(descriptor: textureDescriptor)!
+```
+
+#### 7. Render Your Content
+
+Set up your render pass descriptor and configure the render","{'word_count': 974, 'unique_word_count': 325, 'coherence_score': 0.3336755646817248, 'lexical_similarity': 0.6399026763990268, 'semantic_similarity': 0.87015300989151, 'lexical_similarity_window': 0.23632275678129622, 'semantic_similarity_window': 0.5623397252389363, 'token_perplexity': 14.072969614956424, 'version_b_distance': 0.10037118196487427}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+8,2026-07-01 14:00:23.535718,dfc94ab8-c30d-497b-9514-89afda241a7e,"Certainly! Let's go through each step in detail to ensure a robust and efficient setup of Metal in your iOS or macOS app. I'll provide more context and examples to help you integrate Metal seamlessly.
+
+### Step-by-Step Guide to Setting Up Metal in Your iOS/macOS App
+
+#### 1. Enable Metal in Your Project
+
+First, ensure the Metal framework is included in your project.
+
+1. **Open your Xcode project**.
+2. **Navigate to your project settings** by clicking on the project file in the Project Navigator.
+3. **Select the app target**.
+4. **Go to the ""General"" tab**.
+5. **Under the ""Frameworks, Libraries, and Embedded Content"" section**, check if the ""Metal"" framework is listed. If it’s not, click the “+” button and search for ""Metal"" to add it to your project.
+
+#### 2. Create an `MTLDevice`
+
+The `MTLDevice` instance represents the GPU and is essential for creating other Metal objects.
+
+```swift
+import UIKit
+import Metal
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+}
+
+extension ViewController: MTKViewDelegate {
+    func draw(_ inView: MTKView) {
+        // Implement drawing logic here
+        draw(inView: inView)
+    }
+
+    func draw(inView: MTKView) {
+        guard let commandBuffer = inView.commandBuffer else { return }
+
+        // Create a render pass descriptor
+        let renderPassDescriptor = MTLRenderPassDescriptor()
+        renderPassDescriptor.colorAttachments[0].texture = inView.currentDrawable?.texture
+        renderPassDescriptor.colorAttachments[0].loadAction = .clear
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+        // Create a render encoder
+        guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
+        renderEncoder.setRenderPipelineState(pipelineState)
+        renderEncoder.endEncoding()
+
+        // Present and commit the command buffer
+        inView.present(inView.currentDrawable!)
+        commandBuffer.commit()
+    }
+}
+```
+
+#### 3. Set Up a Metal View
+
+The `MTKView` is a `UIView` (iOS) or `NSView` (macOS) subclass that can render Metal content.
+
+For iOS:
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+
+    func draw(_ inView: MTKView) {
+        // Implement drawing logic here
+        draw(inView: inView)
+    }
+
+    func draw(inView: MTKView) {
+        guard let commandBuffer = inView.commandBuffer else { return }
+
+        // Create a render pass descriptor
+        let renderPassDescriptor = MTLRenderPassDescriptor()
+        renderPassDescriptor.colorAttachments[0].texture = inView.currentDrawable?.texture
+        renderPassDescriptor.colorAttachments[0].loadAction = .clear
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+        // Create a render encoder
+        guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
+        renderEncoder.setRenderPipelineState(pipelineState)
+        renderEncoder.endEncoding()
+
+        // Present and commit the command buffer
+        inView.present(inView.currentDrawable!)
+        commandBuffer.commit()
+    }
+}
+```
+
+For macOS:
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+    }
+
+    func draw(_ inView: MTKView) {
+        // Implement drawing logic here
+        draw(inView: inView)
+    }
+
+    func draw(inView: MTKView) {
+        guard let commandBuffer = inView.commandBuffer else { return }
+
+        // Create a render pass descriptor
+        let renderPassDescriptor = MTLRenderPassDescriptor()
+        renderPassDescriptor.colorAttachments[0].texture = inView.currentDrawable?.texture
+        renderPassDescriptor.colorAttachments[0].loadAction = .clear
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+        // Create a render encoder
+        guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
+        renderEncoder.setRenderPipelineState(pipelineState)
+        renderEncoder.endEncoding()
+
+        // Present and commit the command buffer
+        inView.present(inView.currentDrawable!)
+        commandBuffer.commit()
+    }
+}
+```
+
+#### 4. Create Shaders
+
+Shaders are written using the Metal Shading Language (MSL). Compile them into Metal libraries during the build process.
+
+1. **Create `.metal` files** in your project.
+2. **Write your shader code** in the `.metal` files.
+
+##### Vertex Shader (`vertex_shader.metal`):
+
+```metal
+#include <metal_stdlib>
+using namespace metal;
+
+struct VertexIn {
+    float3 position [[attribute(0)]];
+};
+
+struct VertexOut {
+    float4 position [[position]];
+};
+
+vertex VertexOut vertexShader(VertexIn in [[stage_in]]) {
+    VertexOut out = {};
+    out.position = float4(in.position, 1.0);
+    return out;
+}
+```
+
+##### Fragment Shader (`fragment_shader.metal`):
+
+```metal
+#include <metal_stdlib>
+using namespace metal;
+
+fragment float4 fragmentShader(void) {
+    return float4(1.0, 0.0, 0.0, 1.0); // Red color
+}
+```
+
+#### 5. Load the Shader Functions and Create a Pipeline
+
+Load the shader functions and create a render pipeline state.
+
+```swift
+import Metal
+
+// Load the default library
+guard let defaultLibrary = device.makeDefaultLibrary() else {
+    fatalError(""Failed to create default Metal library"")
+}
+
+// Get the shader functions
+let vertexFunction = defaultLibrary?.makeFunction(name: ""vertexShader"")
+let fragmentFunction = defaultLibrary?.makeFunction(name: ""fragmentShader"")
+
+// Define the render pipeline descriptor
+let pipelineDescriptor = MTLRenderPipelineDescriptor()
+pipelineDescriptor.vertexFunction = vertexFunction
+pipelineDescriptor.fragmentFunction = fragmentFunction
+pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+// Create the render pipeline state
+do {
+    let pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+    self.pipelineState = pipelineState
+} catch {
+    fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+}
+```
+
+#### 6. Create Buffers and Textures
+
+You can create buffers and textures using the `MTLDevice`.
+
+##### Buffer Example:
+
+```swift
+import Metal
+
+// Create a buffer
+let bufferLength = 1024
+let buffer = device.makeBuffer(length: bufferLength * MemoryLayout<Float>.size, options: [])!
+```
+
+##### Texture Example:
+
+```swift
+import Metal
+
+// Create a texture
+let width = 512
+let height = 512
+let textureDescriptor = MTLTextureDescriptor()
+textureDescriptor.width = width
+textureDescriptor.height = height
+textureDescriptor.pixelFormat = .bgr8Unorm
+textureDescriptor.usage = [.shaderRead, .shaderWrite]
+
+let texture = device.makeTexture(descriptor: textureDescriptor)!
+```
+
+#### 7. Render Your Content
+
+Set up your render pass descriptor and configure the render encoder to render your content.
+
+1. **Update the `draw(_:in:)` function","{'word_count': 968, 'unique_word_count': 320, 'coherence_score': 0.3305785123966942, 'lexical_similarity': 0.9196428571428571, 'semantic_similarity': 0.9039913415908813, 'lexical_similarity_window': 0.3197848254258001, 'semantic_similarity_window': 0.5651293199043721, 'token_perplexity': 13.425371049507236, 'version_b_distance': 0.10222059488296509}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+9,2026-07-01 14:00:39.071305,dfc94ab8-c30d-497b-9514-89afda241a7e,"Sure, let's continue from where we left off with updating the `draw(_:in:)` function to include setting up the render pass descriptor and configuring the render encoder to render your content using shaders and buffers.
+
+### Step 7: Render Your Content
+
+Now, we need to update the `draw(_:in:)` function to properly set up the render pass descriptor and configure the render encoder to use the shaders and any buffers/textures you might have created.
+
+Here’s how you can do this in both iOS and macOS environments:
+
+#### For iOS:
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            // Implement drawing logic here
+            draw(inView: inView)
+        }
+
+        func draw(inView: MTKView) {
+            guard let commandBuffer = inView.commandBuffer else { return }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = inView.currentDrawable?.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Assuming you have a vertex buffer and index buffer, set them as well
+            // let vertexBuffer = ... // Your vertex buffer
+            // let vertexBufferOffset = ... // Offset within the buffer
+            // let indexCount = ... // Number of indices to draw
+            // let indexType = .uint32 // Type of the indices
+
+            // renderEncoder.setVertexBuffer(vertexBuffer, offset: vertexBufferOffset, index: 0)
+            // renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: indexCount, indexType: indexType, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            inView.present(inView.currentDrawable!)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+#### For macOS:
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            // Implement drawing logic here
+            draw(inView: inView)
+        }
+
+        func draw(inView: MTKView) {
+            guard let commandBuffer = inView.commandBuffer else { return }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = inView.currentDrawable?.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Assuming you have a vertex buffer and index buffer, set them as well
+            // let vertexBuffer = ... // Your vertex buffer
+            // let vertexBufferOffset = ... // Offset within the buffer
+            // let indexCount = ... // Number of indices to draw
+            // let indexType = .uint32 // Type of the indices
+
+            // renderEncoder.setVertexBuffer(vertexBuffer, offset: vertexBufferOffset, index: 0)
+            // renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: indexCount, indexType: indexType, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            inView.present(inView.currentDrawable!)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+### Additional Notes:
+
+1. **Vertex and Index Buffers**: In the example, comments indicate where you would set up vertex and index buffers. You would need to create these buffers and provide offsets and counts for indices and vertices.
+
+2. **Buffer Management**: Manage your buffers efficiently by reusing them when possible. This helps reduce memory overhead.
+
+3. **Error Handling**: Ensure you handle errors gracefully, especially when creating Metal objects, as these operations can fail due to various reasons such as hardware limitations or configuration issues.
+
+4. **Performance Optimization**: Optimize your rendering pipeline and shader code for better performance. Consider profiling your application to identify bottlenecks.
+
+By following these steps, you should be able to set up Metal in your iOS or macOS app and start rendering basic graphics using Metal.","{'word_count': 865, 'unique_word_count': 293, 'coherence_score': 0.33872832369942196, 'lexical_similarity': 0.3744394618834081, 'semantic_similarity': 0.7314311265945435, 'lexical_similarity_window': 0.2041079491251968, 'semantic_similarity_window': 0.5012205926080545, 'token_perplexity': 8.206994212517913, 'version_b_distance': 0.14657700061798096}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+10,2026-07-01 14:00:56.091537,dfc94ab8-c30d-497b-9514-89afda241a7e,"Your implementation is on the right track! However, there are a few additional steps and considerations that can help ensure everything works smoothly. Let's go through the updated and more detailed implementation for both iOS and macOS.
+
+### iOS Implementation
+
+Here's an updated version of the iOS implementation with additional comments and error handling:
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Assuming you have a vertex buffer and index buffer, set them as well
+            // let vertexBuffer = ... // Your vertex buffer
+            // let vertexBufferOffset = ... // Offset within the buffer
+            // let indexCount = ... // Number of indices to draw
+            // let indexType = .uint32 // Type of the indices
+
+            // renderEncoder.setVertexBuffer(vertexBuffer, offset: vertexBufferOffset, index: 0)
+            // renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: indexCount, indexType: indexType, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            renderPassDescriptor.colorAttachments[0].loadAction = .dontCare
+            inView.present(drawable)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+### macOS Implementation
+
+Here's an updated version of the macOS implementation with additional comments and error handling:
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Assuming you have a vertex buffer and index buffer, set them as well
+            // let vertexBuffer = ... // Your vertex buffer
+            // let vertexBufferOffset = ... // Offset within the buffer
+            // let indexCount = ... // Number of indices to draw
+            // let indexType = .uint32 // Type of the indices
+
+            // renderEncoder.setVertexBuffer(vertexBuffer, offset: vertexBufferOffset, index: 0)
+            // renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: indexCount, indexType: indexType, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            renderPassDescriptor.colorAttachments[0].loadAction = .dontCare
+            inView.present(drawable)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+### Additional Notes:
+
+1. **Vertex and Index Buffers**:
+   - Ensure you have created and set up your vertex and index buffers. These are crucial for rendering 3D models or simple shapes.
+   - Example setup:
+     ```swift
+     let vertexBuffer = device.makeBuffer(length: vertexData.count * MemoryLayout<Float>.size, options: [])
+     let indexBuffer = device.makeBuffer(length: indexData.count * MemorySize(indexData.count), options: [])
+     ```
+
+2. **Buffer Management**:
+   - Reuse buffers whenever possible to minimize memory allocation and deallocation, which can improve performance.
+
+3. **Error Handling**:
+   - Handle errors gracefully, especially during the creation of Metal objects, as these operations can fail due to various reasons such as hardware limitations or configuration issues.
+
+4. **Performance Optimization**:
+   - Optimize your rendering pipeline and shader code for better performance. Use profiling tools like Instruments to identify bottlenecks.
+   - Consider techniques such as instancing, batch rendering, and efficient texture management.
+
+5. **Code Comments**:
+   - Add comments to your shader code and buffer setup to make it easier to understand what each part does.
+
+By following these steps, you should be able to set up Metal rendering in your iOS or macOS app and start rendering basic graphics using Metal. If you have any specific questions or need further assistance, feel free to ask!","{'word_count': 930, 'unique_word_count': 332, 'coherence_score': 0.35698924731182796, 'lexical_similarity': 0.6066838046272494, 'semantic_similarity': 0.7281147837638855, 'lexical_similarity_window': 0.2375342899888618, 'semantic_similarity_window': 0.5326128505170346, 'token_perplexity': 8.243662330982254, 'version_b_distance': 0.07098531723022461}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+11,2026-07-01 14:01:16.497778,dfc94ab8-c30d-497b-9514-89afda241a7e,"Your implementations for both iOS and macOS using Metal look solid and cover many important aspects. Here are some additional enhancements and best practices to consider to ensure robustness and efficiency:
+
+### Enhanced iOS Implementation
+
+#### 1. **Vertex and Index Buffer Setup**
+   - Ensure you have correctly set up and configured your vertex and index buffers.
+   - Use `MTLBuffer` methods to create and manage your buffers efficiently.
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0,  0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            renderPassDescriptor.colorAttachments[0].loadAction = .dontCare
+            inView.present(drawable)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+### Enhanced macOS Implementation
+
+#### 1. **Vertex and Index Buffer Setup**
+   - Similar to the iOS version, ensure you have correctly set up and configured your vertex and index buffers.
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0,  0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            renderPassDescriptor.colorAttachments[0].loadAction = .dontCare
+            inView.present(drawable)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+### Additional Notes
+
+1. **Vertex and Index Data**:
+   - Ensure your vertex data and index data are correctly formatted and match the expected format in your shaders.
+   - For example, if your shader expects vertices in a different format (e.g., float3 instead of float), adjust the vertexData accordingly.
+
+2. **Shader Code**:
+   - Make sure your vertex and fragment shaders are correctly implemented and placed in the Metal library.
+   - Here is a simple example of a vertex and fragment shader:
+
+   **vertexShader.metal**:
+   ```metal
+   kernel void vertexShader(device float4 vertices [[buffer","{'word_count': 893, 'unique_word_count': 282, 'coherence_score': 0.3157894736842105, 'lexical_similarity': 0.4584323040380047, 'semantic_similarity': 0.8033437132835388, 'lexical_similarity_window': 0.24877286145810937, 'semantic_similarity_window': 0.6115087665617466, 'token_perplexity': 7.733112202903738, 'version_b_distance': 0.07763803005218506}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+12,2026-07-01 14:01:34.691347,dfc94ab8-c30d-497b-9514-89afda241a7e,"Certainly! Let's complete the shader code and provide some additional best practices and notes to ensure robustness and efficiency in your Metal implementation.
+
+### Vertex Shader (vertexShader.metal)
+
+The vertex shader is responsible for transforming the vertices from model space to clip space.
+
+```metal
+Kernel void vertexShader(
+    constant float4 vertices [[ buffer(0) ]],
+    constant uint    id       [[ thread_position_in_block() ]],
+    out float4       position [[ position ]])
+{
+    // Calculate the position in clip space
+    position = vertices[id];
+}
+```
+
+### Fragment Shader (fragmentShader.metal)
+
+The fragment shader is responsible for determining the color of each pixel.
+
+```metal
+kernel void fragmentShader(
+    in float4 position [[ position ]],
+    out float4 color [[color_out]])
+{
+    // Simple color assignment
+    color = float4(1.0, 0.0, 0.0, 1.0); // Red color
+}
+```
+
+### Additional Best Practices and Notes
+
+1. **Vertex and Index Data Format**:
+   - Ensure that the vertex data and index data are correctly formatted and match the expected format in your shaders.
+   - For instance, if your vertex shader expects `float3` for positions and texture coordinates, make sure the data reflects this.
+
+2. **Buffer Management**:
+   - Always check for errors when creating buffers, pipelines, and command queues.
+   - Use `try?` or `do-catch` blocks to handle potential errors gracefully.
+
+3. **Error Handling**:
+   - Implement robust error handling to catch and report any issues during initialization and rendering.
+   - Use logging (e.g., `print()` or a more advanced logging mechanism) to debug issues.
+
+4. **Performance Considerations**:
+   - Minimize the number of draw calls and command encodings per frame.
+   - Optimize the use of resource bindings to reduce overhead.
+
+5. **Resource Management**:
+   - Use `autoreleasepool` to manage resources more efficiently.
+   - Ensure that no unnecessary resources are retained longer than necessary.
+
+6. **Shader Optimization**:
+   - Keep shaders as simple as possible initially and optimize as needed.
+   - Use `#if DEBUG` and `#endif` directives to enable or disable debug code.
+
+7. **Frame Rate and Sync**:
+   - Ensure that the frame rate is consistent and synchronized with the display refresh rate.
+   - Use `preferredFramesPerSecond` to control the frame rate.
+
+8. **Memory Layout**:
+   - Use efficient memory layouts for large data structures to minimize memory usage and improve performance.
+
+### Complete Example with Vertex and Fragment Shaders
+
+Here is the complete example including the vertex and fragment shaders:
+
+#### Vertex Shader (vertexShader.metal)
+
+```metal
+kernel void vertexShader(
+    constant float4 vertices [[ buffer(0) ]],
+    constant uint    id       [[ thread_position_in_block() ]],
+    out float4       position [[ position ]])
+{
+    // Calculate the position in clip space
+    position = vertices[id];
+}
+```
+
+#### Fragment Shader (fragmentShader.metal)
+
+```metal
+kernel void fragmentShader(
+    in float4 position [[ position ]],
+    out float4 color [[color_out]])
+{
+    // Simple color assignment
+    color = float4(1.0, 0.0, 0.0, 1.0); // Red color
+}
+```
+
+#### ViewController Implementation
+
+##### iOS Implementation
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0,  0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            renderPassDescriptor.colorAttachments[0].loadAction = .dontCare
+            inView.present(drawable)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+##### macOS Implementation
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0,  0.5, -0.5, ","{'word_count': 998, 'unique_word_count': 392, 'coherence_score': 0.3927855711422846, 'lexical_similarity': 0.5601851851851852, 'semantic_similarity': 0.5175445079803467, 'lexical_similarity_window': 0.28623333444107446, 'semantic_similarity_window': 0.37360253036022184, 'token_perplexity': 10.845303896541314, 'version_b_distance': 0.11056786775588989}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+13,2026-07-01 14:01:52.382910,dfc94ab8-c30d-497b-9514-89afda241a7e,"Certainly! Here is the complete example, including both the vertex and fragment shaders, and the necessary Swift implementations for both iOS and macOS environments. This setup ensures robustness and efficiency in your Metal implementation.
+
+### Vertex Shader (vertexShader.metal)
+
+```metal
+#include <metal_stdlib>
+using namespace metal;
+
+kernel void vertexShader(
+    constant float4 vertices [[ buffer(0) ]],
+    constant uint    id       [[ thread_position_in_block() ]],
+    out float4       position [[ position ]])
+{
+    // Calculate the position in clip space
+    position = vertices[id];
+}
+```
+
+### Fragment Shader (fragmentShader.metal)
+
+```metal
+#include <metal_stdlib>
+using namespace metal;
+
+kernel void fragmentShader(
+    in float4 position [[ position ]],
+    out float4 color [[color_out]])
+{
+    // Simple color assignment
+    color = float4(1.0, 0.0, 0.0, 1.0); // Red color
+}
+```
+
+### ViewController Implementation
+
+#### iOS Implementation
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            renderPassDescriptor.colorAttachments[0].loadAction = .dontCare
+            inView.present(drawable)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+#### macOS Implementation
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            renderPassDescriptor.colorAttachments[0].loadAction = .dontCare
+            inView.present(drawable)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+### Additional Best Practices and Notes
+
+1. **Vertex and Index Data Format**:
+   - Ensure that the vertex data and index data are correctly formatted and match","{'word_count': 860, 'unique_word_count': 273, 'coherence_score': 0.3174418604651163, 'lexical_similarity': 0.6379310344827587, 'semantic_similarity': 0.8457260727882385, 'lexical_similarity_window': 0.369658382298065, 'semantic_similarity_window': 0.5954215109348298, 'token_perplexity': 8.094977418360735, 'version_b_distance': 0.08831566572189331}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+14,2026-07-01 14:02:12.472261,dfc94ab8-c30d-497b-9514-89afda241a7e,"Your implementation looks solid and covers the essential aspects of using Metal with Swift for both iOS and macOS. Below are some additional best practices and notes to ensure robustness and efficiency:
+
+### Additional Best Practices and Notes
+
+1. **Vertex and Index Data Format**:
+   - Ensure that the vertex data and index data are correctly formatted and match the expectations of your shaders.
+   - Use appropriate data types and ensure that the number of elements matches the number of vertices or indices.
+
+2. **Error Handling**:
+   - Enhance error handling to provide more informative feedback when something goes wrong.
+   - Consider using `try?` or `do-catch` blocks for more precise control over error handling.
+
+3. **Memory Management**:
+   - Ensure that all Metal objects are properly managed and deallocated to avoid memory leaks.
+   - Use `autoreleasepool` where necessary to manage object lifetimes.
+
+4. **Profiling and Optimization**:
+   - Profile your Metal application to identify bottlenecks.
+   - Optimize shader code and use Metal's profiling tools to improve performance.
+
+5. **User Interface Updates**:
+   - Ensure that the Metal view is updated at the correct frame rate and that it does not cause unnecessary UI updates.
+
+6. **Shader Compilation**:
+   - Compile your shaders at runtime to catch any errors early.
+   - Optimize your shaders for efficiency and correctness.
+
+7. **Thread Safety**:
+   - Ensure that Metal operations are thread-safe. Metal is not thread-safe, so only perform Metal operations on the main thread or in a task that you know is safe.
+
+### Example with Enhanced Error Handling and Profiling
+
+Here’s an enhanced version of your iOS implementation with better error handling and some additional comments:
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            renderPassDescriptor.colorAttachments[0].loadAction = .dontCare
+            inView.present(drawable)
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+### Additional Steps for macOS Implementation
+
+Ensure that the macOS implementation is similarly robust:
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError(""Failed to create Metal device"")
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            fatalError(""Failed to create default Metal library"")
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            fatalError(""Failed to create pipeline state: \(error.localizedDescription)"")
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder","{'word_count': 951, 'unique_word_count': 350, 'coherence_score': 0.36803364879074657, 'lexical_similarity': 0.5692695214105793, 'semantic_similarity': 0.7291404008865356, 'lexical_similarity_window': 0.4014071513300964, 'semantic_similarity_window': 0.6628950238227844, 'token_perplexity': 8.900842643156842, 'version_b_distance': 0.07582736015319824}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+15,2026-07-01 14:02:31.269055,dfc94ab8-c30d-497b-9514-89afda241a7e,"Your implementation for both iOS and macOS Metal applications with Swift looks well-structured and includes many best practices and additional notes. Here are some minor improvements and additional suggestions to enhance robustness and performance:
+
+### Enhanced iOS Implementation
+
+1. **Enhanced Error Handling and Logging:**
+   - Use more detailed logging for better debugging.
+   - Use `do-catch` blocks to handle errors more gracefully.
+
+2. **Memory Management:**
+   - Ensure that Metal objects are properly deallocated when they are no longer needed.
+
+3. **Profiling and Optimization:**
+   - Consider using Metal's built-in profiling tools like `MTLDebugRenderer`.
+
+4. **User Interface Updates:**
+   - Ensure that UI updates are performed on the main thread.
+
+Here’s the improved version of your iOS implementation:
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            logError(""Failed to create Metal device"")
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            logError(""Failed to create default Metal library"")
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            logError(""Failed to create pipeline state: \(error.localizedDescription)"")
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            inView.present(drawable)
+            commandBuffer.commit()
+        }
+
+        private func logError(_ message: String) {
+            print(""Error: \(message)"")
+        }
+    }
+}
+```
+
+### Additional Steps for macOS Implementation
+
+For the macOS implementation, ensure that you follow similar best practices:
+
+1. **Enhanced Error Handling and Logging:**
+   - Use detailed error messages for better debugging.
+
+2. **Memory Management:**
+   - Ensure that Metal objects are properly managed and deallocated.
+
+3. **Profiling and Optimization:**
+   - Use Metal’s profiling tools for better performance insights.
+
+Here’s the improved version of your macOS implementation:
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            logError(""Failed to create Metal device"")
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            logError(""Failed to create default Metal library"")
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            logError(""Failed to create pipeline state: \(error.localizedDescription)"")
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Present and commit the command buffer
+            inView","{'word_count': 891, 'unique_word_count': 300, 'coherence_score': 0.3367003367003367, 'lexical_similarity': 0.6290726817042607, 'semantic_similarity': 0.8237401843070984, 'lexical_similarity_window': 0.44221096436515045, 'semantic_similarity_window': 0.6551721394062042, 'token_perplexity': 8.01803307027956, 'version_b_distance': 0.0888938307762146}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+16,2026-07-01 14:02:51.723808,dfc94ab8-c30d-497b-9514-89afda241a7e,"Your improved code looks solid and includes several key improvements such as enhanced error handling, detailed logging, memory management, and proper use of Metal's features for both iOS and macOS. Below, I'll provide some additional enhancements and ensure the code is complete and optimized for both platforms.
+
+### Enhanced iOS Implementation
+
+Here’s an enhanced version of your iOS implementation with additional optimizations and improvements:
+
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            logError(""Failed to create Metal device"")
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            logError(""Failed to create default Metal library"")
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            logError(""Failed to create pipeline state: \(error.localizedDescription)"")
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.stride, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.stride, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            defer {
+                inView.present()
+            }
+
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].storeAction = .store
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Commit the command buffer
+            commandBuffer.commit()
+        }
+
+        private func logError(_ message: String) {
+            print(""Error: \(message)"")
+        }
+    }
+}
+```
+
+### Enhanced macOS Implementation
+
+Here’s an enhanced version of your macOS implementation with similar enhancements:
+
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            logError(""Failed to create Metal device"")
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            logError(""Failed to create default Metal library"")
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            logError(""Failed to create pipeline state: \(error.localizedDescription)"")
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            defer {
+                inView.present()
+            }
+
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].storeAction = .store
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Commit the command buffer
+            commandBuffer.commit()
+        }
+
+        private func logError(_ message: String) {
+            print(""Error: \(message)"")
+        }
+    }
+}
+```
+
+### Additional Notes
+
+1. **Error Handling and Logging:**
+   - The `logError` function uses `print` for logging, which is fine for development. For production, consider using a more structured logging framework like `os_log`.
+
+2. **Memory Management:**
+   - Ensure all Metal objects (`MTLBuffer`, `MTLRenderPipelineState`, etc.) are deallocated when they are no longer needed. In the provided code,","{'word_count': 868, 'unique_word_count': 295, 'coherence_score': 0.33986175115207373, 'lexical_similarity': 0.7, 'semantic_similarity': 0.8424393534660339, 'lexical_similarity_window': 0.4714238299482746, 'semantic_similarity_window': 0.7145530760288239, 'token_perplexity': 7.13948382392199, 'version_b_distance': 0.09335869550704956}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+17,2026-07-01 14:03:12.036204,dfc94ab8-c30d-497b-9514-89afda241a7e,"That's a great enhancement to the Metal-based graphics views for both iOS and macOS. Here are a few additional notes and suggestions to further improve the code and ensure it's robust and efficient:
+
+### Error Handling and Logging (Enhanced)
+- **Structured Logging:** Instead of just using `print`, you might want to use `os_log` for better structured logging, especially in production builds.
+- **Detailed Error Messages:** Provide more detailed error messages to help with debugging.
+
+### Memory Management
+- **Deallocating Resources:** Ensure that all Metal resources are properly deallocated when they are no longer needed. This can be done in the `deinit` method or through weak references if resources are shared.
+
+### Performance Optimization
+- **Batch Drawing:** If you're drawing multiple objects, consider batching them together to reduce the number of draw calls.
+- **Render Pass Caching:** Cache render pass descriptors and encode them only once per frame to avoid unnecessary creation and destruction.
+
+### Code Completion and Cleanup
+- **Complete the Command Buffer if Encoding Fails:** Ensure the command buffer is completed even if the draw call fails.
+- **Avoid Unnecessary Checks:** Simplify conditions where possible to improve readability and performance.
+
+### Updated Code with Enhancements
+
+#### Enhanced iOS Implementation
+```swift
+import UIKit
+importMetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            os_log(""Failed to create Metal device"", log: .default, type: .error)
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            os_log(""Failed to create default Metal library"", log: .default, type: .error)
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            os_log(""Failed to create pipeline state: %s"", log: .default, type: .error, error.localizedDescription)
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.stride, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.stride, options: [])
+    }
+
+    deinit {
+        vertexBuffer?.label = nil
+        indexBuffer?.label = nil
+        pipelineState?.label = nil
+        commandQueue?.label = nil
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            defer {
+                inView.present()
+            }
+
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].storeAction = .store
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Commit the command buffer
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+#### Enhanced macOS Implementation
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            os_log(""Failed to create Metal device"", log: .default, type: .error)
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            os_log(""Failed to create default Metal library"", log: .default, type: .error)
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            os_log(""Failed to create pipeline state: %s"", log: .default, type: .error, error.localizedDescription)
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    deinit {
+        vertexBuffer?.label = nil
+        indexBuffer?.label = nil
+        pipelineState?.label = nil
+        commandQueue?.label = nil
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            defer {
+                inView.present()
+            }
+
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].storeAction = .store
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0","{'word_count': 910, 'unique_word_count': 347, 'coherence_score': 0.3813186813186813, 'lexical_similarity': 0.5773955773955773, 'semantic_similarity': 0.5982130765914917, 'lexical_similarity_window': 0.4471782617540926, 'semantic_similarity_window': 0.5588787436485291, 'token_perplexity': 8.920813334421137, 'version_b_distance': 0.10839319229125977}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+18,2026-07-01 14:03:31.963456,dfc94ab8-c30d-497b-9514-89afda241a7e,"Your updated code with enhancements is well-structured and addresses several important aspects such as error handling, memory management, and performance optimization. Below is an enhanced version of your code with a few additional improvements and clarifications:
+
+### Enhanced Code for Both iOS and macOS
+
+#### Enhanced iOS Implementation
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            os_log(""Failed to create Metal device"", log: .default, type: .error)
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            os_log(""Failed to create default Metal library"", log: .default, type: .error)
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            os_log(""Failed to create pipeline state: %s"", log: .default, type: .error, error.localizedDescription)
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    deinit {
+        vertexBuffer?.label = nil
+        indexBuffer?.label = nil
+        pipelineState?.label = nil
+        commandQueue?.label = nil
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            defer {
+                inView.present()
+            }
+
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].storeAction = .store
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, vertexStart: 0, instanceCount: 1, baseVertex: 0, baseInstance: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Commit the command buffer
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+#### Enhanced macOS Implementation
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            os_log(""Failed to create Metal device"", log: .default, type: .error)
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            os_log(""Failed to create default Metal library"", log: .default, type: .error)
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            os_log(""Failed to create pipeline state: %s"", log: .default, type: .error, error.localizedDescription)
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+    }
+
+    deinit {
+        vertexBuffer?.label = nil
+        indexBuffer?.label = nil
+        pipelineState?.label = nil
+        commandQueue?.label = nil
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            defer {
+                inView.present()
+            }
+
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer() else {
+                return
+            }
+
+            // Create a render pass descriptor
+            let renderPassDescriptor = MTLRenderPassDescriptor()
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+            renderPassDescriptor.colorAttachments[0].loadAction = .clear
+            renderPassDescriptor.colorAttachments[0].storeAction = .store
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
+
+            // Create a render encoder
+            guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+                commandBuffer.complete()
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, vertexStart: 0, instanceCount: 1, baseVertex: 0, baseInstance: 0)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Commit the command buffer
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+### Additional Notes and Suggestions
+
+1. **Vertex Start and Base Vertex:**
+   -","{'word_count': 840, 'unique_word_count': 253, 'coherence_score': 0.3011904761904762, 'lexical_similarity': 0.6129032258064516, 'semantic_similarity': 0.5876643657684326, 'lexical_similarity_window': 0.524548264182964, 'semantic_similarity_window': 0.7250169336795806, 'token_perplexity': 6.7612360587840845, 'version_b_distance': 0.10318869352340698}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"
+19,2026-07-01 14:03:52.177781,dfc94ab8-c30d-497b-9514-89afda241a7e,"Your enhanced code is well-structured and covers many important aspects for initializing and rendering with Metal on both iOS and macOS. Here are some additional notes and suggestions to further enhance the code and improve its robustness:
+
+### Additional Notes and Suggestions
+
+1. **Vertex Start and Base Vertex:**
+   - In the `draw` method, the `baseVertex` parameter is set to 0. If your vertex data starts from a different index, you should adjust this value accordingly.
+   - Similarly, the `vertexStart` parameter is set to 0. Ensure that this value correctly points to the starting index of the vertices you want to render.
+
+2. **Error Handling:**
+   - The error handling in the `setupBuffers` function could be improved to provide more detailed information about what went wrong during buffer creation.
+
+3. **Resource Deallocation:**
+   - Ensure that all Metal resources are properly deallocated when they are no longer needed to avoid memory leaks.
+   - Consider using optional binding (`if let`) to safely handle potential `nil` values.
+
+4. **Performance Optimization:**
+   - Minimize the use of `defer` statements inside the `draw` method, as they can introduce minor overhead.
+   - Ensure that the Metal view's frame updates are synchronized with the view's layout changes.
+
+5. **Shader Functions:**
+   - Ensure that the `vertexShader` and `fragmentShader` functions are correctly defined in your Metal shaders and are named as expected (`""vertexShader""` and `""fragmentShader""`).
+
+6. **Logging:**
+   - Use `os_log` for logging instead of `print` for better integration with Xcode's debugging tools.
+
+7. **Resource Management:**
+   - Consider using `autoreleasepool` for managing temporary objects to optimize memory usage.
+
+Here is the revised code with these improvements:
+
+### Revised Code
+
+#### Enhanced iOS Implementation
+```swift
+import UIKit
+import MetalKit
+
+class ViewController: UIViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            os_log(""Failed to create Metal device"", log: .default, type: .error)
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            os_log(""Failed to create default Metal library"", log: .default, type: .error)
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            os_log(""Failed to create pipeline state: %s"", log: .default, type: .error, error.localizedDescription)
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+
+        if vertexBuffer == nil {
+            os_log(""Failed to create vertex buffer"", log: .default, type: .error)
+        }
+
+        if indexBuffer == nil {
+            os_log(""Failed to create index buffer"", log: .default, type: .error)
+        }
+    }
+
+    deinit {
+        vertexBuffer?.label = nil
+        indexBuffer?.label = nil
+        pipelineState?.label = nil
+        commandQueue?.label = nil
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            defer {
+                inView.present()
+            }
+
+            guard let drawable = inView.currentDrawable, let commandBuffer = commandQueue.makeCommandBuffer(), let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: inView.currentRenderPassDescriptor) else {
+                return
+            }
+
+            // Set the render pipeline state
+            renderEncoder.setRenderPipelineState(pipelineState)
+
+            // Set the vertex buffer
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+
+            // Draw indexed primitives
+            renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: 3, indexType: .uint16, indexBuffer: indexBuffer, indexBytesPerIndex: MemoryLayout<UInt16>.stride)
+
+            // End encoding
+            renderEncoder.endEncoding()
+
+            // Commit the command buffer
+            commandBuffer.commit()
+        }
+    }
+}
+```
+
+#### Enhanced macOS Implementation
+```swift
+import AppKit
+import MetalKit
+
+class ViewController: NSViewController {
+    var metalView: MTKView!
+    var device: MTLDevice!
+    var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
+    var vertexBuffer: MTLBuffer!
+    var indexBuffer: MTLBuffer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Check if a Metal device is available
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            os_log(""Failed to create Metal device"", log: .default, type: .error)
+            return
+        }
+        self.device = device
+
+        print(""Using Metal device: \(device.name)"")
+
+        // Initialize the Metal view
+        metalView = MTKView(frame: view.bounds, device: device)
+        metalView.delegate = self
+        view.addSubview(metalView)
+
+        // Set the preferred rendering API to Metal
+        metalView.preferredFramesPerSecond = 60
+        metalView.preferredRenderingAPI = .metal
+
+        // Load the default library and get the shader functions
+        guard let defaultLibrary = device.makeDefaultLibrary() else {
+            os_log(""Failed to create default Metal library"", log: .default, type: .error)
+            return
+        }
+
+        let vertexFunction = defaultLibrary.makeFunction(name: ""vertexShader"")!
+        let fragmentFunction = defaultLibrary.makeFunction(name: ""fragmentShader"")!
+
+        // Define the render pipeline descriptor
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.fragmentFunction = fragmentFunction
+        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
+        // Create the command queue
+        commandQueue = device.makeCommandQueue()
+
+        // Create the render pipeline state
+        do {
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        } catch {
+            os_log(""Failed to create pipeline state: %s"", log: .default, type: .error, error.localizedDescription)
+            return
+        }
+
+        // Setup vertex and index buffers
+        let vertexData: [Float] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0] // Example triangle vertices
+        let indexData: [UInt16] = [0, 1, 2] // Example triangle indices
+        setupBuffers(vertexData: vertexData, indexData: indexData)
+    }
+
+    func setupBuffers(vertexData: [Float], indexData: [UInt16]) {
+        vertexBuffer = device.makeBuffer(bytes: vertexData, length: vertexData.count * MemoryLayout<Float>.size, options: [])
+        indexBuffer = device.makeBuffer(bytes: indexData, length: indexData.count * MemoryLayout<UInt16>.size, options: [])
+
+        if vertexBuffer == nil {
+            os_log(""Failed to create vertex buffer"", log: .default, type: .error)
+        }
+
+        if indexBuffer == nil {
+            os_log(""Failed to create index buffer"", log: .default, type: .error)
+        }
+    }
+
+    deinit {
+        vertexBuffer?.label = nil
+        indexBuffer?.label = nil
+        pipelineState?.label = nil
+        commandQueue?.label = nil
+    }
+
+    extension ViewController: MTKViewDelegate {
+        func draw(_ inView: MTKView) {
+            defer {
+               ","{'word_count': 961, 'unique_word_count': 355, 'coherence_score': 0.36940686784599375, 'lexical_similarity': 0.5353535353535354, 'semantic_similarity': 0.6903272867202759, 'lexical_similarity_window': 0.4614566394958467, 'semantic_similarity_window': 0.641406711935997, 'token_perplexity': 9.533300692981467, 'version_b_distance': 0.10553210973739624}",,dfc94ab8-c30d-497b-9514-89afda241a7e,"{'provider': <Provider.OLLAMA_COMPANY: 'ollama_company'>, 'model': <OllamaCompanyModels.QWEN_2_5_7B: 'Qwen/Qwen2.5-7B-Instruct'>, 'system_prompt': None, 'temperature': 0.7, 'max_tokens': 2048, 'frequency_penalty': 0.0, 'presence_penalty': 0.0, 'top_p': 1.0, 'seed': None}"

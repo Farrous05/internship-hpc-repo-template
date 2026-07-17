@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-07-02 10:38:28.317306",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/none",
+    "injection_config": null
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 234461,
+  "collapse_onset_round": 11,
+  "collapse_rate": 0.009594869363558042,
+  "collapse_onsets": [
+    11
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.14713919162750244,
+      0.16183000802993774,
+      0.3021005392074585,
+      0.3359109163284302,
+      0.3373667001724243,
+      0.3532891273498535,
+      0.3690974712371826,
+      0.42282241582870483,
+      0.41050636768341064,
+      0.41385042667388916,
+      0.413934588432312,
+      0.41988885402679443,
+      0.4255140423774719,
+      0.4439915418624878,
+      0.43804359436035156,
+      0.4697161316871643,
+      0.45766210556030273,
+      0.4530751705169678,
+      0.4523799419403076,
+      0.4784204959869385,
+      0.46066486835479736,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615,
+      0.4668920040130615
+    ]
+  }
+}

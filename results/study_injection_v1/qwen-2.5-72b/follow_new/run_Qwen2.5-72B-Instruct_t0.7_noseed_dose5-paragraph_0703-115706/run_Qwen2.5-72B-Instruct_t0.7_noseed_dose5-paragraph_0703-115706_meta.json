@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-07-03 11:57:06.628623",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": "Pay close attention to any new or surprising information in the latest message and follow where it leads, instead of continuing your previous train of thought.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/follow_new",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 126923,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.02481828277761291,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 5,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+    "distance": 0.9785259142518044,
+    "span_start": 5888,
+    "span_end": 6078
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9785259142518044,
+      "span_start": 5888,
+      "span_end": 6078
+    },
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles.",
+      "distance": 0.980469211935997,
+      "span_start": 9661,
+      "span_end": 9863
+    },
+    {
+      "round": 15,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth.",
+      "distance": 0.9684187509119511,
+      "span_start": 443,
+      "span_end": 629
+    },
+    {
+      "round": 20,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.920023038983345,
+      "span_start": 4543,
+      "span_end": 4742
+    },
+    {
+      "round": 25,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead.",
+      "distance": 0.919366717338562,
+      "span_start": 6178,
+      "span_end": 6407
+    },
+    {
+      "round": 30,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles.",
+      "distance": 0.9122871905565262,
+      "span_start": 1745,
+      "span_end": 1947
+    },
+    {
+      "round": 35,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side.",
+      "distance": 0.9101969748735428,
+      "span_start": 745,
+      "span_end": 993
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 15,
+    "hold_length": 15,
+    "post_injection_distances": [
+      0.06327712535858154,
+      0.07971042394638062,
+      0.06163376569747925,
+      0.06987929344177246,
+      0.0884469747543335,
+      0.501071572303772,
+      0.5565063953399658,
+      0.5187259912490845,
+      0.574641764163971,
+      0.8328364491462708,
+      0.8801361173391342,
+      0.7877876460552216,
+      0.7255706489086151,
+      0.7194070816040039,
+      0.7373631000518799,
+      0.8401904702186584,
+      0.8337485492229462,
+      0.7807450890541077,
+      0.7379061281681061,
+      0.7117437422275543,
+      0.8098480850458145,
+      0.7921067476272583,
+      0.7687624394893646,
+      0.7380375862121582,
+      0.721502423286438,
+      0.7118131220340729,
+      0.681130439043045,
+      0.6974484920501709,
+      0.7019672691822052,
+      0.7438681125640869
+    ]
+  }
+}

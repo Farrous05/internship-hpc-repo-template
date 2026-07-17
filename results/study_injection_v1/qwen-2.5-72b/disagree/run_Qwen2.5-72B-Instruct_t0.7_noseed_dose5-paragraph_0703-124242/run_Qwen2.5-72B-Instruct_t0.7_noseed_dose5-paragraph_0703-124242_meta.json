@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-07-03 12:42:42.353371",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": "Be critical. Each reply should question, challenge, or disagree with something in the previous message -- never just agree and elaborate.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/disagree",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 84667,
+  "collapse_onset_round": 15,
+  "collapse_rate": 0.012504664063453689,
+  "collapse_onsets": [
+    15
+  ],
+  "injection": {
+    "round": 5,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them.",
+    "distance": 0.9397871233522892,
+    "span_start": 2903,
+    "span_end": 3091
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them.",
+      "distance": 0.9397871233522892,
+      "span_start": 2903,
+      "span_end": 3091
+    },
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.9185574948787689,
+      "span_start": 1302,
+      "span_end": 1501
+    },
+    {
+      "round": 15,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.8863527551293373,
+      "span_start": 1685,
+      "span_end": 1884
+    },
+    {
+      "round": 20,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour.",
+      "distance": 0.941224567592144,
+      "span_start": 2500,
+      "span_end": 2699
+    },
+    {
+      "round": 25,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+      "distance": 0.9456372037529945,
+      "span_start": 2983,
+      "span_end": 3190
+    },
+    {
+      "round": 30,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour.",
+      "distance": 0.977200074121356,
+      "span_start": 2687,
+      "span_end": 2886
+    },
+    {
+      "round": 35,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead.",
+      "distance": 0.953519232571125,
+      "span_start": 3437,
+      "span_end": 3666
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.4878668189048767,
+      0.4962092638015747,
+      0.5095846652984619,
+      0.45790451765060425,
+      0.40947914123535156,
+      0.4545596241950989,
+      0.4613000154495239,
+      0.4512336254119873,
+      0.4383302927017212,
+      0.4748828411102295,
+      0.44180452823638916,
+      0.46465080976486206,
+      0.4356038570404053,
+      0.45568978786468506,
+      0.4435761570930481,
+      0.4368780851364136,
+      0.4715111255645752,
+      0.47148656845092773,
+      0.44315481185913086,
+      0.4644656181335449,
+      0.4264754056930542,
+      0.47092580795288086,
+      0.43051576614379883,
+      0.4398990273475647,
+      0.41516703367233276,
+      0.4126451015472412,
+      0.40424561500549316,
+      0.3933342695236206,
+      0.4087215065956116,
+      0.4482458233833313
+    ]
+  }
+}

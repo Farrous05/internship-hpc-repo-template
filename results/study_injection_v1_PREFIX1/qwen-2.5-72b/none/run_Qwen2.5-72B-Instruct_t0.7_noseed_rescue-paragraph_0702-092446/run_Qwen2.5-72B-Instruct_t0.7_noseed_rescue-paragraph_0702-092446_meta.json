@@ -1,0 +1,126 @@
+{
+  "timestamp": "2026-07-02 09:24:46.580750",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 4,
+  "total_characters": 224521,
+  "collapse_onset_round": 16,
+  "collapse_rate": 0.00901432612947392,
+  "collapse_onsets": [
+    16
+  ],
+  "injection": {
+    "round": 16,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks.",
+    "distance": 1.00862602237612,
+    "span_start": 4393,
+    "span_end": 4598
+  },
+  "injections": [
+    {
+      "round": 16,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks.",
+      "distance": 1.00862602237612,
+      "span_start": 4393,
+      "span_end": 4598
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.12906384468078613,
+      0.17020326852798462,
+      0.21123355627059937,
+      0.17409181594848633,
+      0.14432132244110107,
+      0.13977456092834473,
+      0.15631771087646484,
+      0.13636457920074463,
+      0.15295147895812988,
+      0.15295147895812988,
+      0.15295147895812988,
+      0.15295147895812988,
+      0.15295147895812988,
+      0.15295147895812988,
+      0.15295147895812988,
+      0.15295147895812988,
+      0.15295147895812988,
+      0.15362834930419922,
+      0.15362834930419922,
+      0.15362834930419922,
+      0.1513599157333374,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.15421521663665771,
+      0.1543518304824829,
+      0.1543518304824829,
+      0.1543518304824829
+    ]
+  }
+}

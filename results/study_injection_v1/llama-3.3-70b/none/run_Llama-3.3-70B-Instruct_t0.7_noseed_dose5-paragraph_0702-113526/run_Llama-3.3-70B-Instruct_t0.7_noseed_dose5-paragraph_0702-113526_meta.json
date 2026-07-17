@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-07-02 11:35:26.218179",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 206997,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.015540850704366524,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 5,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+    "distance": 0.9845021115615964,
+    "span_start": 3404,
+    "span_end": 3594
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9845021115615964,
+      "span_start": 3404,
+      "span_end": 3594
+    },
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles.",
+      "distance": 0.9882959742099047,
+      "span_start": 5028,
+      "span_end": 5230
+    },
+    {
+      "round": 15,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom.",
+      "distance": 0.974090076982975,
+      "span_start": 2433,
+      "span_end": 2637
+    },
+    {
+      "round": 20,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.9647065103054047,
+      "span_start": 785,
+      "span_end": 984
+    },
+    {
+      "round": 25,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.9527058005332947,
+      "span_start": 1403,
+      "span_end": 1602
+    },
+    {
+      "round": 30,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step.",
+      "distance": 0.9822930432856083,
+      "span_start": 6044,
+      "span_end": 6239
+    },
+    {
+      "round": 35,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9836916476488113,
+      "span_start": 2289,
+      "span_end": 2479
+    },
+    {
+      "round": 40,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step.",
+      "distance": 0.9857913721352816,
+      "span_start": 9035,
+      "span_end": 9230
+    },
+    {
+      "round": 45,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour.",
+      "distance": 0.9472272247076035,
+      "span_start": 9921,
+      "span_end": 10120
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 21,
+    "hold_length": 8,
+    "post_injection_distances": [
+      0.044877052307128906,
+      0.04418325424194336,
+      0.12460476160049438,
+      0.05951797962188721,
+      0.09186351299285889,
+      0.1122773289680481,
+      0.18769490718841553,
+      0.19570040702819824,
+      0.17996639013290405,
+      0.18217182159423828,
+      0.17499905824661255,
+      0.678288996219635,
+      0.6516681611537933,
+      0.6772280335426331,
+      0.6808286905288696,
+      0.7744455337524414,
+      0.7635283172130585,
+      0.8014607727527618,
+      0.8119163513183594,
+      0.7980630993843079,
+      0.7770952582359314,
+      0.7850370854139328,
+      0.7768884152173996,
+      0.7649369686841965,
+      0.7090197205543518,
+      0.8070401251316071,
+      0.8385498076677322,
+      0.8373394012451172,
+      0.7927432656288147,
+      0.7818269580602646,
+      0.7347705662250519,
+      0.7325204014778137,
+      0.7371655404567719,
+      0.7340773046016693,
+      0.712641179561615,
+      0.6989237666130066,
+      0.7056524455547333,
+      0.7031509876251221,
+      0.7137618362903595,
+      0.7231970727443695
+    ]
+  }
+}

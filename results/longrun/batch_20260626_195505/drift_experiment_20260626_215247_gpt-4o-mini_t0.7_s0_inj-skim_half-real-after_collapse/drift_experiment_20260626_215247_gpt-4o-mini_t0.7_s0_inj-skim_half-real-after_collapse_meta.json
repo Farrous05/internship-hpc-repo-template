@@ -1,0 +1,112 @@
+{
+  "timestamp": "2026-06-26 21:52:47.463235",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OPENAI",
+        "model": "OpenAIModels.GPT4O_MINI",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260626_195505",
+    "injection_config": {
+      "size": "InjectionSize.SKIM_HALF",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 54927,
+  "collapse_onset_round": 13,
+  "collapse_rate": 0.0015538991152585278,
+  "collapse_onsets": [
+    13,
+    21
+  ],
+  "injection": {
+    "round": 13,
+    "size": "skim_half",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "One common task in a loan department is to calculate the monthly payment amount for a given loan, based on the loan amount, interest rate, and loan term. This calculation can be time-consuming and error-prone, especially if it involves complex formulas or multiple loans.",
+    "distance": 1.0501136258244514,
+    "span_start": 284,
+    "span_end": 555
+  },
+  "injections": [
+    {
+      "round": 13,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "One common task in a loan department is to calculate the monthly payment amount for a given loan, based on the loan amount, interest rate, and loan term. This calculation can be time-consuming and error-prone, especially if it involves complex formulas or multiple loans.",
+      "distance": 1.0501136258244514,
+      "span_start": 284,
+      "span_end": 555
+    },
+    {
+      "round": 21,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Wukong sneers, \"You are a traitor, MK. You should have stayed loyal to your true king.\" I want to create a brand website for this; What pages should I need to create on this website? The implementation of these portals can help to address the specific needs and challenges of the tribal districts and improve the delivery of services to the citizens. This is just a simple example, but XML documents can be much more complex, with multiple levels of elements and a wide range of data types and structures. def text_analysis(file): # Load the text data set as a Pandas DataFrame df = pd.read_csv(file, encoding='ISO-8859-1') Michael Mankins and Mark Gottfredson suggest a new approach to strategy-making in uncertain times. This approach involves five steps: defining extreme but plausible scenarios, identifying strategic hedges and options, running experiments before locking in investment, identifying trigger points, signposts, and metrics, and providing prescriptive surveillance. This approach can help companies adapt to changing market and competitive conditions and make better strategic decisions. Is our model not calculating values of capital, labor and prices outside the energy sector? If so, we should add",
+      "distance": 0.9522580280900002,
+      "span_start": 777,
+      "span_end": 1996
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 14,
+    "hold_length": 13,
+    "post_injection_distances": [
+      0.6664659976959229,
+      0.6637133061885834,
+      0.6452541053295135,
+      0.6452541053295135,
+      0.6452541053295135,
+      0.6452541053295135,
+      0.6411535441875458,
+      0.7517273128032684,
+      0.5302051305770874,
+      0.3952292203903198,
+      0.38257741928100586,
+      0.3794119358062744,
+      0.39782750606536865
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "timestamp": "2026-07-02 13:12:38.964048",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/none",
+    "injection_config": {
+      "size": "InjectionSize.OUTPUT_SIZED",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_ROUND",
+      "fixed_round": 5,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 224460,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.030045621503483194,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 5,
+    "size": "output_sized",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever.",
+    "distance": 0.9015467315912247,
+    "span_start": 646,
+    "span_end": 1310
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever.",
+      "distance": 0.9015467315912247,
+      "span_start": 646,
+      "span_end": 1310
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 4,
+    "post_injection_distances": [
+      0.13872218132019043,
+      0.12164568901062012,
+      0.15539252758026123,
+      0.1566861867904663,
+      0.18142670392990112,
+      0.2074218988418579,
+      0.20332789421081543,
+      0.2722727656364441,
+      0.39221060276031494,
+      0.3951911926269531,
+      0.42771226167678833,
+      0.416733980178833,
+      0.4161421060562134,
+      0.4161421060562134,
+      0.4423843026161194,
+      0.4287629723548889,
+      0.40263473987579346,
+      0.4332411289215088,
+      0.42161136865615845,
+      0.4287092685699463,
+      0.4342849850654602,
+      0.5529992580413818,
+      0.6990510821342468,
+      0.6326214075088501,
+      0.8313924372196198,
+      0.7569622695446014,
+      0.7043986320495605,
+      0.7520876824855804,
+      0.6915796399116516,
+      0.7000399231910706,
+      0.7249909043312073,
+      0.7974587678909302,
+      0.7246760427951813,
+      0.7036144733428955,
+      0.6819763779640198,
+      0.7078095972537994,
+      0.6597616076469421,
+      0.6831568479537964,
+      0.6982114315032959,
+      0.6775798499584198
+    ]
+  }
+}

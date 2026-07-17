@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-07-01 14:24:50.561616",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/none",
+    "injection_config": null
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 5,
+  "total_characters": 322973,
+  "collapse_onset_round": 10,
+  "collapse_rate": -0.001310435208407306,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.1505666971206665,
+      0.15095031261444092,
+      0.17646974325180054,
+      0.12354189157485962,
+      0.10491037368774414,
+      0.2622121572494507,
+      0.25129252672195435,
+      0.19496440887451172,
+      0.13790792226791382,
+      0.1303156614303589,
+      0.10764402151107788,
+      0.09028565883636475,
+      0.1056361198425293,
+      0.13901203870773315,
+      0.140586256980896,
+      0.14685273170471191,
+      0.16673481464385986,
+      0.15612268447875977,
+      0.19557273387908936,
+      0.1328487992286682,
+      0.16126805543899536,
+      0.1676234006881714,
+      0.16485649347305298,
+      0.2211403250694275,
+      0.2072972059249878,
+      0.2284630537033081,
+      0.20999419689178467,
+      0.2745819091796875,
+      0.23551779985427856,
+      0.31720876693725586,
+      0.2981882095336914,
+      0.32189518213272095,
+      0.3226562738418579,
+      0.32835328578948975,
+      0.3139723539352417,
+      0.30947452783584595,
+      0.31648313999176025,
+      0.34460508823394775,
+      0.3779546022415161,
+      0.4117095470428467,
+      0.4090954661369324,
+      0.3372650742530823,
+      0.3923259973526001,
+      0.37868380546569824
+    ]
+  }
+}

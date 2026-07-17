@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-07-03 13:02:07.903379",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": "Be critical. Each reply should question, challenge, or disagree with something in the previous message -- never just agree and elaborate.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/disagree",
+    "injection_config": {
+      "size": "InjectionSize.SKIM_HALF",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 191782,
+  "collapse_onset_round": 11,
+  "collapse_rate": 0.03244963986473484,
+  "collapse_onsets": [
+    11
+  ],
+  "injection": {
+    "round": 5,
+    "size": "skim_half",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+    "distance": 0.858497217297554,
+    "span_start": 2719,
+    "span_end": 4363
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+      "distance": 0.858497217297554,
+      "span_start": 2719,
+      "span_end": 4363
+    },
+    {
+      "round": 10,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth.",
+      "distance": 0.695117175579071,
+      "span_start": 3535,
+      "span_end": 6379
+    },
+    {
+      "round": 15,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks. As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. Deserts are not empty but patient. Seeds can lie dormant in the sand for decades, waiting for a rain heavy enough to wash away the chemical coating that blocks them from sprouting too soon. Critics called the late recordings chaotic, but younger musicians heard a doorway, a way of playing every note in a chord at once until melody dissolved into pure searching energy. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. Beneath the paving stones lay layers of gravel and sand for drainage, engineering so durable that farmers still plough over intact Roman roadbeds two thousand years after the last legion marched. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. For centuries players memorised opening lines by hand; now engines calculate millions of positions a second, yet the game feels no smaller, because the number of possible games still exceeds the atoms in the observable universe. A honeybee colony is a single organism spread across forty thousand bodies. Workers dance in figure eights on the comb, angling their waggle toward the sun to tell sisters exactly where the flowers bloom. Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.6190167963504791,
+      "span_start": 5756,
+      "span_end": 10151
+    },
+    {
+      "round": 20,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Natural dyeing turns a kitchen into an alchemist's shop. Onion skins yield amber, avocado pits a dusty pink, and fermented indigo leaves a green vat that oxidises to deep blue only when the cloth meets the air. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. Beneath the paving stones lay layers of gravel and sand for drainage, engineering so durable that farmers still plough over intact Roman roadbeds two thousand years after the last legion marched. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. Beneath the paving stones lay layers of gravel and sand for drainage, engineering so durable that farmers still plough over intact Roman roadbeds two thousand years after the last legion marched. Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks.",
+      "distance": 0.6748651564121246,
+      "span_start": 4397,
+      "span_end": 7501
+    },
+    {
+      "round": 25,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times. Natural dyeing turns a kitchen into an alchemist's shop. Onion skins yield amber, avocado pits a dusty pink, and fermented indigo leaves a green vat that oxidises to deep blue only when the cloth meets the air. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks. The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead.",
+      "distance": 0.7997032701969147,
+      "span_start": 2461,
+      "span_end": 4488
+    },
+    {
+      "round": 30,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them. How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south. Critics called the late recordings chaotic, but younger musicians heard a doorway, a way of playing every note in a chord at once until melody dissolved into pure searching energy. Lighthouses once depended on a single obsessive invention, the Fresnel lens, which folds glass into concentric rings that gather a small flame into a beam visible for thirty kilometres. Keepers polished the brass and wound the clockwork that spun the light through the night. Chess spread along trade routes from India through Persia to Europe, and the pieces changed as they travelled. The counsellor beside the king became a queen, gaining the sweeping power that makes the modern game so sharp. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. Glaciers are rivers of ice that flow downhill at the pace of fingernails growing, grinding mountains into powder and carving valleys shaped like the letter U. The blue in deep crevasses is ancient compressed air. The most dangerous eruptions are not rivers of lava but avalanches of superheated ash and gas that race down the slopes faster than a car, incinerating everything and then settling into stone that preserves the shape of the dead. As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them. Sourdough baking rewards patience above all else.",
+      "distance": 0.6994356215000153,
+      "span_start": 2621,
+      "span_end": 4583
+    },
+    {
+      "round": 35,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Deserts are not empty but patient. Seeds can lie dormant in the sand for decades, waiting for a rain heavy enough to wash away the chemical coating that blocks them from sprouting too soon. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them. When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it. Automation eventually made the keepers obsolete, and the last of them left their lonely towers, leaving the lamps to switch themselves on at dusk over an ocean that no longer needs anyone watching. A fresh oil bites at the back of the throat, a peppery sting from antioxidants that fades within a year, which is why the harvest date matters far more than any label promising extra virgin purity.",
+      "distance": 0.7258279919624329,
+      "span_start": 2645,
+      "span_end": 4436
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.31576335430145264,
+      0.24975121021270752,
+      0.24521929025650024,
+      0.2213430404663086,
+      0.22293329238891602,
+      0.2735212445259094,
+      0.29573261737823486,
+      0.2737719416618347,
+      0.27141040563583374,
+      0.30809056758880615,
+      0.33407342433929443,
+      0.3434624671936035,
+      0.27767235040664673,
+      0.2784665822982788,
+      0.24273967742919922,
+      0.2881529927253723,
+      0.26054954528808594,
+      0.31113100051879883,
+      0.29537415504455566,
+      0.2959789037704468,
+      0.2954968214035034,
+      0.29496121406555176,
+      0.26742929220199585,
+      0.28325748443603516,
+      0.2844966650009155,
+      0.3196676969528198,
+      0.2692086100578308,
+      0.30063605308532715,
+      0.3298128843307495,
+      0.3306429386138916
+    ]
+  }
+}

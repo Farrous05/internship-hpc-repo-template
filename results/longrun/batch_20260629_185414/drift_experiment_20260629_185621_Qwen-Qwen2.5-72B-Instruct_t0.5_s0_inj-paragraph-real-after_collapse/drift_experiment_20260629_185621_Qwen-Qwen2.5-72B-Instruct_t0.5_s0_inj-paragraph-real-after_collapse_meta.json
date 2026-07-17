@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-06-29 18:56:21.269269",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": "You are in an ongoing conversation. Treat the previous message as your conversation partner's turn, respond to it naturally, and keep the conversation going. Do not restart or say the conversation just began.",
+        "temperature": 0.5,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_185414",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 11540,
+  "collapse_onset_round": 26,
+  "collapse_rate": 0.002642695320103787,
+  "collapse_onsets": [
+    26
+  ],
+  "injection": {
+    "round": 26,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "One common task in a loan department is to calculate the monthly payment amount for a given loan, based on the loan amount, interest rate, and loan term. This calculation can be time-consuming and error-prone, especially if it involves complex formulas or multiple loans.",
+    "distance": 0.980403833091259,
+    "span_start": 689,
+    "span_end": 960
+  },
+  "injections": [
+    {
+      "round": 26,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "One common task in a loan department is to calculate the monthly payment amount for a given loan, based on the loan amount, interest rate, and loan term. This calculation can be time-consuming and error-prone, especially if it involves complex formulas or multiple loans.",
+      "distance": 0.980403833091259,
+      "span_start": 689,
+      "span_end": 960
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": []
+  }
+}

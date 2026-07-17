@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-06-29 14:41:00.357467",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "You are in an ongoing conversation. Treat the previous message as your conversation partner's turn, respond to it naturally, and keep the conversation going. Do not restart or say the conversation just began.",
+        "temperature": 0.5,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_143102",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 3,
+  "total_characters": 140192,
+  "collapse_onset_round": 22,
+  "collapse_rate": 0.004903583305155333,
+  "collapse_onsets": [
+    22,
+    45,
+    55
+  ],
+  "injection": {
+    "round": 22,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "One common task in a loan department is to calculate the monthly payment amount for a given loan, based on the loan amount, interest rate, and loan term. This calculation can be time-consuming and error-prone, especially if it involves complex formulas or multiple loans.",
+    "distance": 1.076583981513977,
+    "span_start": 3105,
+    "span_end": 3376
+  },
+  "injections": [
+    {
+      "round": 22,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "One common task in a loan department is to calculate the monthly payment amount for a given loan, based on the loan amount, interest rate, and loan term. This calculation can be time-consuming and error-prone, especially if it involves complex formulas or multiple loans.",
+      "distance": 1.076583981513977,
+      "span_start": 3105,
+      "span_end": 3376
+    },
+    {
+      "round": 45,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Wukong sneers, \"You are a traitor, MK. You should have stayed loyal to your true king.\".",
+      "distance": 1.1191259622573853,
+      "span_start": 3902,
+      "span_end": 3990
+    },
+    {
+      "round": 55,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "This is just a simple example, but XML documents can be much more complex, with multiple levels of elements and a wide range of data types and structures.",
+      "distance": 0.9957903157919645,
+      "span_start": 2365,
+      "span_end": 2519
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 23,
+    "hold_length": 34,
+    "post_injection_distances": [
+      0.6628580987453461,
+      0.7104257941246033,
+      0.3491552472114563,
+      0.8409793227910995,
+      0.30329811573028564,
+      0.7017770409584045,
+      0.809757798910141,
+      0.7677963674068451,
+      0.7959574311971664,
+      0.7979714870452881,
+      0.9315051510930061,
+      0.9070103913545609,
+      0.825335830450058,
+      0.8808365613222122,
+      0.8675742745399475,
+      0.8958283811807632,
+      0.8064241260290146,
+      0.7825781404972076,
+      0.8571000546216965,
+      0.8108890652656555,
+      0.8235467672348022,
+      0.8195471465587616,
+      0.8141451478004456,
+      0.8335888385772705,
+      0.8359522372484207,
+      0.8788372427225113,
+      0.8018220365047455,
+      0.8465297222137451,
+      0.8316043466329575,
+      0.8725661635398865,
+      0.8149012178182602,
+      0.7539296299219131,
+      0.7880764752626419,
+      0.7851997166872025
+    ]
+  }
+}

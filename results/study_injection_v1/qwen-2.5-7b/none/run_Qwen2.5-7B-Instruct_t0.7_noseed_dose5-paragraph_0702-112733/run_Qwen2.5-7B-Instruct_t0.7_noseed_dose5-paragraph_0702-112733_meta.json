@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-07-02 11:27:33.356528",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 268757,
+  "collapse_onset_round": 26,
+  "collapse_rate": 0.0055476961229838015,
+  "collapse_onsets": [
+    26
+  ],
+  "injection": {
+    "round": 5,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it.",
+    "distance": 0.9693979937583208,
+    "span_start": 4793,
+    "span_end": 5001
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it.",
+      "distance": 0.9693979937583208,
+      "span_start": 4793,
+      "span_end": 5001
+    },
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.9694128334522247,
+      "span_start": 9025,
+      "span_end": 9224
+    },
+    {
+      "round": 15,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks.",
+      "distance": 0.9327559545636177,
+      "span_start": 3195,
+      "span_end": 3387
+    },
+    {
+      "round": 20,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth.",
+      "distance": 0.8922368660569191,
+      "span_start": 5899,
+      "span_end": 6085
+    },
+    {
+      "round": 25,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.936962679028511,
+      "span_start": 8542,
+      "span_end": 8741
+    },
+    {
+      "round": 30,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Romans built roads so straight they seem to ignore the landscape entirely, cutting through hills rather than bending around them. Surveyors sighted along smoking poles to hold a true line for miles.",
+      "distance": 0.9687165394425392,
+      "span_start": 11072,
+      "span_end": 11274
+    },
+    {
+      "round": 35,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.8923275023698807,
+      "span_start": 4072,
+      "span_end": 4262
+    },
+    {
+      "round": 40,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "A volcano is a pressure valve for a planet still cooling from its birth. Magma rises because it is lighter than the surrounding rock, gathering in chambers until gas bubbles force it upward through cracks.",
+      "distance": 0.9150559157133102,
+      "span_start": 10760,
+      "span_end": 10965
+    },
+    {
+      "round": 45,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Chess spread along trade routes from India through Persia to Europe, and the pieces changed as they travelled. The counsellor beside the king became a queen, gaining the sweeping power that makes the modern game so sharp.",
+      "distance": 0.8961319178342819,
+      "span_start": 6618,
+      "span_end": 6839
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 3,
+    "post_injection_distances": [
+      0.5511786043643951,
+      0.3199479579925537,
+      0.24936282634735107,
+      0.26685869693756104,
+      0.2649468183517456,
+      0.804453656077385,
+      0.7068536281585693,
+      0.6483508944511414,
+      0.6261545419692993,
+      0.593086451292038,
+      0.7699943333864212,
+      0.7045004367828369,
+      0.6776077449321747,
+      0.6556673049926758,
+      0.6613191366195679,
+      0.8085527569055557,
+      0.7893582731485367,
+      0.7071061730384827,
+      0.7118774652481079,
+      0.708191454410553,
+      0.7343787848949432,
+      0.7590526044368744,
+      0.7602909207344055,
+      0.7755636721849442,
+      0.7779031991958618,
+      0.8517124503850937,
+      0.7941022515296936,
+      0.8068990111351013,
+      0.8392287492752075,
+      0.7585565894842148,
+      0.7305566668510437,
+      0.6935675144195557,
+      0.7133385539054871,
+      0.712018609046936,
+      0.6687468588352203,
+      0.6914675533771515,
+      0.6876383423805237,
+      0.713129311800003,
+      0.676527351140976,
+      0.6922228336334229
+    ]
+  }
+}

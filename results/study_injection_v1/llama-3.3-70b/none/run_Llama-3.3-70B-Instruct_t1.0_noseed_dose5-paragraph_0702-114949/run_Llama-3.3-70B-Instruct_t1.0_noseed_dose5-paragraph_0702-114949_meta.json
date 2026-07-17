@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-07-02 11:49:49.992043",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 1.0,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_INTERVAL",
+      "fixed_round": null,
+      "interval": 5,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 109952,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.01389713666655804,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 5,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+    "distance": 0.9568633995950222,
+    "span_start": 2096,
+    "span_end": 2286
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9568633995950222,
+      "span_start": 2096,
+      "span_end": 2286
+    },
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+      "distance": 0.967699222266674,
+      "span_start": 2312,
+      "span_end": 2519
+    },
+    {
+      "round": 15,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull.",
+      "distance": 0.9378887787461281,
+      "span_start": 1230,
+      "span_end": 1429
+    },
+    {
+      "round": 20,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Above five thousand metres the air holds half the oxygen it does at sea level, and the body begins to consume its own muscle to survive. Climbers move slowly, breathing four times for every step.",
+      "distance": 0.9381029829382896,
+      "span_start": 819,
+      "span_end": 1014
+    },
+    {
+      "round": 25,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+      "distance": 0.9554979503154755,
+      "span_start": 3346,
+      "span_end": 3553
+    },
+    {
+      "round": 30,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres. Over a lifetime it travels far enough to reach the moon and back three times.",
+      "distance": 0.9638318680226803,
+      "span_start": 1697,
+      "span_end": 1904
+    },
+    {
+      "round": 35,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.933804988861084,
+      "span_start": 4241,
+      "span_end": 4431
+    },
+    {
+      "round": 40,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Coral reefs are built by tiny animals called polyps that secrete limestone skeletons over thousands of years. Each polyp hosts symbiotic algae that photosynthesize and give the reef its vivid colour.",
+      "distance": 0.9328450262546539,
+      "span_start": 2448,
+      "span_end": 2647
+    },
+    {
+      "round": 45,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Sourdough baking rewards patience above all else. A wild-yeast starter is a living culture of flour and water that you feed daily until it doubles reliably, smelling of ripe apples and yogurt.",
+      "distance": 0.949481263756752,
+      "span_start": 2067,
+      "span_end": 2259
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 4,
+    "post_injection_distances": [
+      0.07701325416564941,
+      0.05458003282546997,
+      0.032283663749694824,
+      0.03989279270172119,
+      0.049759089946746826,
+      0.09599614143371582,
+      0.45405101776123047,
+      0.42379438877105713,
+      0.32515162229537964,
+      0.3867616653442383,
+      0.3453786373138428,
+      0.35103654861450195,
+      0.26522332429885864,
+      0.28679800033569336,
+      0.38104546070098877,
+      0.42894482612609863,
+      0.36285698413848877,
+      0.4023935794830322,
+      0.35551154613494873,
+      0.306429922580719,
+      0.2623170018196106,
+      0.2857797145843506,
+      0.2747514247894287,
+      0.2996482849121094,
+      0.360315203666687,
+      0.5246536135673523,
+      0.6841570734977722,
+      0.5030924677848816,
+      0.42355358600616455,
+      0.2871568202972412,
+      0.35785388946533203,
+      0.3396414518356323,
+      0.3785538077354431,
+      0.3786271810531616,
+      0.40458106994628906,
+      0.6023865342140198,
+      0.7259531915187836,
+      0.7622480988502502,
+      0.8160785734653473,
+      0.8038781583309174
+    ]
+  }
+}

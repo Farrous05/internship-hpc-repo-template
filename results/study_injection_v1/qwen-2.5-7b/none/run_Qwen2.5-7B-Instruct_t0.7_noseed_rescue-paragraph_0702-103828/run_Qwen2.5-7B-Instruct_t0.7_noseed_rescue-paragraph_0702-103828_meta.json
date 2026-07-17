@@ -1,0 +1,122 @@
+{
+  "timestamp": "2026-07-02 10:38:28.302086",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 379934,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.028330088203603575,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 10,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+    "distance": 0.9416477829217911,
+    "span_start": 9801,
+    "span_end": 9991
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9416477829217911,
+      "span_start": 9801,
+      "span_end": 9991
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.17566567659378052,
+      0.15713858604431152,
+      0.09947484731674194,
+      0.13492971658706665,
+      0.165166974067688,
+      0.09272253513336182,
+      0.10836684703826904,
+      0.1514683961868286,
+      0.17077600955963135,
+      0.11358386278152466,
+      0.18370890617370605,
+      0.2235490083694458,
+      0.27394169569015503,
+      0.270734965801239,
+      0.2939671277999878,
+      0.28753507137298584,
+      0.27801942825317383,
+      0.25977766513824463,
+      0.2655676603317261,
+      0.27186405658721924,
+      0.26931118965148926,
+      0.26209890842437744,
+      0.2744106650352478,
+      0.2328435778617859,
+      0.27109020948410034,
+      0.27409517765045166,
+      0.27906930446624756,
+      0.29698634147644043,
+      0.3126524090766907,
+      0.28300583362579346,
+      0.2903470993041992,
+      0.30391252040863037,
+      0.30884695053100586,
+      0.28606104850769043,
+      0.28412580490112305
+    ]
+  }
+}

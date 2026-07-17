@@ -1,0 +1,122 @@
+{
+  "timestamp": "2026-07-02 10:38:28.331618",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 258840,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.022807479446584546,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 10,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south.",
+    "distance": 0.9347615838050842,
+    "span_start": 6299,
+    "span_end": 6496
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "How the birds navigate remains partly mysterious, but they seem to read the earth's magnetic field, the angle of polarised light, and star patterns they memorise before their first migration south.",
+      "distance": 0.9347615838050842,
+      "span_start": 6299,
+      "span_end": 6496
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.46975886821746826,
+      0.4374812841415405,
+      0.4425349235534668,
+      0.4797850251197815,
+      0.5095908641815186,
+      0.4404991865158081,
+      0.19693195819854736,
+      0.13672029972076416,
+      0.21448886394500732,
+      0.1988391876220703,
+      0.17666685581207275,
+      0.16434574127197266,
+      0.11122375726699829,
+      0.14723843336105347,
+      0.14442330598831177,
+      0.11775863170623779,
+      0.11711430549621582,
+      0.13192760944366455,
+      0.13161301612854004,
+      0.13161301612854004,
+      0.1311866044998169,
+      0.13070565462112427,
+      0.16077864170074463,
+      0.15625500679016113,
+      0.1270279884338379,
+      0.11370152235031128,
+      0.13193684816360474,
+      0.13030964136123657,
+      0.11131560802459717,
+      0.14838635921478271,
+      0.14567089080810547,
+      0.14878904819488525,
+      0.18449270725250244,
+      0.18703442811965942,
+      0.15583252906799316
+    ]
+  }
+}

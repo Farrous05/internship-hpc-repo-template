@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-07-01 14:24:50.531101",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 5,
+  "total_characters": 361379,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.0059869403188879,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 10,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it.",
+    "distance": 0.93570127338171,
+    "span_start": 8454,
+    "span_end": 8662
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "When you finally mix the dough, long cold fermentation in the refrigerator develops flavour and strengthens the gluten, so the crumb opens into glossy, irregular holes and the crust shatters when you tear it.",
+      "distance": 0.93570127338171,
+      "span_start": 8454,
+      "span_end": 8662
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 1,
+    "post_injection_distances": [
+      0.7759164869785309,
+      0.657922625541687,
+      0.6434614658355713,
+      0.6329134702682495,
+      0.6437413692474365,
+      0.6138902902603149,
+      0.5982984304428101,
+      0.6084205210208893,
+      0.5993235111236572,
+      0.6013007164001465,
+      0.6033470928668976,
+      0.6037680804729462,
+      0.6211932301521301,
+      0.5879641771316528,
+      0.6120346784591675,
+      0.5921821892261505,
+      0.6048628985881805,
+      0.594181090593338,
+      0.6080479025840759,
+      0.5818662047386169,
+      0.592724621295929,
+      0.5665028691291809,
+      0.5860170722007751,
+      0.5671937465667725,
+      0.5813809633255005,
+      0.5745928883552551,
+      0.5743116736412048,
+      0.5849539041519165,
+      0.5849539041519165,
+      0.5845533609390259,
+      0.5836597084999084,
+      0.6184914708137512,
+      0.5706525444984436,
+      0.5974015593528748,
+      0.598241925239563,
+      0.5837007761001587,
+      0.5677739083766937,
+      0.6090685129165649,
+      0.5888539552688599,
+      0.6010959148406982,
+      0.5906035900115967,
+      0.5879086852073669,
+      0.5988931655883789,
+      0.5925014317035675
+    ]
+  }
+}

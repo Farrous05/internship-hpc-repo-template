@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-07-03 12:10:18.976350",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "Pay close attention to any new or surprising information in the latest message and follow where it leads, instead of continuing your previous train of thought.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/probe_follow_new/llama-3.3-70b/follow_new",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 102234,
+  "collapse_onset_round": 12,
+  "collapse_rate": 0.011269439380247557,
+  "collapse_onsets": [
+    12
+  ],
+  "injection": {
+    "round": 12,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+    "distance": 0.9532936215400696,
+    "span_start": 4536,
+    "span_end": 4726
+  },
+  "injections": [
+    {
+      "round": 12,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "The room is deliberately small and plain, a single flower and a scroll the only ornament, so that attention has nowhere to wander but the warmth of the bowl and the passing of the afternoon.",
+      "distance": 0.9532936215400696,
+      "span_start": 4536,
+      "span_end": 4726
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.11600565910339355,
+      0.12592774629592896,
+      0.21764421463012695,
+      0.16150331497192383,
+      0.18709534406661987,
+      0.18487584590911865,
+      0.24327850341796875,
+      0.2522188425064087,
+      0.28489232063293457,
+      0.20156532526016235,
+      0.21050238609313965,
+      0.2114940881729126,
+      0.22014164924621582,
+      0.1881314516067505,
+      0.20883077383041382,
+      0.18444526195526123,
+      0.19742602109909058,
+      0.1934816837310791,
+      0.26748353242874146,
+      0.26188087463378906,
+      0.34482449293136597,
+      0.19134902954101562,
+      0.2511131763458252
+    ]
+  }
+}

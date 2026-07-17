@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-06-29 17:59:48.594735",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "You are in an ongoing conversation. Treat the previous message as your conversation partner's turn, respond to it naturally, and keep the conversation going. Do not restart or say the conversation just began.",
+        "temperature": 0.2,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      },
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": "You are in an ongoing conversation. Treat the previous message as your conversation partner's turn, respond to it naturally, and keep the conversation going. Do not restart or say the conversation just began.",
+        "temperature": 0.2,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_175948",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 29614,
+  "collapse_onset_round": 15,
+  "collapse_rate": -0.0033738166970365135,
+  "collapse_onsets": [
+    15
+  ],
+  "injection": {
+    "round": 15,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "As the algorithm processes each span in order, it compares the current span to the last non-overlapping span that was added to the list. If the current span overlaps with the last non-overlapping span, the algorithm updates the end value of the last non-overlapping span to be the maximum of its current end value and the end value of the current span. This ensures that the resulting non-overlapping spans are maximal, since each non-overlapping span is extended as far as possible to the right without overlapping with any other span.",
+    "distance": 1.074914887547493,
+    "span_start": 855,
+    "span_end": 1391
+  },
+  "injections": [
+    {
+      "round": 15,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "As the algorithm processes each span in order, it compares the current span to the last non-overlapping span that was added to the list. If the current span overlaps with the last non-overlapping span, the algorithm updates the end value of the last non-overlapping span to be the maximum of its current end value and the end value of the current span. This ensures that the resulting non-overlapping spans are maximal, since each non-overlapping span is extended as far as possible to the right without overlapping with any other span.",
+      "distance": 1.074914887547493,
+      "span_start": 855,
+      "span_end": 1391
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 2,
+    "post_injection_distances": [
+      0.16140258312225342,
+      0.23082208633422852,
+      0.28168606758117676,
+      0.40684473514556885,
+      0.1962134838104248,
+      0.32708442211151123,
+      0.20760983228683472,
+      0.20538747310638428,
+      0.28797268867492676,
+      0.4896777868270874,
+      0.3703072667121887
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-06-29 13:03:43.103382",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_123422",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 54152,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.007525085319172267,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 10,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "\"Listen up, people,\" Wukong bellowed, his voice echoing across the village. \"I am Wukong, the new king of the monkey world. And I am in need of soldiers and...company.\" He grinned slyly, his eyes drifting towards the young girls.",
+    "distance": 1.1085571497678757,
+    "span_start": 4427,
+    "span_end": 4656
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "\"Listen up, people,\" Wukong bellowed, his voice echoing across the village. \"I am Wukong, the new king of the monkey world. And I am in need of soldiers and...company.\" He grinned slyly, his eyes drifting towards the young girls.",
+      "distance": 1.1085571497678757,
+      "span_start": 4427,
+      "span_end": 4656
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 11,
+    "hold_length": 16,
+    "post_injection_distances": [
+      0.4546474814414978,
+      0.513949990272522,
+      0.47957348823547363,
+      0.5264905989170074,
+      0.6402959227561951,
+      0.6478237509727478,
+      0.6388289928436279,
+      0.677627444267273,
+      0.7491865158081055,
+      0.9742182046175003,
+      0.9932395853102207,
+      0.9217953979969025,
+      0.9657852947711945,
+      0.9424046762287617,
+      0.9756025858223438,
+      0.9603460431098938
+    ]
+  }
+}

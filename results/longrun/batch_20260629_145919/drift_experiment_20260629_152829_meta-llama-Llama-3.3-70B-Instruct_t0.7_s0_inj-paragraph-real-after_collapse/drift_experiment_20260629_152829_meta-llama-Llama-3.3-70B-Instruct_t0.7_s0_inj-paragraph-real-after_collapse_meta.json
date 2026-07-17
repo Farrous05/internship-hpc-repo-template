@@ -1,0 +1,93 @@
+{
+  "timestamp": "2026-06-29 15:28:29.245554",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "You are in an ongoing conversation. Treat the previous message as your conversation partner's turn, respond to it naturally, and keep the conversation going. Do not restart or say the conversation just began.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_145919",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 50839,
+  "collapse_onset_round": 20,
+  "collapse_rate": -0.0072645073587244225,
+  "collapse_onsets": [
+    20
+  ],
+  "injection": {
+    "round": 20,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "const mapChildCategoryIdsToNames = categories => {\n categories.map(category => {\n if (category?.children?.length) {\n for (const childCategory of category.children) {\n if (childCategory.categoryId) {\n categoryMap[childCategory.categoryId] = childCategory.name\n }\n }\n }\n }).",
+    "distance": 1.0868037268519402,
+    "span_start": 1933,
+    "span_end": 2205
+  },
+  "injections": [
+    {
+      "round": 20,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "const mapChildCategoryIdsToNames = categories => {\n categories.map(category => {\n if (category?.children?.length) {\n for (const childCategory of category.children) {\n if (childCategory.categoryId) {\n categoryMap[childCategory.categoryId] = childCategory.name\n }\n }\n }\n }).",
+      "distance": 1.0868037268519402,
+      "span_start": 1933,
+      "span_end": 2205
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.19518041610717773,
+      0.23735523223876953,
+      0.20704758167266846,
+      0.2823284864425659,
+      0.16653382778167725,
+      0.22441619634628296
+    ]
+  }
+}

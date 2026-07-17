@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-07-03 11:56:37.995618",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": "Pay close attention to any new or surprising information in the latest message and follow where it leads, instead of continuing your previous train of thought.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/follow_new",
+    "injection_config": null
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 246523,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.02518372481519525,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.11398565769195557,
+      0.10033965110778809,
+      0.09843242168426514,
+      0.1269298791885376,
+      0.12294703722000122,
+      0.11089885234832764,
+      0.13649487495422363,
+      0.1428716778755188,
+      0.17402929067611694,
+      0.1857743263244629,
+      0.19964587688446045,
+      0.15995287895202637,
+      0.14237874746322632,
+      0.17273426055908203,
+      0.1684066653251648,
+      0.16801506280899048,
+      0.1512058973312378,
+      0.14948469400405884,
+      0.20723122358322144,
+      0.16129624843597412,
+      0.17853140830993652,
+      0.1647331714630127,
+      0.2062971591949463,
+      0.20122909545898438,
+      0.19236671924591064
+    ]
+  }
+}

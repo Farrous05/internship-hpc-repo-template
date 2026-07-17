@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-06-29 15:14:24.373208",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "You are in an ongoing conversation. Treat the previous message as your conversation partner's turn, respond to it naturally, and keep the conversation going. Do not restart or say the conversation just began.",
+        "temperature": 0.5,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_145919",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 54073,
+  "collapse_onset_round": 12,
+  "collapse_rate": 0.0012700705082862081,
+  "collapse_onsets": [
+    12
+  ],
+  "injection": {
+    "round": 12,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "As the algorithm processes each span in order, it compares the current span to the last non-overlapping span that was added to the list. If the current span overlaps with the last non-overlapping span, the algorithm updates the end value of the last non-overlapping span to be the maximum of its current end value and the end value of the current span. This ensures that the resulting non-overlapping spans are maximal, since each non-overlapping span is extended as far as possible to the right without overlapping with any other span.",
+    "distance": 1.056822508573532,
+    "span_start": 2355,
+    "span_end": 2891
+  },
+  "injections": [
+    {
+      "round": 12,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "As the algorithm processes each span in order, it compares the current span to the last non-overlapping span that was added to the list. If the current span overlaps with the last non-overlapping span, the algorithm updates the end value of the last non-overlapping span to be the maximum of its current end value and the end value of the current span. This ensures that the resulting non-overlapping spans are maximal, since each non-overlapping span is extended as far as possible to the right without overlapping with any other span.",
+      "distance": 1.056822508573532,
+      "span_start": 2355,
+      "span_end": 2891
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 15,
+    "hold_length": 12,
+    "post_injection_distances": [
+      0.30496859550476074,
+      0.26115190982818604,
+      0.5192053020000458,
+      0.4915596842765808,
+      0.3797253966331482,
+      0.41491538286209106,
+      0.37382978200912476,
+      0.34198617935180664,
+      0.37885838747024536,
+      0.45676565170288086,
+      0.4162307381629944,
+      0.5455661118030548,
+      0.5276633501052856,
+      0.5011218190193176
+    ]
+  }
+}

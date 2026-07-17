@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-07-02 10:38:28.120537",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": null,
+        "temperature": 1.0,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/none",
+    "injection_config": null
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 286356,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.021813529729843174,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.031577110290527344,
+      0.039661288261413574,
+      0.03633183240890503,
+      0.04436081647872925,
+      0.0693291425704956,
+      0.04663360118865967,
+      0.14141499996185303,
+      0.12385052442550659,
+      0.18205702304840088,
+      0.12713515758514404,
+      0.14241182804107666,
+      0.13874506950378418,
+      0.1759374737739563,
+      0.1570124626159668,
+      0.1550620198249817,
+      0.16342514753341675,
+      0.16245818138122559,
+      0.17232882976531982,
+      0.22488582134246826,
+      0.25495874881744385,
+      0.28894054889678955,
+      0.33970922231674194,
+      0.31838858127593994,
+      0.30758631229400635,
+      0.30342864990234375,
+      0.2497265338897705,
+      0.2717640995979309,
+      0.2706924080848694,
+      0.24088990688323975,
+      0.24188363552093506,
+      0.2614091634750366,
+      0.2562498450279236,
+      0.27268463373184204,
+      0.23382925987243652,
+      0.22280746698379517
+    ]
+  }
+}

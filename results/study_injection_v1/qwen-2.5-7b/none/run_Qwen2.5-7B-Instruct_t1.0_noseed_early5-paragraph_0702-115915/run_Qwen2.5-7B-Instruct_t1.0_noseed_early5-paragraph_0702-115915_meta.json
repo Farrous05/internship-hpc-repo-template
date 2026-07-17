@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-07-02 11:59:15.174185",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": null,
+        "temperature": 1.0,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_ROUND",
+      "fixed_round": 2,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 311779,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.02874229604547675,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 2,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them.",
+    "distance": 0.997332320548594,
+    "span_start": 5557,
+    "span_end": 5745
+  },
+  "injections": [
+    {
+      "round": 2,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "As they retreat they leave behind moraines, long ridges of rubble that mark where the ice once ended, and meltwater lakes that glow a milky turquoise from the rock flour suspended in them.",
+      "distance": 0.997332320548594,
+      "span_start": 5557,
+      "span_end": 5745
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.4384588599205017,
+      0.27385783195495605,
+      0.33146393299102783,
+      0.1870829463005066,
+      0.18334722518920898,
+      0.2464832067489624,
+      0.2351473569869995,
+      0.2363647222518921,
+      0.21280252933502197,
+      0.387784481048584,
+      0.4658315181732178,
+      0.450606107711792,
+      0.43897557258605957,
+      0.4556151032447815,
+      0.4565761089324951,
+      0.44469285011291504,
+      0.4501481056213379,
+      0.4657094478607178,
+      0.4485440254211426,
+      0.45045191049575806,
+      0.4448429346084595,
+      0.4544762372970581,
+      0.44308972358703613,
+      0.4239741563796997,
+      0.4425448179244995,
+      0.4571338891983032,
+      0.431390643119812,
+      0.4384293556213379,
+      0.44825172424316406,
+      0.41200166940689087,
+      0.4142094850540161,
+      0.4444354772567749,
+      0.4492967128753662,
+      0.4531114101409912,
+      0.44288086891174316,
+      0.4272177219390869,
+      0.4202054738998413,
+      0.44778329133987427,
+      0.4437357783317566,
+      0.4879799485206604,
+      0.4560917615890503,
+      0.4323251247406006,
+      0.44010257720947266
+    ]
+  }
+}

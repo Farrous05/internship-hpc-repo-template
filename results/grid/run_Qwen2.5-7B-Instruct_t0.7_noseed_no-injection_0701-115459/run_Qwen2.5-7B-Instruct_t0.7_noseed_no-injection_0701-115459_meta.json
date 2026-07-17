@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-07-01 11:54:59.596536",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/grid",
+    "injection_config": null
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 5,
+  "total_characters": 269230,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.008874345367605094,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.05584287643432617,
+      0.03261607885360718,
+      0.033879876136779785,
+      0.038905560970306396,
+      0.035655081272125244,
+      0.031090855598449707,
+      0.03884625434875488,
+      0.03291398286819458,
+      0.03097355365753174,
+      0.06055796146392822,
+      0.038977086544036865,
+      0.06804358959197998,
+      0.054810523986816406,
+      0.08885467052459717,
+      0.046622514724731445,
+      0.06630849838256836,
+      0.06462258100509644,
+      0.09081411361694336,
+      0.05272018909454346,
+      0.03654921054840088,
+      0.0410614013671875,
+      0.059369444847106934,
+      0.04229539632797241,
+      0.09100621938705444
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-07-01 14:10:39.597562",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 20,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_smoke/qwen-2.5-7b/none",
+    "injection_config": null
+  },
+  "num_iterations_total": 20,
+  "num_fetcher_messages": 5,
+  "total_characters": 111467,
+  "collapse_onset_round": 10,
+  "collapse_rate": -0.005615598505193514,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.0772172212600708,
+      0.0737072229385376,
+      0.06706875562667847,
+      0.0683891773223877
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-07-03 12:16:34.237789",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": "You are an intensely curious conversationalist who loves tangents. Chase whatever is most interesting or unexpected in the last message, even if it means changing the subject.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/curious",
+    "injection_config": null
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 166829,
+  "collapse_onset_round": 21,
+  "collapse_rate": 0.011068509753850283,
+  "collapse_onsets": [
+    21
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.10897088050842285,
+      0.15415412187576294,
+      0.17862355709075928,
+      0.21242785453796387,
+      0.31600522994995117,
+      0.35579168796539307,
+      0.3232228755950928,
+      0.41648733615875244,
+      0.4242667555809021,
+      0.4191310405731201,
+      0.3978656530380249,
+      0.5092883706092834,
+      0.4274389147758484,
+      0.4455595016479492
+    ]
+  }
+}

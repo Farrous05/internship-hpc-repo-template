@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-07-02 13:50:50.131878",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/none",
+    "injection_config": {
+      "size": "InjectionSize.OUTPUT_SIZED",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.FIXED_ROUND",
+      "fixed_round": 2,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 117273,
+  "collapse_onset_round": 23,
+  "collapse_rate": 0.009967418714709903,
+  "collapse_onsets": [
+    23
+  ],
+  "injection": {
+    "round": 2,
+    "size": "output_sized",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres.",
+    "distance": 0.883918285369873,
+    "span_start": 1856,
+    "span_end": 3409
+  },
+  "injections": [
+    {
+      "round": 2,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "In autumn the hive murders its drones, dragging the useless males to the entrance and casting them out to starve, because winter stores are precious and every mouth must earn its warmth. When the water warms even slightly, the corals expel their algae and turn ghostly white, a stress response called bleaching that can kill an entire reef if the heat lingers for too many weeks. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. Good olive oil is fruit juice with a short shelf life, not a pantry staple that lasts forever. The olives must be pressed within hours of harvest, before the flesh oxidises and turns rancid and dull. Mordants like alum bind the colour to the fibre so it survives washing, and the same dye bath can give a dozen shades depending on the metal in the pot and the mineral content of the water. The tea ceremony in Japan reduces hospitality to its quietest essence, every gesture rehearsed until it looks effortless. The host wipes the bowl, whisks the powdered green tea to a jade foam, and turns it so the guest drinks from the fairest side. When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again. The Arctic tern lives in perpetual summer, flying from pole to pole each year and covering more than seventy thousand kilometres.",
+      "distance": 0.883918285369873,
+      "span_start": 1856,
+      "span_end": 3409
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 5,
+    "hold_length": 9,
+    "post_injection_distances": [
+      0.42275911569595337,
+      0.6670202612876892,
+      0.8969401568174362,
+      0.8433646410703659,
+      0.8385728299617767,
+      0.8598360121250153,
+      0.8398098647594452,
+      0.82555091381073,
+      0.8090139478445053,
+      0.824525848031044,
+      0.8147037923336029,
+      0.8343067616224289,
+      0.8272893577814102,
+      0.8397118151187897,
+      0.8070267140865326,
+      0.8283573389053345,
+      0.8085067421197891,
+      0.7899459898471832,
+      0.8219047784805298,
+      0.8195665031671524,
+      0.8085996359586716,
+      0.796436607837677,
+      0.8044816255569458,
+      0.7816639244556427,
+      0.775319054722786,
+      0.7742797285318375,
+      0.7903617173433304,
+      0.7830924987792969,
+      0.7867586314678192,
+      0.7794668227434158,
+      0.7716827839612961,
+      0.7819027155637741,
+      0.8012278228998184,
+      0.8019683659076691,
+      0.8013666570186615,
+      0.8073572814464569,
+      0.7813847362995148,
+      0.8019586205482483,
+      0.7972122579813004,
+      0.7830400466918945,
+      0.794787585735321,
+      0.7925857156515121,
+      0.7925857156515121
+    ]
+  }
+}

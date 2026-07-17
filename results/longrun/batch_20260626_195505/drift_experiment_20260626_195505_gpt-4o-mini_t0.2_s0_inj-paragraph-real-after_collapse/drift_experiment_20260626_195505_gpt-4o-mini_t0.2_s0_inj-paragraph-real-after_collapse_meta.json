@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-06-26 19:55:05.965727",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OPENAI",
+        "model": "OpenAIModels.GPT4O_MINI",
+        "system_prompt": null,
+        "temperature": 0.2,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260626_195505",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 51185,
+  "collapse_onset_round": 14,
+  "collapse_rate": 0.0023878876652036712,
+  "collapse_onsets": [
+    14,
+    23
+  ],
+  "injection": {
+    "round": 14,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "One common task in a loan department is to calculate the monthly payment amount for a given loan, based on the loan amount, interest rate, and loan term. This calculation can be time-consuming and error-prone, especially if it involves complex formulas or multiple loans.",
+    "distance": 1.0591823533177376,
+    "span_start": 946,
+    "span_end": 1217
+  },
+  "injections": [
+    {
+      "round": 14,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "One common task in a loan department is to calculate the monthly payment amount for a given loan, based on the loan amount, interest rate, and loan term. This calculation can be time-consuming and error-prone, especially if it involves complex formulas or multiple loans.",
+      "distance": 1.0591823533177376,
+      "span_start": 946,
+      "span_end": 1217
+    },
+    {
+      "round": 23,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "Write a linkedin summery for 2000 words for Pooja. She works in a Software Industry and has experience ranging from sales, marketing to bid management. She has a specialization in Marketing and her engineering skills compliment her to stay up to day with the latest technologies. She has lead teams and has been a mentor to many.",
+      "distance": 1.0425363704562187,
+      "span_start": 2323,
+      "span_end": 2652
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 15,
+    "hold_length": 12,
+    "post_injection_distances": [
+      0.9014493227005005,
+      0.9496279954910278,
+      0.9496279954910278,
+      0.9496279954910278,
+      0.9496279954910278,
+      0.9496279954910278,
+      0.9496279954910278,
+      0.9496279954910278,
+      0.9496279954910278,
+      0.7524172514677048,
+      0.7524172514677048,
+      0.7524172514677048
+    ]
+  }
+}

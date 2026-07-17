@@ -1,0 +1,122 @@
+{
+  "timestamp": "2026-07-02 10:59:45.534115",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 1.0,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 50,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/none",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/injection_diverse.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 50,
+  "num_fetcher_messages": 4,
+  "total_characters": 123135,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.004818169095299506,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 10,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again.",
+    "distance": 0.9432605393230915,
+    "span_start": 1927,
+    "span_end": 2141
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "When that rain finally comes, a valley can bloom overnight into a carpet of wildflowers, and the whole frantic cycle of pollination and seeding races to finish before the heat returns and the soil cracks dry again.",
+      "distance": 0.9432605393230915,
+      "span_start": 1927,
+      "span_end": 2141
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 13,
+    "hold_length": 9,
+    "post_injection_distances": [
+      0.10803723335266113,
+      0.38843345642089844,
+      0.8591065406799316,
+      0.7704699337482452,
+      0.764675036072731,
+      0.7538502812385559,
+      0.7629774361848831,
+      0.7858261317014694,
+      0.7495118677616119,
+      0.725177526473999,
+      0.7534455209970474,
+      0.7782977819442749,
+      0.748930037021637,
+      0.714106559753418,
+      0.7038495540618896,
+      0.7181491851806641,
+      0.704624593257904,
+      0.7317065000534058,
+      0.7131015658378601,
+      0.7021869421005249,
+      0.6954416036605835,
+      0.7051465511322021,
+      0.7242276668548584,
+      0.689662516117096,
+      0.672676295042038,
+      0.6840232312679291,
+      0.6852757632732391,
+      0.6907433271408081,
+      0.7023612260818481,
+      0.6375791728496552,
+      0.6308853626251221,
+      0.6415903568267822,
+      0.6723124980926514,
+      0.653632402420044,
+      0.7192080616950989
+    ]
+  }
+}

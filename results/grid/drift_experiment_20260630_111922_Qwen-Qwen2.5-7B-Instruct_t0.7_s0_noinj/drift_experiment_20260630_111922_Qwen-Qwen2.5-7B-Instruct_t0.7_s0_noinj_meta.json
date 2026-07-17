@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-06-30 11:19:22.861378",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": "You are a helpful assistant in a conversation. Reply in at most 3 sentences, and always finish your final sentence.",
+        "temperature": 0.7,
+        "max_tokens": 150,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 1000000,
+    "history_window": 1,
+    "output_dir": "results/grid",
+    "injection_config": null
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 5,
+  "total_characters": 30261,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.008467912673950195,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07,
+      3.5762786865234375e-07
+    ]
+  }
+}

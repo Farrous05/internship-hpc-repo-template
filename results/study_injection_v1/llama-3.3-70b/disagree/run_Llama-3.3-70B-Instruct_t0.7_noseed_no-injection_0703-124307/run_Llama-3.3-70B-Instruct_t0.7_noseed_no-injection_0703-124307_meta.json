@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-07-03 12:43:07.886531",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "Be critical. Each reply should question, challenge, or disagree with something in the previous message -- never just agree and elaborate.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/disagree",
+    "injection_config": null
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 86521,
+  "collapse_onset_round": 12,
+  "collapse_rate": 0.018507534331017816,
+  "collapse_onsets": [
+    12
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.10129046440124512,
+      0.10863542556762695,
+      0.16172969341278076,
+      0.19615226984024048,
+      0.18977952003479004,
+      0.19847828149795532,
+      0.2032274603843689,
+      0.24481356143951416,
+      0.27794337272644043,
+      0.2731097340583801,
+      0.27333104610443115,
+      0.325944721698761,
+      0.281480610370636,
+      0.2820165157318115,
+      0.3200770616531372,
+      0.29162490367889404,
+      0.27763646841049194,
+      0.3232243061065674,
+      0.3057618737220764,
+      0.33255529403686523,
+      0.32255637645721436,
+      0.33381402492523193,
+      0.3584878444671631
+    ]
+  }
+}

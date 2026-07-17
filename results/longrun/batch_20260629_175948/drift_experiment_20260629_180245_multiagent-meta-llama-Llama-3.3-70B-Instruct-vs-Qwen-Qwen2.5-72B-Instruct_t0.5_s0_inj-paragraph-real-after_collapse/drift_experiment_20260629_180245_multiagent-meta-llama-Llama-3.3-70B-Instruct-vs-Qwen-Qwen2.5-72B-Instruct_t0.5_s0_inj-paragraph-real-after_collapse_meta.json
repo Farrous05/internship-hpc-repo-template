@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-06-29 18:02:45.566508",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "You are in an ongoing conversation. Treat the previous message as your conversation partner's turn, respond to it naturally, and keep the conversation going. Do not restart or say the conversation just began.",
+        "temperature": 0.5,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      },
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": "You are in an ongoing conversation. Treat the previous message as your conversation partner's turn, respond to it naturally, and keep the conversation going. Do not restart or say the conversation just began.",
+        "temperature": 0.5,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_175948",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 37015,
+  "collapse_onset_round": 13,
+  "collapse_rate": 0.016562455696064054,
+  "collapse_onsets": [
+    13
+  ],
+  "injection": {
+    "round": 13,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "const mapChildCategoryIdsToNames = categories => {\n categories.map(category => {\n if (category?.children?.length) {\n for (const childCategory of category.children) {\n if (childCategory.categoryId) {\n categoryMap[childCategory.categoryId] = childCategory.name\n }\n }\n }\n }).",
+    "distance": 1.0582179836928844,
+    "span_start": 1836,
+    "span_end": 2108
+  },
+  "injections": [
+    {
+      "round": 13,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "const mapChildCategoryIdsToNames = categories => {\n categories.map(category => {\n if (category?.children?.length) {\n for (const childCategory of category.children) {\n if (childCategory.categoryId) {\n categoryMap[childCategory.categoryId] = childCategory.name\n }\n }\n }\n }).",
+      "distance": 1.0582179836928844,
+      "span_start": 1836,
+      "span_end": 2108
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 14,
+    "hold_length": 13,
+    "post_injection_distances": [
+      0.3865163326263428,
+      0.5075639486312866,
+      0.5452107191085815,
+      0.5992358326911926,
+      0.557879775762558,
+      0.6103226542472839,
+      0.7454599738121033,
+      0.6322745084762573,
+      0.7554511576890945,
+      0.7647044956684113,
+      0.7495576441287994,
+      0.7789216339588165,
+      0.806984931230545
+    ]
+  }
+}

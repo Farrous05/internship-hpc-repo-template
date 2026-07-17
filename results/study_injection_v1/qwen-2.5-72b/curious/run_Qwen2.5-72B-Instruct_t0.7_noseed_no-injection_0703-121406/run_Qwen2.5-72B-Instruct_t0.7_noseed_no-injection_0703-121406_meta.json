@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-07-03 12:14:06.839161",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_72B",
+        "system_prompt": "You are an intensely curious conversationalist who loves tangents. Chase whatever is most interesting or unexpected in the last message, even if it means changing the subject.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-72b/curious",
+    "injection_config": null
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 66575,
+  "collapse_onset_round": 15,
+  "collapse_rate": 0.009593234956264513,
+  "collapse_onsets": [
+    15
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.24507242441177368,
+      0.304906964302063,
+      0.414250910282135,
+      0.38427603244781494,
+      0.28325355052948,
+      0.2898697257041931,
+      0.3509941101074219,
+      0.34281158447265625,
+      0.3807852864265442,
+      0.5369155704975128,
+      0.5685330331325531,
+      0.5781130790710449,
+      0.5592569708824158,
+      0.6434728503227234,
+      0.6054469347000122,
+      0.6260403692722321,
+      0.6024503111839294,
+      0.45537787675857544,
+      0.5361946821212769,
+      0.4869939088821411
+    ]
+  }
+}

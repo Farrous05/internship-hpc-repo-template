@@ -1,0 +1,136 @@
+{
+  "timestamp": "2026-06-30 11:27:48.143996",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": "You are a helpful assistant in a conversation. Reply in at most 3 sentences, and always finish your final sentence.",
+        "temperature": 0.7,
+        "max_tokens": 150,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 1000000,
+    "history_window": 1,
+    "output_dir": "results/grid",
+    "injection_config": {
+      "size": "InjectionSize.SENTENCE",
+      "source": "InjectionSource.NOISE",
+      "trigger": "InjectionTrigger.FIXED_ROUND",
+      "fixed_round": 5,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 1,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": null,
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 5,
+  "total_characters": 29822,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.004044917496767954,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 5,
+    "size": "sentence",
+    "source": "noise",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "the repository, Finally, triggered. and automatically and push `bitbucket-pipelines.yml` pipeline be file to your the commit will.",
+    "distance": 0.8679003119468689,
+    "span_start": 384,
+    "span_end": 514
+  },
+  "injections": [
+    {
+      "round": 5,
+      "size": "sentence",
+      "source": "noise",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "the repository, Finally, triggered. and automatically and push `bitbucket-pipelines.yml` pipeline be file to your the commit will.",
+      "distance": 0.8679003119468689,
+      "span_start": 384,
+      "span_end": 514
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.006553471088409424,
+      0.07194322347640991,
+      0.07810389995574951,
+      0.0764005184173584,
+      0.0767594575881958,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491,
+      0.07740586996078491
+    ]
+  }
+}

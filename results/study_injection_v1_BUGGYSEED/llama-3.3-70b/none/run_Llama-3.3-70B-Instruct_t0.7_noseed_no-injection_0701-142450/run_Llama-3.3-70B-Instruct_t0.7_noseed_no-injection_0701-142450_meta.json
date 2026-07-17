@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-07-01 14:24:50.368032",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/none",
+    "injection_config": null
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 5,
+  "total_characters": 282411,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.003158160773190578,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.04781508445739746,
+      0.05973994731903076,
+      0.09364873170852661,
+      0.09153938293457031,
+      0.0633695125579834,
+      0.06343525648117065,
+      0.09983503818511963,
+      0.06640505790710449,
+      0.06729519367218018,
+      0.058946967124938965,
+      0.07373785972595215,
+      0.0858762264251709,
+      0.11389666795730591,
+      0.10306358337402344,
+      0.10306358337402344,
+      0.12908029556274414,
+      0.26442521810531616,
+      0.15781748294830322,
+      0.36764466762542725,
+      0.43158555030822754,
+      0.4727816581726074,
+      0.47077590227127075,
+      0.5109001398086548,
+      0.44018906354904175,
+      0.3608497381210327,
+      0.32961976528167725,
+      0.16019964218139648,
+      0.12823611497879028,
+      0.14380639791488647,
+      0.1143953800201416,
+      0.13022035360336304,
+      0.16491186618804932,
+      0.17252898216247559,
+      0.2553620934486389,
+      0.2864036560058594,
+      0.3281395435333252,
+      0.30750852823257446,
+      0.33306223154067993,
+      0.29104143381118774,
+      0.30762118101119995,
+      0.2824220061302185,
+      0.27967333793640137,
+      0.27827417850494385,
+      0.28224897384643555
+    ]
+  }
+}

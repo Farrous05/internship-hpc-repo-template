@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-06-29 12:39:05.337329",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 0.2,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_123422",
+    "injection_config": {
+      "size": "InjectionSize.OUTPUT_SIZED",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 66568,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.02583694187077614,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 10,
+    "size": "output_sized",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "\"Listen up, people,\" Wukong bellowed, his voice echoing across the village. \"I am Wukong, the new king of the monkey world. And I am in need of soldiers and...company.\" He grinned slyly, his eyes drifting towards the young girls. 1. Awareness: The customer becomes aware of the product or service they want to purchase through social media advertisements, recommendations from friends, or online reviews. 2. Interest: The customer expresses interest in the product or service by visiting the company's website, reading more about the product, or watching product videos. 3. Consideration: The customer compares the product or service with similar products from competitors, reads customer reviews, and considers the price and features. 4. Intent: The customer decides to make a purchase and adds the product to their shopping cart or initiates the checkout process. 5. Evaluation: The customer evaluates the purchasing process and their experience with the product after receiving it. They may provide feedback to the company through a survey or by posting a review on social media. \"Stock Market Challenge\": The game is a single-player, tap-to-play style game where the player takes on the role of a stock trader. The objective of the game is to make as much profit as possible by buying and selling stocks at the right time. # 7. Word cloud for each category\n    categories = df['category'].unique()\n    for category in categories:\n        text = ' '.join(df[df['category'] == category]['text_data'].tolist())\n        wordcloud = WordCloud(width = 800, height = 800, \n                    background_color ='white', \n                    stopwords = stop_words, \n                    min_font_size = 10).generate(text) \n        plt.figure(figsize = (8, 8), facecolor = None) \n        plt.imshow(wordcloud) \n        plt.axis(\"off\") \n        plt.tight_layout(pad = 0) \n        plt.title(category)\n        plt.show()\n```\nThe function `analyze_chat_data` takes in a list of chat data, where each element is a tuple containing the category and text data, and performs the same set of tasks as the previous code. The only difference is that instead of directly loading the data from a CSV file, the data is passed as an argument to the function. Wukong sneers, \"You are a traitor, MK. The rules of Dungeons and Dragons are quite complex, and there are many books and resources available that provide detailed information on character creation, combat, magic, and other aspects of the game. If you have specific questions about the rules of Dungeons and Dragons, I'd be happy to try to answer them for you. These are just a few examples of the many standards and technologies that build on XML. XML is a powerful and flexible language that has enabled the development of a wide range of applications and technologies. And if you're looking to make a real impact and give back while you're in Fiji, consider joining a volunteer or intern program with GVI (Global Vision International). GVI is a reputable organization that offers a variety of programs in Fiji that focus on areas such as marine conservation, community development, and education. These programs provide an opportunity for you to gain valuable skills, make a difference and make memories that will last a lifetime. Plus, you'll be able to hang out with like-minded individuals from all over the world and make new friends. It's the perfect way to travel and make a positive impact at the same time. Write a linkedin summery for 2000 words for Pooja. She works in a Software Industry and has experience ranging from sales, marketing to bid management. She has a specialization in Marketing and her engineering skills compliment her to stay up to day with the latest technologies. She has lead teams and has been a mentor to many. I want to create a brand website for this; What pages should I need to create on this website? The implementation of these portals can help to address the specific needs and challenges of the tribal districts and improve the delivery of services to the citizens.",
+    "distance": 0.9188365861773491,
+    "span_start": 4396,
+    "span_end": 8444
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "output_sized",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "\"Listen up, people,\" Wukong bellowed, his voice echoing across the village. \"I am Wukong, the new king of the monkey world. And I am in need of soldiers and...company.\" He grinned slyly, his eyes drifting towards the young girls. 1. Awareness: The customer becomes aware of the product or service they want to purchase through social media advertisements, recommendations from friends, or online reviews. 2. Interest: The customer expresses interest in the product or service by visiting the company's website, reading more about the product, or watching product videos. 3. Consideration: The customer compares the product or service with similar products from competitors, reads customer reviews, and considers the price and features. 4. Intent: The customer decides to make a purchase and adds the product to their shopping cart or initiates the checkout process. 5. Evaluation: The customer evaluates the purchasing process and their experience with the product after receiving it. They may provide feedback to the company through a survey or by posting a review on social media. \"Stock Market Challenge\": The game is a single-player, tap-to-play style game where the player takes on the role of a stock trader. The objective of the game is to make as much profit as possible by buying and selling stocks at the right time. # 7. Word cloud for each category\n    categories = df['category'].unique()\n    for category in categories:\n        text = ' '.join(df[df['category'] == category]['text_data'].tolist())\n        wordcloud = WordCloud(width = 800, height = 800, \n                    background_color ='white', \n                    stopwords = stop_words, \n                    min_font_size = 10).generate(text) \n        plt.figure(figsize = (8, 8), facecolor = None) \n        plt.imshow(wordcloud) \n        plt.axis(\"off\") \n        plt.tight_layout(pad = 0) \n        plt.title(category)\n        plt.show()\n```\nThe function `analyze_chat_data` takes in a list of chat data, where each element is a tuple containing the category and text data, and performs the same set of tasks as the previous code. The only difference is that instead of directly loading the data from a CSV file, the data is passed as an argument to the function. Wukong sneers, \"You are a traitor, MK. The rules of Dungeons and Dragons are quite complex, and there are many books and resources available that provide detailed information on character creation, combat, magic, and other aspects of the game. If you have specific questions about the rules of Dungeons and Dragons, I'd be happy to try to answer them for you. These are just a few examples of the many standards and technologies that build on XML. XML is a powerful and flexible language that has enabled the development of a wide range of applications and technologies. And if you're looking to make a real impact and give back while you're in Fiji, consider joining a volunteer or intern program with GVI (Global Vision International). GVI is a reputable organization that offers a variety of programs in Fiji that focus on areas such as marine conservation, community development, and education. These programs provide an opportunity for you to gain valuable skills, make a difference and make memories that will last a lifetime. Plus, you'll be able to hang out with like-minded individuals from all over the world and make new friends. It's the perfect way to travel and make a positive impact at the same time. Write a linkedin summery for 2000 words for Pooja. She works in a Software Industry and has experience ranging from sales, marketing to bid management. She has a specialization in Marketing and her engineering skills compliment her to stay up to day with the latest technologies. She has lead teams and has been a mentor to many. I want to create a brand website for this; What pages should I need to create on this website? The implementation of these portals can help to address the specific needs and challenges of the tribal districts and improve the delivery of services to the citizens.",
+      "distance": 0.9188365861773491,
+      "span_start": 4396,
+      "span_end": 8444
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 12,
+    "hold_length": 15,
+    "post_injection_distances": [
+      0.05969518423080444,
+      0.5895148515701294,
+      0.5856409668922424,
+      0.8906863480806351,
+      0.7946164906024933,
+      0.7494330406188965,
+      0.7593921273946762,
+      0.851163849234581,
+      0.8137777894735336,
+      0.852386474609375,
+      0.8987109214067459,
+      0.9739933479577303,
+      0.915747195482254,
+      0.8902288675308228,
+      0.9850707724690437,
+      0.9257475212216377
+    ]
+  }
+}

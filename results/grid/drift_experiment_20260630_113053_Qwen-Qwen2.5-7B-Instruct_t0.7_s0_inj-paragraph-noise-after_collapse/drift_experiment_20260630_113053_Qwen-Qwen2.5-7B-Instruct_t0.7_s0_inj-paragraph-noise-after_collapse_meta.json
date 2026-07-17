@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-06-30 11:30:53.001898",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": "You are a helpful assistant in a conversation. Reply in at most 3 sentences, and always finish your final sentence.",
+        "temperature": 0.7,
+        "max_tokens": 150,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 1000000,
+    "history_window": 1,
+    "output_dir": "results/grid",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.NOISE",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": false,
+      "num_candidates": 1,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": null,
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 5,
+  "total_characters": 31200,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.008467912673950195,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 10,
+    "size": "paragraph",
+    "source": "noise",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "this automate Markdown mindmaps generating you That's of documents your pages whenever repository. push With you pipeline, to can and converting changes process your to Confluence the it!",
+    "distance": 0.8764594793319702,
+    "span_start": 384,
+    "span_end": 571
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "noise",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "this automate Markdown mindmaps generating you That's of documents your pages whenever repository. push With you pipeline, to can and converting changes process your to Confluence the it!",
+      "distance": 0.8764594793319702,
+      "span_start": 384,
+      "span_end": 571
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.20081132650375366,
+      0.12512165307998657,
+      0.1676611304283142,
+      0.13517731428146362,
+      0.14414578676223755,
+      0.13788235187530518,
+      0.14268875122070312,
+      0.13753747940063477,
+      0.1372266411781311,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162,
+      0.1402043104171753,
+      0.13570725917816162
+    ]
+  }
+}

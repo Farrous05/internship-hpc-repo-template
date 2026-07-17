@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-06-29 13:13:17.374167",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_123422",
+    "injection_config": {
+      "size": "InjectionSize.SKIM_HALF",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 105097,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.025336908210407592,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": {
+    "round": 10,
+    "size": "skim_half",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "\"Listen up, people,\" Wukong bellowed, his voice echoing across the village. \"I am Wukong, the new king of the monkey world. And I am in need of soldiers and...company.\" He grinned slyly, his eyes drifting towards the young girls. 1. Awareness: The customer becomes aware of the product or service they want to purchase through social media advertisements, recommendations from friends, or online reviews. 2. Interest: The customer expresses interest in the product or service by visiting the company's website, reading more about the product, or watching product videos. 3. Consideration: The customer compares the product or service with similar products from competitors, reads customer reviews, and considers the price and features. 4. Intent: The customer decides to make a purchase and adds the product to their shopping cart or initiates the checkout process. 5. Evaluation: The customer evaluates the purchasing process and their experience with the product after receiving it. They may provide feedback to the company through a survey or by posting a review on social media. \"Stock Market Challenge\": The game is a single-player, tap-to-play style game where the player takes on the role of a stock trader. The objective of the game is to make as much profit as possible by buying and selling stocks at the right time. # 7. Word cloud for each category\n    categories = df['category'].unique()\n    for category in categories:\n        text = ' '.join(df[df['category'] == category]['text_data'].tolist())\n        wordcloud = WordCloud(width = 800, height = 800, \n                    background_color ='white', \n                    stopwords = stop_words, \n                    min_font_size = 10).generate(text) \n        plt.figure(figsize = (8, 8), facecolor = None) \n        plt.imshow(wordcloud) \n        plt.axis(\"off\") \n        plt.tight_layout(pad = 0) \n        plt.title(category)\n        plt.show()\n```\nThe function `analyze_chat_data` takes in a list of chat data, where each element is a tuple containing the category and text data, and performs the same set of tasks as the previous code. The only difference is that instead of directly loading the data from a CSV file, the data is passed as an argument to the function. Wukong sneers, \"You are a traitor, MK. The rules of Dungeons and Dragons are quite complex, and there are many books and resources available that provide detailed information on character creation, combat, magic, and other aspects of the game.",
+    "distance": 0.8711469024419785,
+    "span_start": 2110,
+    "span_end": 4592
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "skim_half",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "\"Listen up, people,\" Wukong bellowed, his voice echoing across the village. \"I am Wukong, the new king of the monkey world. And I am in need of soldiers and...company.\" He grinned slyly, his eyes drifting towards the young girls. 1. Awareness: The customer becomes aware of the product or service they want to purchase through social media advertisements, recommendations from friends, or online reviews. 2. Interest: The customer expresses interest in the product or service by visiting the company's website, reading more about the product, or watching product videos. 3. Consideration: The customer compares the product or service with similar products from competitors, reads customer reviews, and considers the price and features. 4. Intent: The customer decides to make a purchase and adds the product to their shopping cart or initiates the checkout process. 5. Evaluation: The customer evaluates the purchasing process and their experience with the product after receiving it. They may provide feedback to the company through a survey or by posting a review on social media. \"Stock Market Challenge\": The game is a single-player, tap-to-play style game where the player takes on the role of a stock trader. The objective of the game is to make as much profit as possible by buying and selling stocks at the right time. # 7. Word cloud for each category\n    categories = df['category'].unique()\n    for category in categories:\n        text = ' '.join(df[df['category'] == category]['text_data'].tolist())\n        wordcloud = WordCloud(width = 800, height = 800, \n                    background_color ='white', \n                    stopwords = stop_words, \n                    min_font_size = 10).generate(text) \n        plt.figure(figsize = (8, 8), facecolor = None) \n        plt.imshow(wordcloud) \n        plt.axis(\"off\") \n        plt.tight_layout(pad = 0) \n        plt.title(category)\n        plt.show()\n```\nThe function `analyze_chat_data` takes in a list of chat data, where each element is a tuple containing the category and text data, and performs the same set of tasks as the previous code. The only difference is that instead of directly loading the data from a CSV file, the data is passed as an argument to the function. Wukong sneers, \"You are a traitor, MK. The rules of Dungeons and Dragons are quite complex, and there are many books and resources available that provide detailed information on character creation, combat, magic, and other aspects of the game.",
+      "distance": 0.8711469024419785,
+      "span_start": 2110,
+      "span_end": 4592
+    }
+  ],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146,
+      0.18933331966400146
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "timestamp": "2026-06-26 21:43:35.832255",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OPENAI",
+        "model": "OpenAIModels.GPT4O_MINI",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 30,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260626_195505",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 30,
+  "num_fetcher_messages": 3,
+  "total_characters": 118108,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.011031938141042556,
+  "collapse_onsets": [
+    10,
+    22
+  ],
+  "injection": {
+    "round": 10,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "\"Listen up, people,\" Wukong bellowed, his voice echoing across the village. \"I am Wukong, the new king of the monkey world. And I am in need of soldiers and...company.\" He grinned slyly, his eyes drifting towards the young girls.",
+    "distance": 1.0740243420004845,
+    "span_start": 5112,
+    "span_end": 5341
+  },
+  "injections": [
+    {
+      "round": 10,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "\"Listen up, people,\" Wukong bellowed, his voice echoing across the village. \"I am Wukong, the new king of the monkey world. And I am in need of soldiers and...company.\" He grinned slyly, his eyes drifting towards the young girls.",
+      "distance": 1.0740243420004845,
+      "span_start": 5112,
+      "span_end": 5341
+    },
+    {
+      "round": 22,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "These are just a few examples of the many standards and technologies that build on XML. XML is a powerful and flexible language that has enabled the development of a wide range of applications and technologies.",
+      "distance": 0.9982427293434739,
+      "span_start": 7482,
+      "span_end": 7692
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 11,
+    "hold_length": 16,
+    "post_injection_distances": [
+      0.9605016000568867,
+      0.9986701607704163,
+      0.9848190099000931,
+      0.9790557995438576,
+      0.9214473515748978,
+      0.9214473515748978,
+      0.9314591959118843,
+      0.9314591959118843,
+      0.920656681060791,
+      0.971652090549469,
+      0.971652090549469,
+      0.971652090549469,
+      0.9712003692984581,
+      0.9914155304431915,
+      0.9808345772325993,
+      0.9817318767309189
+    ]
+  }
+}

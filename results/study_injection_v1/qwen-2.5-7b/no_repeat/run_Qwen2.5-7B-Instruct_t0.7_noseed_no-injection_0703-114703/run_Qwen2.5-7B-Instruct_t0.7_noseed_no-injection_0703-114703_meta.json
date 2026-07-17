@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-07-03 11:47:03.894594",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": "You are in an open-ended conversation. Each reply must introduce a genuinely new idea, fact, or question -- never repeat points already made or keep circling the same topic.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/no_repeat",
+    "injection_config": null
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 146892,
+  "collapse_onset_round": 24,
+  "collapse_rate": 0.007434195921971238,
+  "collapse_onsets": [
+    24
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.33505916595458984,
+      0.4526534080505371,
+      0.4316760301589966,
+      0.4211921691894531,
+      0.4500925540924072,
+      0.4947676658630371,
+      0.443447470664978,
+      0.4224894046783447,
+      0.46756744384765625,
+      0.49837398529052734,
+      0.5519077479839325
+    ]
+  }
+}

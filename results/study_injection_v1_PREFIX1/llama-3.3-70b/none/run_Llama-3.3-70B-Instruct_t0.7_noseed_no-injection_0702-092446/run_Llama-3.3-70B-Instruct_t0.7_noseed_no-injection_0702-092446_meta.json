@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-07-02 09:24:46.621842",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": null,
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/llama-3.3-70b/none",
+    "injection_config": null
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 4,
+  "total_characters": 317696,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.020333395762877023,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.030606508255004883,
+      0.052877724170684814,
+      0.07647478580474854,
+      0.0710412859916687,
+      0.07072615623474121,
+      0.08139979839324951,
+      0.06722742319107056,
+      0.15734827518463135,
+      0.2541067600250244,
+      0.10710799694061279,
+      0.0897371768951416,
+      0.09585672616958618,
+      0.2875511646270752,
+      0.39754819869995117,
+      0.35231637954711914,
+      0.4118976593017578,
+      0.3899626135826111,
+      0.4395188093185425,
+      0.4178340435028076,
+      0.45944279432296753,
+      0.3678467273712158,
+      0.4504406452178955,
+      0.37082207202911377,
+      0.43783169984817505,
+      0.41002070903778076,
+      0.3838554620742798,
+      0.388901948928833,
+      0.3948233723640442,
+      0.41762852668762207,
+      0.39349865913391113,
+      0.41701000928878784,
+      0.4122759699821472,
+      0.4098750352859497,
+      0.38021576404571533,
+      0.3337087631225586,
+      0.3615607023239136,
+      0.38799428939819336,
+      0.3508455753326416,
+      0.38347578048706055,
+      0.42326778173446655,
+      0.427532434463501,
+      0.425112783908844,
+      0.43989330530166626,
+      0.4105769395828247,
+      0.47020888328552246
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-07-03 12:41:58.768047",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/sharegpt_real.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.QWEN_2_5_7B",
+        "system_prompt": "Be critical. Each reply should question, challenge, or disagree with something in the previous message -- never just agree and elaborate.",
+        "temperature": 0.7,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": null
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 40,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/study_injection_v1/qwen-2.5-7b/disagree",
+    "injection_config": null
+  },
+  "num_iterations_total": 40,
+  "num_fetcher_messages": 4,
+  "total_characters": 264830,
+  "collapse_onset_round": 10,
+  "collapse_rate": 0.029262441938573677,
+  "collapse_onsets": [
+    10
+  ],
+  "injection": null,
+  "injections": [],
+  "recovery": {
+    "recovered": false,
+    "recovery_round": null,
+    "hold_length": 0,
+    "post_injection_distances": [
+      0.10841870307922363,
+      0.10978120565414429,
+      0.1412283182144165,
+      0.12952369451522827,
+      0.1509193778038025,
+      0.15778493881225586,
+      0.15725868940353394,
+      0.16775298118591309,
+      0.15935850143432617,
+      0.15442359447479248,
+      0.15562474727630615,
+      0.15086185932159424,
+      0.13362717628479004,
+      0.163488507270813,
+      0.1601455807685852,
+      0.11427676677703857,
+      0.11617106199264526,
+      0.12523651123046875,
+      0.10861217975616455,
+      0.10911333560943604,
+      0.11347293853759766,
+      0.12238436937332153,
+      0.13701629638671875,
+      0.11880415678024292,
+      0.14281916618347168
+    ]
+  }
+}

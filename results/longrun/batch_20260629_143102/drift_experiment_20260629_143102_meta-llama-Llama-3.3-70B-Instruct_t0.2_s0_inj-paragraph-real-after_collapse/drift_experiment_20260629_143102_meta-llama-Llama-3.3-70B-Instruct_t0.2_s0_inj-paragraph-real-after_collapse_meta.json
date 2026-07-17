@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-06-29 14:31:02.274115",
+  "config": {
+    "fetcher_config": {
+      "fetcher": "FetcherType.SHAREGPT",
+      "data_path": "data/seed_handpicked.json",
+      "second_data_path": null,
+      "category": null,
+      "min_messages": 2,
+      "max_messages": 6
+    },
+    "analyzer_config": {
+      "analyzer": "AnalyzerType.SIMILARITY",
+      "analyze_window": 10
+    },
+    "agent_configs": [
+      {
+        "provider": "Provider.OLLAMA_COMPANY",
+        "model": "OllamaCompanyModels.LLAMA_3_3_70B",
+        "system_prompt": "You are in an ongoing conversation. Treat the previous message as your conversation partner's turn, respond to it naturally, and keep the conversation going. Do not restart or say the conversation just began.",
+        "temperature": 0.2,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "top_p": 1.0,
+        "seed": 0
+      }
+    ],
+    "agent_selection_method": "AgentSelectionMethod.ROUND_ROBIN",
+    "max_iterations": 60,
+    "max_total_characters": 10000000,
+    "history_window": 1,
+    "output_dir": "results/longrun/batch_20260629_143102",
+    "injection_config": {
+      "size": "InjectionSize.PARAGRAPH",
+      "source": "InjectionSource.REAL",
+      "trigger": "InjectionTrigger.AFTER_COLLAPSE",
+      "fixed_round": null,
+      "interval": null,
+      "repeat": true,
+      "num_candidates": 8,
+      "use_marker": true,
+      "marker": "<end>",
+      "corpus_path": "data/sharegpt_real.json",
+      "rng_seed": 0
+    }
+  },
+  "num_iterations_total": 60,
+  "num_fetcher_messages": 3,
+  "total_characters": 112821,
+  "collapse_onset_round": 32,
+  "collapse_rate": 0.0020892726068190747,
+  "collapse_onsets": [
+    32
+  ],
+  "injection": {
+    "round": 32,
+    "size": "paragraph",
+    "source": "real",
+    "use_marker": true,
+    "marker": "<end>",
+    "text": "As the algorithm processes each span in order, it compares the current span to the last non-overlapping span that was added to the list. If the current span overlaps with the last non-overlapping span, the algorithm updates the end value of the last non-overlapping span to be the maximum of its current end value and the end value of the current span. This ensures that the resulting non-overlapping spans are maximal, since each non-overlapping span is extended as far as possible to the right without overlapping with any other span.",
+    "distance": 1.036817755550146,
+    "span_start": 2123,
+    "span_end": 2659
+  },
+  "injections": [
+    {
+      "round": 32,
+      "size": "paragraph",
+      "source": "real",
+      "use_marker": true,
+      "marker": "<end>",
+      "text": "As the algorithm processes each span in order, it compares the current span to the last non-overlapping span that was added to the list. If the current span overlaps with the last non-overlapping span, the algorithm updates the end value of the last non-overlapping span to be the maximum of its current end value and the end value of the current span. This ensures that the resulting non-overlapping spans are maximal, since each non-overlapping span is extended as far as possible to the right without overlapping with any other span.",
+      "distance": 1.036817755550146,
+      "span_start": 2123,
+      "span_end": 2659
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "recovery_round": 39,
+    "hold_length": 18,
+    "post_injection_distances": [
+      0.2291862964630127,
+      0.22811567783355713,
+      0.34373146295547485,
+      0.18589842319488525,
+      0.3531177043914795,
+      0.2599421739578247,
+      0.35217511653900146,
+      0.3949333429336548,
+      0.41074979305267334,
+      0.5043036937713623,
+      0.3500567078590393,
+      0.43229663372039795,
+      0.42776501178741455,
+      0.44701462984085083,
+      0.5245710015296936,
+      0.48748332262039185,
+      0.5054842829704285,
+      0.46085023880004883,
+      0.5431016683578491,
+      0.6116693019866943,
+      0.6169989705085754,
+      0.7630282640457153,
+      0.7619679868221283,
+      0.7594679743051529
+    ]
+  }
+}
