@@ -33,7 +33,7 @@ END_TOKEN = "<end>"
 def p_end(model, tok, end_id, messages, max_length):
     """P(<end>) as the FIRST token of the assistant's reply = the decision point."""
     ids = tok.apply_chat_template(messages, tokenize=True,
-                                  add_generation_prompt=True)
+                                  add_generation_prompt=True, return_dict=False)
     ids = ids[-max_length:]                     # keep the END (the decision point)
     x = torch.tensor([ids], device=model.device)
     with torch.no_grad():
@@ -117,8 +117,9 @@ def main():
     healthy = [r for r in rows if r["label_type"] == "negative"][:args.n_generate]
     spam, gens = 0, 0
     for r in healthy:
-        ids = tok.apply_chat_template(r["messages"], tokenize=True,
-                                      add_generation_prompt=True)[-args.max_length:]
+        ids = tok.apply_chat_template(
+            r["messages"], tokenize=True, add_generation_prompt=True,
+            return_dict=False)[-args.max_length:]
         with torch.no_grad():
             out = model.generate(torch.tensor([ids], device=model.device),
                                  max_new_tokens=80, do_sample=False,
@@ -156,13 +157,24 @@ def main():
     json.dump(report, open(args.out, "w"), indent=1)
     print(f"\nwrote {args.out}")
     print("\n=== VERDICT ===")
-    if a > 0.9 and fired_neg < 0.2:
-        print("  PASS: the model learned the <end> trigger.")
+    # AUC alone is NOT enough: P(<end>) can be ~1e-9 on positives and ~1e-11 on
+    # negatives -> AUC=1.0 by an infinitesimal margin while the model NEVER fires
+    # (fired_pos=0). A real PASS needs the model to actually EMIT <end> on loops,
+    # so gate on the absolute fire rate too, not just the ranking.
+    if fired_pos < 0.10:
+        print(f"  FAIL: the model barely fires <end> at all "
+              f"(fires on {100*fired_pos:.0f}% of loops, mean P={mean(pos):.2e}). "
+              f"AUC={a:.3f} here is a near-zero-probability artifact, not learning. "
+              f"Undertrained or too few positives; <end> was ~0.4% of the signal "
+              f"-- consider more data, more epochs, or trigger-region loss masking.")
+    elif a > 0.9 and fired_pos > 0.5 and fired_neg < 0.2:
+        print(f"  PASS: fires on {100*fired_pos:.0f}% of loops, "
+              f"{100*fired_neg:.0f}% of healthy; AUC={a:.3f}.")
     elif a > 0.7:
         print("  PARTIAL: some signal, but the trigger is mushy. Check the "
               "negatives (too few? contaminated?) and the loss balance.")
     else:
-        print("  FAIL: no real separation. <end> was ~0.5% of the training signal "
+        print("  FAIL: no real separation. <end> was ~0.4% of the training signal "
               "-- consider trigger-region loss masking, and more negatives.")
 
 
